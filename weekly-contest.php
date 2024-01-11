@@ -3,7 +3,8 @@
 
 include "includes/config.php";
 
-
+$error = false;
+$errorMessage = '';
 
 // Function to validate member ID
 function isValidMemberId($memberId)
@@ -36,7 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_user'])) {
 
         if ($result) {
             // Member ID is already registered, prevent form submission
-            echo "<p>User with this member ID is already registered. Please use a different member ID.</p>";
+            $error = true;
+            $errorMessage = 'User with this member ID is already registered. Please use a different member ID.';
         } else {
             // Save user information using PDO prepared statement for INSERT
             $stmt = $pdo->prepare("INSERT INTO users (first_name, surname, member_id, actuarial_assoc, organization, email, contact_no) 
@@ -50,13 +52,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_user'])) {
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
             $stmt->bindParam(':contact_no', $contact_no, PDO::PARAM_STR);
             $stmt->execute();
+            // Get the last inserted userid
 
+            $lastInsertedId = $pdo->lastInsertId();
+            session_start();
+            $_SESSION['user_id'] = $lastInsertedId;
             // Set a cookie to track user submission
             setcookie('user_submitted', true, time() + (86400 * 30), "/"); // 86400 = 1 day
+            $_COOKIE['user_submitted'] = true;
         }
     } else {
         // Check for duplicates based on email and contact number
-        $stmt = $pdo->prepare("SELECT user_id FROM users WHERE email = :email AND contact_no = :contact_no");
+        $stmt = $pdo->prepare("SELECT id FROM users WHERE email = :email AND contact_no = :contact_no");
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':contact_no', $contact_no, PDO::PARAM_STR);
         $stmt->execute();
@@ -64,7 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_user'])) {
 
         if ($result) {
             // Email and contact number combination is already registered, prevent form submission
-            echo "<p>User with this email and contact number is already registered. Please use a different email or contact number.</p>";
+            $error = true;
+            $errorMessage = 'User with this email and contact number is already registered. Please use a different email or contact number.</p>';
         } else {
             // Prepare and execute the SQL query for user registration
             $stmt = $pdo->prepare("INSERT INTO users (first_name, surname, member_id, actuarial_assoc, organization, email, contact_no) 
@@ -78,11 +86,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_user'])) {
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
             $stmt->bindParam(':contact_no', $contact_no, PDO::PARAM_STR);
             $stmt->execute();
+            // Get the last inserted userid
 
+            $lastInsertedId = $pdo->lastInsertId();
+            session_start();
+            $_SESSION['user_id'] = $lastInsertedId;
             // Set a cookie to track user submission
             setcookie('user_submitted', true, time() + (86400 * 30), "/"); // 86400 = 1 day
+            $_COOKIE['user_submitted'] = true;
+           
         }
     }
+    
+            
+
 }
 
 // Check if the user has submitted the MCQs before displaying the form
@@ -130,11 +147,23 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
 
         .options-container {
             margin-top: 10px;
+            margin-bottom: 20px;
         }
+
 
         .hidden {
             display: none;
         }
+        .success-card {
+            width: 300px;
+            margin: 20px auto;
+        }
+
+        .success-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transform: scale(1.05);
+        }
+
     </style>
 
 </head>
@@ -182,10 +211,15 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
                     <div class="section-title">
                         <h3>Live <span class="alternate">Contest</span></h3>
                         <p>Engage, Learn, and Compete: Immerse Yourself in the Thrilling Atmosphere of Our Live Weekly Quiz Event!</p>
+                        
+                    </div>
+                    <div>
+                    <img src="assets/images/weekly contest.jpg" alt="" style="width: 100%;">
                     </div>
                 </div>
             </div>
             <?php
+           
             // Check if the user has submitted the MCQs
             $mcqSubmitted = isset($_COOKIE['mcq_submitted']) && $_COOKIE['mcq_submitted'] == true;
 
@@ -200,13 +234,13 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
                                 <li class="nav-item">
                                     <a class="nav-link active" href="#nov20" data-toggle="pill">
                                         Step 01
-                                        <span>Register yourself</span>
+                                        <span>Provide your details</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#nov21">
                                         Step 02
-                                        <span>Apply for Quiz</span>
+                                        <span>Take the quiz</span>
                                     </a>
                                 </li>
 
@@ -217,6 +251,14 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
                                 <div class="tab-pane fade show active schedule-item" id="nov20">
 
                                     <div class="p-5">
+                                    <?php
+                                    // Display success message if set in the URL
+                                    if (isset($error)  && $errorMessage !='') {
+                                        echo '<div class="alert alert-success" id="successMessage"> <strong>Success!</strong> ' . $errorMessage . '</div>';
+                                    }elseif(isset($error)  && $errorMessage !=''){
+                                        echo '<div class="alert alert-danger" id="successMessage"> <strong>Failed!</strong> ' . $errorMessage . '</div>';
+                                    }
+                                    ?>
                                         <form id="userForm" method="post" action="">
 
                                             <div class="row mb-3">
@@ -294,13 +336,13 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
                                 <li class="nav-item">
                                     <a class="nav-link " href="#nov20" data-toggle="pill">
                                         Step 01
-                                        <span>Register yourself</span>
+                                        <span>Provide your details</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link active" href="#nov21">
                                         Step 02
-                                        <span>Apply for Quiz</span>
+                                        <span>Take the quiz</span>
                                     </a>
                                 </li>
 
@@ -333,8 +375,8 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
                                                     </div>
                                                 </div>
                                                 <div class="row mt-3">
-                                                    <div class="col text-end">
-                                                        <button class="btn btn-success" id="submitBtn" onclick="submitQuestions()">Submit</button>
+                                                    <div class="col text-center">
+                                                        <button class="btn btn-success" id="submitBtn" onclick="submitQuestions()" disabled>Submit</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -357,7 +399,6 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
 
             <?php
                 // Set a cookie to track MCQ submission
-                setcookie('mcq_submitted', true, time() + (86400 * 30), "/"); // 86400 = 1 day
             } else {
                 // Display user registration form if the MCQs are already submitted
                 echo "<p>You have already submitted the MCQs. Thank you!</p>";
@@ -397,11 +438,12 @@ function fetchQuestions() {
         })
         .catch(error => console.error("Error fetching questions:", error));
 }
+// Initialize the selectedOptions array
+let selectedOptions = [];
 
-// Display the current question and options with radio buttons
 function displayQuestion() {
     const currentQuestion = mcqQuestions[currentQuestionIndex];
-    document.getElementById("questionText").textContent = currentQuestion.question_text;
+    document.getElementById("questionText").innerHTML = `Q. ${currentQuestionIndex + 1} ` + currentQuestion.question_text;
 
     const optionsContainer = document.getElementById("optionsContainer");
     optionsContainer.innerHTML = ""; // Clear previous options
@@ -417,8 +459,13 @@ function displayQuestion() {
         optionRadio.className = "form-check-input";
         optionRadio.name = "options";
         optionRadio.id = `option${index + 1}`; // Generating unique IDs for each radio button
-        optionRadio.value = currentQuestion[optionName];
-        optionRadio.onclick = () => selectOption(index);
+        optionRadio.value = index; // Use the index as the value
+        optionRadio.onclick = () => selectOption(currentQuestion.question_id, index);
+
+        // Check if the option is selected for the current question
+        if (selectedOptions[currentQuestion.question_id] !== undefined && selectedOptions[currentQuestion.question_id] === index) {
+            optionRadio.checked = true;
+        }
 
         const optionLabel = document.createElement("label");
         optionLabel.className = "form-check-label";
@@ -435,20 +482,48 @@ function displayQuestion() {
     document.getElementById("prevBtn").style.display = (currentQuestionIndex === 0) ? "none" : "inline";
     document.getElementById("nextBtn").style.display = (currentQuestionIndex === mcqQuestions.length - 1) ? "none" : "inline";
     document.getElementById("submitBtn").style.display = (currentQuestionIndex === mcqQuestions.length - 1) ? "inline" : "none";
+
+    // Enable the "Next" button only if an option is selected
+    const nextBtn = document.getElementById("nextBtn");
+    nextBtn.disabled = selectedOptions[currentQuestion.question_id] === undefined;
 }
 
+// Other functions and code in your script
 
-// Handle option selection
-function selectOption(optionIndex) {
-    // Add logic to handle selected option (if needed)
-    console.log("Selected option:", mcqQuestions[currentQuestionIndex].options[optionIndex]);
+
+
+// Function to handle option selection
+function selectOption(question_id, index) {
+
+
+    // Initialize the selectedOptions array for the current question if not already initialized
+    if (!selectedOptions[question_id]) {
+        selectedOptions[question_id] = [];
+    }
+
+    // Update the selectedOptions array for the current question
+    selectedOptions[question_id] = index;
+
+    // Log the selected question_id and user_answer for testing
+  //  console.log(`Selected Question ID: ${question_id}, User Answer: ${index}`);
+   //  console.log(`Till Date: ` + selectedOptions);
+       // Enable the "Next" button if an option is selected
+       const nextBtn = document.getElementById("nextBtn");
+    nextBtn.removeAttribute("disabled");
+    if(currentQuestionIndex === mcqQuestions.length - 1){
+        document.getElementById("submitBtn").removeAttribute("disabled");
+    }
 }
+
+// Other functions and code in your script
+
 
 // Move to the previous question
 function prevQuestion() {
     if (currentQuestionIndex > 0) {
         currentQuestionIndex--;
         displayQuestion();
+
     }
 }
 
@@ -457,6 +532,7 @@ function nextQuestion() {
     if (currentQuestionIndex < mcqQuestions.length - 1) {
         currentQuestionIndex++;
         displayQuestion();
+        
     }
 }
 
@@ -465,13 +541,14 @@ function submitQuestions() {
     // Prepare data for submission
     const userAnswers = mcqQuestions.map((question, index) => {
         return {
-            question_id: question.id, // Assuming there's an 'id' column in mcq_questions table
-            user_answer: selectedOptions[index], // Include the selected option (modify as needed)
+            question_id: question.question_id, // Assuming there's an 'id' column in mcq_questions table
+            user_answer: selectedOptions[index+1], // Include the selected option (modify as needed)
         };
     });
 
+    
     // Send data to the server using fetch
-    fetch("./submit_questions", {
+    fetch("./get_quiz_questions", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -481,8 +558,15 @@ function submitQuestions() {
     .then(response => response.json())
     .then(data => {
         // Handle success (data may contain any additional information from the server)
-        alert("Questions submitted successfully!");
-        document.getElementById("successMessage").classList.remove("hidden");
+    //    alert("Questions submitted successfully!");
+     //   document.getElementById("successMessage").classList.remove("hidden");
+        document.getElementById("questionForm").innerHTML = '<div class="card success-card">'+
+    '<div class="card-body text-center">'+
+        '<h4 class="card-title">Thank you for participating!</h4>'+
+        '<p class="card-text">The winner will be notified through email.</p>'+
+        '<a href="./index" class="btn btn-primary">Go to Home Page</a>'+
+    '</div>'+
+'</div>';
     })
     .catch(error => {
         // Handle error

@@ -1,6 +1,6 @@
 <?php
 include "includes/config.php";
-
+session_start();
 // require 'includes/emailSender.php';
 
 $error  = false;
@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     
         // Fetch quiz questions
         try {
-            $stmt = $pdo->query("SELECT `id`, `question_text`, `option1`, `option2`, `option3`, `option4` FROM mcq_questions");
+            $stmt = $pdo->query("SELECT `id` as question_id, `question_text`, `option1`, `option2`, `option3`, `option4` FROM mcq_questions");
             $mcqQuestions = $stmt->fetchAll(PDO::FETCH_ASSOC);
             echo json_encode($mcqQuestions);
         } catch (PDOException $e) {
@@ -25,12 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         http_response_code(400);
         echo json_encode(["error" => "Invalid GET request."]);
     }
-} else {
-    // Handle other request methods or provide a default response
-    http_response_code(400);
-    echo json_encode(["error" => "Invalid request method."]);
 }
-
 
 
 
@@ -49,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                VALUES (:user_id, :question_id, :user_answer, NOW())");
 
         // Assuming 'user_id' is available in your session or from the user registration
-        $user_id = 1; // Replace with actual user ID
+        $user_id = $_SESSION['user_id']; // Replace with actual user ID
 
         foreach ($userAnswers as $answer) {
             $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
@@ -57,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->bindParam(':user_answer', $answer['user_answer'], PDO::PARAM_STR);
             $stmt->execute();
         }
+        setcookie('mcq_submitted', true, time() + (86400 * 30), "/"); // 86400 = 1 day
 
         // Send a success response back to the client (can include additional data if needed)
         echo json_encode(["success" => true]);

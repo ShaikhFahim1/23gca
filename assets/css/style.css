@@ -3977,3 +3977,29 @@ ul.pagination .active a {
 }
 
 /*# sourceMappingURL=style.css.map */
+@property --angle {
+	syntax: '<angle>';
+	inherits: true;
+	initial-value: 0deg;
+}
+
+.weekly-button {
+	--angle: 0deg;
+	padding: 10px;
+	background: linear-gradient(white, white) padding-box, conic-gradient(from var(--angle), #dfdfdf, #17171b) border-box;
+	border: 2px solid transparent;
+	border-radius: 16px;
+	max-width: 400px;
+	-webkit-animation: rotate-gradient 3s infinite linear;
+	        animation: rotate-gradient 3s infinite linear;
+}
+
+@-webkit-keyframes rotate-gradient {
+	from { --angle: 0deg; }
+	to { --angle: 360deg; }
+}
+
+@keyframes rotate-gradient {
+	from { --angle: 0deg; }
+	to { --angle: 360deg; }
+}

@@ -405,9 +405,11 @@ function getApiEmailBody($name)
                                     <?php
                                     // Display success message if set in the URL
                                     if (isset($_GET['status']) && $_GET['status'] == "success" && $_GET['message'] !='') {
-                                        echo '<div class="success-label">' . $_GET['message'] . '</div>';
+                                      //  echo '<div class="success-label">' . $_GET['message'] . '</div>';
+                                        echo '<div class="alert alert-success" id="successMessage"> <strong>Success!</strong> ' . $_GET['message'] . '</div>';
                                     }elseif(isset($_GET['status']) && $_GET['status'] == "failed" && $_GET['message'] !=''){
-                                        echo '<div class="danger-label">' . $_GET['message'] . '</div>';
+                                      //  echo '<div class="danger-label">' . $_GET['message'] . '</div>';
+                                        echo '<div class="alert alert-danger" id="successMessage"> <strong>Failed!</strong> ' . $_GET['message'] . '</div>';
                                     }
                                     ?>
                                     <div class="form-group">

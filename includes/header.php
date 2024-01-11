@@ -99,9 +99,12 @@
 		<li class="nav-item">
 		<a class="nav-link" href="./pre-gca-tour">Pre GCA Tour</a>
 		</li>
-		<!-- <li class="nav-item">
-		<a class="nav-link" href="./coming-soon">Weekly Event</a>
-		</li> -->
+		<li class="nav-item">
+			<!-- <img src="assets/images/icon/new.png" alt=""> -->
+		<a class="nav-link " href="./weekly-contest">Weekly Contest</a>
+		</li>
+	
+		
 		<li class="nav-item nav-reg-li"><a class="btn-main-md btn" href="./registration-guidelines">Register Now</a></li>
 	  </ul>
 	  
