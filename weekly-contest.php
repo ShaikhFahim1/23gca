@@ -387,30 +387,48 @@ document.addEventListener("DOMContentLoaded", function() {
 let currentQuestionIndex = 0;
 
 // Fetch questions from the server
+// Fetch questions from the server
 function fetchQuestions() {
-    fetch("./get_quiz_questions")
+    fetch("./get_quiz_questions?action=get_quiz_questions") // Corrected the file extension to .php
         .then(response => response.json())
         .then(data => {
             mcqQuestions = data;
-            displayQuestion(mcqQuestions);
+            displayQuestion();
         })
         .catch(error => console.error("Error fetching questions:", error));
 }
 
-// Display the current question and options
+// Display the current question and options with radio buttons
 function displayQuestion() {
     const currentQuestion = mcqQuestions[currentQuestionIndex];
-    document.getElementById("questionText").textContent = currentQuestion.question;
+    document.getElementById("questionText").textContent = currentQuestion.question_text;
 
     const optionsContainer = document.getElementById("optionsContainer");
     optionsContainer.innerHTML = ""; // Clear previous options
 
-    currentQuestion.options.forEach((option, index) => {
-        const optionButton = document.createElement("button");
-        optionButton.className = "btn btn-outline-primary";
-        optionButton.textContent = option;
-        optionButton.onclick = () => selectOption(index);
-        optionsContainer.appendChild(optionButton);
+    // Add radio buttons for each option
+    const optionNames = ["option1", "option2", "option3", "option4"];
+    optionNames.forEach((optionName, index) => {
+        const formCheckDiv = document.createElement("div");
+        formCheckDiv.className = "form-check";
+
+        const optionRadio = document.createElement("input");
+        optionRadio.type = "radio";
+        optionRadio.className = "form-check-input";
+        optionRadio.name = "options";
+        optionRadio.id = `option${index + 1}`; // Generating unique IDs for each radio button
+        optionRadio.value = currentQuestion[optionName];
+        optionRadio.onclick = () => selectOption(index);
+
+        const optionLabel = document.createElement("label");
+        optionLabel.className = "form-check-label";
+        optionLabel.htmlFor = `option${index + 1}`;
+        optionLabel.textContent = currentQuestion[optionName];
+
+        formCheckDiv.appendChild(optionRadio);
+        formCheckDiv.appendChild(optionLabel);
+
+        optionsContainer.appendChild(formCheckDiv);
     });
 
     // Update navigation button visibility
@@ -418,6 +436,7 @@ function displayQuestion() {
     document.getElementById("nextBtn").style.display = (currentQuestionIndex === mcqQuestions.length - 1) ? "none" : "inline";
     document.getElementById("submitBtn").style.display = (currentQuestionIndex === mcqQuestions.length - 1) ? "inline" : "none";
 }
+
 
 // Handle option selection
 function selectOption(optionIndex) {
@@ -443,61 +462,39 @@ function nextQuestion() {
 
 // Submit questions and show success message
 function submitQuestions() {
-    // Add logic to submit questions (e.g., send data to the server)
-    // For demonstration, show an alert and success message
-    alert("Questions submitted!");
-    document.getElementById("successMessage").classList.remove("hidden");
+    // Prepare data for submission
+    const userAnswers = mcqQuestions.map((question, index) => {
+        return {
+            question_id: question.id, // Assuming there's an 'id' column in mcq_questions table
+            user_answer: selectedOptions[index], // Include the selected option (modify as needed)
+        };
+    });
+
+    // Send data to the server using fetch
+    fetch("./submit_questions", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userAnswers),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Handle success (data may contain any additional information from the server)
+        alert("Questions submitted successfully!");
+        document.getElementById("successMessage").classList.remove("hidden");
+    })
+    .catch(error => {
+        // Handle error
+        console.error("Error submitting questions:", error);
+    });
 }
 
        
 
     </script>
-    <script>
-        function submitUserForm() {
-            // Validate user input (add your validation logic here)
-            // Simulate successful user registration for demonstration
-            // In a real scenario, you would use AJAX to send data to the server
-            showMCQForm();
-        }
 
-        function showMCQForm() {
-            // Hide user registration form
-            document.getElementById("userForm").classList.add("hidden");
 
-            // Display MCQ submission form
-            document.getElementById("mcqForm").classList.remove("hidden");
-        }
-
-        function submitMCQForm() {
-            // Validate MCQ input (add your validation logic here)
-            var selectedOption = document.querySelector('input[name="mcqOptions"]:checked');
-
-            if (!selectedOption) {
-                alert("Please select an option before submitting.");
-                return;
-            }
-
-            // Use AJAX to send MCQ data to the server (replace 'your-php-script.php' with the actual PHP script)
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "your-php-script.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Handle the server response if needed
-                    console.log(xhr.responseText);
-                }
-            };
-
-            var mcqData = "selectedOption=" + encodeURIComponent(selectedOption.value);
-            xhr.send(mcqData);
-
-            // Reset the MCQ form and show the user registration form again
-            document.getElementById("mcqForm").reset();
-            document.getElementById("mcqForm").classList.add("hidden");
-            document.getElementById("userForm").classList.remove("hidden");
-        }
-    </script>
 </body>
 
 </html>
