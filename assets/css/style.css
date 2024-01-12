@@ -438,7 +438,7 @@ button:hover {
   padding: 15px 20px;
   height: 48px;
   margin-bottom: 20px;
-  color: #b3b3b3;
+  color: #000000;
 }
 
 .form-control:focus {
@@ -664,7 +664,7 @@ button:hover {
   padding-right: 17px;
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
-  font-size: 1.06rem;
+  font-size: 16px;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -3976,30 +3976,15 @@ ul.pagination .active a {
   margin-bottom: 30px;
 }
 
-/*# sourceMappingURL=style.css.map */
-@property --angle {
-	syntax: '<angle>';
-	inherits: true;
-	initial-value: 0deg;
-}
 
-.weekly-button {
-	--angle: 0deg;
-	padding: 10px;
-	background: linear-gradient(white, white) padding-box, conic-gradient(from var(--angle), #dfdfdf, #17171b) border-box;
-	border: 2px solid transparent;
-	border-radius: 16px;
-	max-width: 400px;
-	-webkit-animation: rotate-gradient 3s infinite linear;
-	        animation: rotate-gradient 3s infinite linear;
+.weekly-dropitem{
+  background: rgb(167 167 167);
 }
-
-@-webkit-keyframes rotate-gradient {
-	from { --angle: 0deg; }
-	to { --angle: 360deg; }
+.weekly-dropitem a.dropdown-item{
+   color: white;
 }
+.astric{
+  color: red;
+  vertical-align: top;
 
-@keyframes rotate-gradient {
-	from { --angle: 0deg; }
-	to { --angle: 360deg; }
 }

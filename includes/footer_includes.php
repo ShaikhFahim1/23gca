@@ -56,7 +56,7 @@ for (var i = 0; i < studentRegisterTables.length; i++) {
       var link = item.querySelector('a.nav-link');
 
       // Check if the filename of the href attribute matches the filename of the current page URL
-      if (getFileName(removeDotSlash(link.getAttribute('href'))) === getFileName(currentPath)) {
+      if (link && getFileName(removeDotSlash(link.getAttribute('href'))) === getFileName(currentPath)) {
         // Add the "active" class to the current nav-item
         item.classList.add('active');
       }
@@ -71,7 +71,7 @@ for (var i = 0; i < studentRegisterTables.length; i++) {
         // Loop through each dropdown-item
         dropdownItems.forEach(function (dropdownItem) {
           // Check if the filename of the dropdown-item matches the filename of the current page URL
-          if (getFileName(removeDotSlash(dropdownItem.getAttribute('href'))) === getFileName(currentPath)) {
+          if (dropdownItems && getFileName(removeDotSlash(dropdownItem.getAttribute('href'))) === getFileName(currentPath)) {
             // Add the "active" class to the current nav-item
             item.classList.add('active');
           }

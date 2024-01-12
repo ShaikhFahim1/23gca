@@ -99,9 +99,19 @@
 		<li class="nav-item">
 		<a class="nav-link" href="./pre-gca-tour">Pre GCA Tour</a>
 		</li>
-		<li class="nav-item">
-			<!-- <img src="assets/images/icon/new.png" alt=""> -->
-		<a class="nav-link " href="./weekly-contest">Weekly Contest</a>
+
+		<li class="nav-item dropdown">
+		  <a class="nav-link" href="#!" data-toggle="dropdown">Weekly Contest
+			<i class="fa fa-angle-down"></i>
+			
+		  </a>
+		  <!-- Dropdown list -->
+		  <ul class="dropdown-menu">
+			<li><a class="dropdown-item" href="./weekly-contest">Current Week</a></li>
+			<li class="weekly-dropitem"><a class="dropdown-item" href="javascript:void(0);">2nd Week</a></li>
+			<li class="weekly-dropitem"><a class="dropdown-item" href="javascript:void(0);">3rd Week</a></li>
+			<li class="weekly-dropitem"><a class="dropdown-item" href="javascript:void(0);">4th Week</a></li>
+		  </ul>
 		</li>
 	
 		
