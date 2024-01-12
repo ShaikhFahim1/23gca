@@ -10,7 +10,7 @@
   <!-- theme meta -->
   <meta name="theme-name" content="GCA" />
   <?php
-  $version = 3;
+  $version = 4;
   ?>
   <!-- PLUGINS CSS STYLE -->
   <!-- Bootstrap -->

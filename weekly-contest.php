@@ -25,8 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_user'])) {
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $contact_no = filter_input(INPUT_POST, 'contact_no');
 
-
-    if($member_id !=''){
+    if($member_id !='' && $member_id !=0){
         // Check for duplicates based on member ID
         $stmt = $pdo->prepare("SELECT id FROM users WHERE member_id = :member_id");
         $stmt->bindParam(':member_id', $member_id);
@@ -78,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_user'])) {
                     // Set a cookie to track user submission
                     setcookie('user_submitted', true, time() + (86400 * 30), "/"); // 86400 = 1 day
                     $_COOKIE['user_submitted'] = true;
-                    header('location:./weekly-contest#pills-tabContent');
+                    header('location:./weekly-contest#mcq_div');
            
         }
         
@@ -155,6 +154,14 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
         form#userForm label{
             color: #000;
         }
+        .section-title{
+            margin-bottom: 25px ;
+        }
+        span.alternate {
+    
+    font-style: normal;
+    font-weight: 600;
+    }
 
     </style>
 
@@ -200,13 +207,13 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3 col-sm-12 mb-4">
-                    <div class="section-title hidden">
-                        <h3>Live <span class="alternate">Contest</span></h3>
-                        <p>Engage, Learn, and Compete: Immerse Yourself in the Thrilling Atmosphere of Our Live Weekly Quiz Event!</p>
+                    <div class="section-title">
+                        <h3><span class="alternate">Coffee Table</span> Quiz Contest</h3>
+                        <p>12th January - 19th January 2024 (Upto 15:00 hrs)</p>
                         
                     </div>
                     <div>
-                    <img src="assets/images/weekly contest.PNG" alt="" style="width: 100%;">
+                    <img src="assets/images/weekly contest.png" alt="" style="width: 100%;">
                     </div>
                 </div>
                 <hr>
@@ -275,8 +282,11 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
                 <div class="col-md-6">
                     <label for="actuarial_assoc" class="form-label">Actuarial Association </label>
                     <select class="form-control" id="actuarial_assoc" name="actuarial_assoc"    >
-                        <option value="" <?php echo empty($actuarial_assoc) ? 'selected' : ''; ?>>&lt;--Select
-                            Association--&gt;</option>
+                        <option value="" <?php echo empty($actuarial_assoc) ? 'selected' : ''; ?>>Select
+                            Association</option>
+                        <option value="Institute of Actuaries of India"
+                            <?php echo ($actuarial_assoc == 'Institute of Actuaries of India') ? 'selected' : ''; ?>>
+                            Institute of Actuaries of India</option>
                         <option value="Institute & Faculty of Actuaries"
                             <?php echo ($actuarial_assoc == 'Institute & Faculty of Actuaries') ? 'selected' : ''; ?>>
                             Institute &amp; Faculty of Actuaries</option>
@@ -342,7 +352,7 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
             } elseif (!$mcqSubmitted) {
                 // Display MCQs only if the user has not submitted them
             ?>
-                <div class="row">
+                <div class="row" id="mcq_div">
                     <div class="col-12">
                         <div class="schedule-tab">
                             <ul class="nav nav-pills text-center">
@@ -444,8 +454,7 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
       <div class="modal-body" style="height: 400px;overflow-y: auto;">
         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><strong><u><span style='font-size:16px;color:red;'>Weekly Contests!</span></u></strong></p>
         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><strong><span style='font-size:16px;color:#666666;'>&nbsp;</span></strong></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#666666;'>Get ready for the weekly fun contest up and win exciting prizes! We promise that these are easier</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#666666;'>than actuarial exams and certainly a lot more fun :)</span></p>
+        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#666666;'>Get ready for the weekly fun contest starting form 12th January 2024 till 09th February 2024 and win exciting prizes! We promise that these are easier than actuarial exams and certainly a lot more fun :)</span></p>
         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#666666;'>&nbsp;</span></p>
         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#666666;'>Watch out this space for regular updates. We have a fresh contest plan for every week starting now up until GCA 2024!</span></p>
         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><strong><span style='font-size:16px;color:#F85D5D;'>&nbsp;</span></strong></p>

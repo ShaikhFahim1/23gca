@@ -681,10 +681,14 @@ include "includes/header.php"
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<div class="section-title">
-					<h3>Our <span class="alternate">Partners</span></h3>
-					<p>We partner with the best.</p>
-				</div>
+				
+				<div class="section-header">
+
+<h2>Our Partners</h2>
+
+<p>We partner with the best.</p>
+
+</div>
 			</div>
 		</div>
 		<div class="row">
