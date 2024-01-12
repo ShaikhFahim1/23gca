@@ -132,7 +132,7 @@
 }
 		</style>
 
-    <link rel="stylesheet" href="css/styles.css">
+
 
 </head>
 
@@ -863,9 +863,6 @@ include "includes/header.php"
 
 =============================-->
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
 
   <!-- The modal container -->
   <div class="modal fade " id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

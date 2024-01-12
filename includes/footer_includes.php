@@ -29,3 +29,54 @@ for (var i = 0; i < studentRegisterTables.length; i++) {
   studentRegisterTable[i].innerHTML = days;
 }
   </script> -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get the current page URL
+    var currentPath = window.location.pathname;
+
+    // Function to extract filename from a given path
+    function getFileName(path) {
+      return path.split('/').pop();
+    }
+
+    // Function to remove "./" from the beginning of a path
+    function removeDotSlash(path) {
+      return path.replace(/^\.\//, '');
+    }
+
+    // Select all nav-item elements within the navbar
+    var navItems = document.querySelectorAll('.navbar-nav .nav-item');
+
+    // Loop through each nav-item
+    navItems.forEach(function (item) {
+      // Remove "active" class from all nav-items initially
+      item.classList.remove('active');
+
+      // Select the anchor tag within the current nav-item
+      var link = item.querySelector('a.nav-link');
+
+      // Check if the filename of the href attribute matches the filename of the current page URL
+      if (getFileName(removeDotSlash(link.getAttribute('href'))) === getFileName(currentPath)) {
+        // Add the "active" class to the current nav-item
+        item.classList.add('active');
+      }
+
+      // Check if there is a dropdown menu within the current nav-item
+      var dropdownMenu = item.querySelector('.dropdown-menu');
+
+      if (dropdownMenu) {
+        // Select all dropdown-item elements within the dropdown menu
+        var dropdownItems = dropdownMenu.querySelectorAll('.dropdown-item');
+
+        // Loop through each dropdown-item
+        dropdownItems.forEach(function (dropdownItem) {
+          // Check if the filename of the dropdown-item matches the filename of the current page URL
+          if (getFileName(removeDotSlash(dropdownItem.getAttribute('href'))) === getFileName(currentPath)) {
+            // Add the "active" class to the current nav-item
+            item.classList.add('active');
+          }
+        });
+      }
+    });
+  });
+</script>

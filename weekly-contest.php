@@ -149,8 +149,7 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
             margin-top: 10px;
             margin-bottom: 20px;
         }
-
-
+        
         .hidden {
             display: none;
         }
@@ -207,14 +206,14 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
     <section class="section schedule">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3>Live <span class="alternate">Contest</span></h3>
-                        <p>Engage, Learn, and Compete: Immerse Yourself in the Thrilling Atmosphere of Our Live Weekly Quiz Event!</p>
+                <div class="col-md-6 offset-md-3 col-sm-12 mb-4">
+                    <div class="section-title hidden">
+                        <!-- <h3>Live <span class="alternate">Contest</span></h3>
+                        <p>Engage, Learn, and Compete: Immerse Yourself in the Thrilling Atmosphere of Our Live Weekly Quiz Event!</p> -->
                         
                     </div>
                     <div>
-                    <img src="assets/images/weekly contest.jpg" alt="" style="width: 100%;">
+                    <img src="assets/images/weekly contest.PNG" alt="" style="width: 100%;">
                     </div>
                 </div>
             </div>
@@ -400,8 +399,9 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
             <?php
                 // Set a cookie to track MCQ submission
             } else {
-                // Display user registration form if the MCQs are already submitted
-                echo "<p>You have already submitted the MCQs. Thank you!</p>";
+               ?>
+               <div class="text-center"><h4 class="card-title">Thank you for participating!</h4><p class="card-text mb-2">The winner will be notified through email.</p><a href="./index" class="btn btn-primary">Go to Home Page</a></div>
+               <?php
             }
             ?>
 
@@ -560,13 +560,11 @@ function submitQuestions() {
         // Handle success (data may contain any additional information from the server)
     //    alert("Questions submitted successfully!");
      //   document.getElementById("successMessage").classList.remove("hidden");
-        document.getElementById("questionForm").innerHTML = '<div class="card success-card">'+
-    '<div class="card-body text-center">'+
+        document.getElementById("questionForm").innerHTML = '<div class="text-center">'+
         '<h4 class="card-title">Thank you for participating!</h4>'+
-        '<p class="card-text">The winner will be notified through email.</p>'+
+        '<p class="card-text mb-2">The winner will be notified through email.</p>'+
         '<a href="./index" class="btn btn-primary">Go to Home Page</a>'+
-    '</div>'+
-'</div>';
+    '</div>';
     })
     .catch(error => {
         // Handle error

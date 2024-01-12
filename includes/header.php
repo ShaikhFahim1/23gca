@@ -12,7 +12,7 @@
       <!-- <ul class="navbar-nav mx-auto">
       
 		
-			<li class="nav-item active">
+			<li class="nav-item">
 				<a class="nav-link" href="index.html">About
 					
 				</a>
