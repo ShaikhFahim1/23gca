@@ -227,7 +227,6 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
             if (!$userSubmitted) {
                 // Display user registration form if not submitted or after a page refresh
             ?>
-
                 <div class="row">
                     <div class="col-12">
                         <div class="schedule-tab">
@@ -261,80 +260,80 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
                                     }
                                     ?>
                                     <form id="userForm" method="post" action="">
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="first_name" class="form-label">First Name <span class="astric">*</span></label>
-                    <input type="text" class="form-control" id="first_name" name="first_name" required
-                        value="<?php echo isset($first_name) ? $first_name : ''; ?>">
-                </div>
-                <div class="col-md-6">
-                    <label for="surname" class="form-label">Surname <span class="astric">*</span></label>
-                    <input type="text" class="form-control" id="surname" name="surname" required
-                        value="<?php echo isset($surname) ? $surname : ''; ?>">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="member_id" class="form-label">Member ID </label>
-                    <input type="number" class="form-control" id="member_id" name="member_id"
-                        value="<?php echo isset($member_id) ? $member_id : ''; ?>">
-                </div>
-                <div class="col-md-6">
-                    <label for="actuarial_assoc" class="form-label">Actuarial Association </label>
-                    <select class="form-control" id="actuarial_assoc" name="actuarial_assoc"    >
-                        <option value="" <?php echo empty($actuarial_assoc) ? 'selected' : ''; ?>>Select
-                            Association</option>
-                        <option value="Institute of Actuaries of India"
-                            <?php echo ($actuarial_assoc == 'Institute of Actuaries of India') ? 'selected' : ''; ?>>
-                            Institute of Actuaries of India</option>
-                        <option value="Institute & Faculty of Actuaries"
-                            <?php echo ($actuarial_assoc == 'Institute & Faculty of Actuaries') ? 'selected' : ''; ?>>
-                            Institute &amp; Faculty of Actuaries</option>
-                        <option value="Casualty Actuarial Society"
-                            <?php echo ($actuarial_assoc == 'Casualty Actuarial Society') ? 'selected' : ''; ?>>
-                            Casualty Actuarial Society</option>
-                        <option value="Actuarial Society of South Africa"
-                            <?php echo ($actuarial_assoc == 'Actuarial Society of South Africa') ? 'selected' : ''; ?>>
-                            Actuarial Society of South Africa</option>
-                        <!-- Add other options as needed -->
-                        
-                        <option>Society of Actuaries</option>
-                                                    <option>Institute of Chartered Accountants of India</option>
-                                                    <option>Chartered Financial Analyst</option>
-                                                    <option>Insurance Institute of India</option>
-                                                    <option>Institute of Insurance and Risk Management</option>
-                                                    <option>Indian Statistical Institute</option>
-                    </select>
-                    
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="organization" class="form-label">Organization <span class="astric">*</span></label>
-                    <input type="text" class="form-control" id="organization" name="organization" required
-                        value="<?php echo isset($organization) ? $organization : ''; ?>">
-                </div>
-                <div class="col-md-6">
-                    <label for="email" class="form-label">Email <span class="astric">*</span></label>
-                    <input type="email" class="form-control" id="email" name="email" required
-                        value="<?php echo isset($email) ? $email : ''; ?>">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="contact_no" class="form-label">Contact No <span class="astric">*</span></label>
-                    <input type="number" class="form-control" id="contact_no" name="contact_no" required
-                        value="<?php echo isset($contact_no) ? $contact_no : ''; ?>">
-                </div>
-                <div class="col-md-6" style="display: flex;align-items: center;">
-                    <input type="checkbox" required>&nbsp;&nbsp;I agree to <a data-toggle="modal"
-                        data-target="#weeklyContestModal">&nbsp;terms & conditions</a>.*
-                </div>
-            </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary" name="submit_user">Submit User Form</button>
-            </div>
-        </form>
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label for="first_name" class="form-label">First Name <span class="astric">*</span></label>
+                                                <input type="text" class="form-control" id="first_name" name="first_name" required
+                                                    value="<?php echo isset($first_name) ? $first_name : ''; ?>">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="surname" class="form-label">Surname <span class="astric">*</span></label>
+                                                <input type="text" class="form-control" id="surname" name="surname" required
+                                                    value="<?php echo isset($surname) ? $surname : ''; ?>">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label for="member_id" class="form-label">Member ID </label>
+                                                <input type="number" class="form-control" id="member_id" name="member_id"
+                                                    value="<?php echo isset($member_id) ? $member_id : ''; ?>">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="actuarial_assoc" class="form-label">Actuarial Association </label>
+                                                <select class="form-control" id="actuarial_assoc" name="actuarial_assoc"    >
+                                                    <option value="" <?php echo empty($actuarial_assoc) ? 'selected' : ''; ?>>Select
+                                                        Association</option>
+                                                    <option value="Institute of Actuaries of India"
+                                                        <?php echo ($actuarial_assoc == 'Institute of Actuaries of India') ? 'selected' : ''; ?>>
+                                                        Institute of Actuaries of India</option>
+                                                    <option value="Institute & Faculty of Actuaries"
+                                                        <?php echo ($actuarial_assoc == 'Institute & Faculty of Actuaries') ? 'selected' : ''; ?>>
+                                                        Institute &amp; Faculty of Actuaries</option>
+                                                    <option value="Casualty Actuarial Society"
+                                                        <?php echo ($actuarial_assoc == 'Casualty Actuarial Society') ? 'selected' : ''; ?>>
+                                                        Casualty Actuarial Society</option>
+                                                    <option value="Actuarial Society of South Africa"
+                                                        <?php echo ($actuarial_assoc == 'Actuarial Society of South Africa') ? 'selected' : ''; ?>>
+                                                        Actuarial Society of South Africa</option>
+                                                    <!-- Add other options as needed -->
+                                                    
+                                                    <option>Society of Actuaries</option>
+                                                                                <option>Institute of Chartered Accountants of India</option>
+                                                                                <option>Chartered Financial Analyst</option>
+                                                                                <option>Insurance Institute of India</option>
+                                                                                <option>Institute of Insurance and Risk Management</option>
+                                                                                <option>Indian Statistical Institute</option>
+                                                </select>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label for="organization" class="form-label">Organization <span class="astric">*</span></label>
+                                                <input type="text" class="form-control" id="organization" name="organization" required
+                                                    value="<?php echo isset($organization) ? $organization : ''; ?>">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="email" class="form-label">Email <span class="astric">*</span></label>
+                                                <input type="email" class="form-control" id="email" name="email" required
+                                                    value="<?php echo isset($email) ? $email : ''; ?>">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label for="contact_no" class="form-label">Contact No <span class="astric">*</span></label>
+                                                <input type="number" class="form-control" id="contact_no" name="contact_no" required
+                                                    value="<?php echo isset($contact_no) ? $contact_no : ''; ?>">
+                                            </div>
+                                            <div class="col-md-6" style="display: flex;align-items: center;">
+                                                <input type="checkbox" required>&nbsp;&nbsp;I agree to <a data-toggle="modal"
+                                                    data-target="#weeklyContestModal">&nbsp;terms & conditions</a>.*
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary" name="submit_user">Submit User Form</button>
+                                        </div>
+                                    </form>
 
 
                                     </div>
@@ -346,8 +345,6 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
 
                     </div>
                 </div>
-
-
             <?php
             } elseif (!$mcqSubmitted) {
                 // Display MCQs only if the user has not submitted them
@@ -421,7 +418,7 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
                 </div>
 
             <?php
-                // Set a cookie to track MCQ submission
+                            
             } else {
                ?>
                <div class="text-center"><h4 class="card-title">Thank you for participating!</h4><p class="card-text mb-2">The winner will be notified through email.</p><a href="./index" class="btn btn-primary">Go to Home Page</a></div>
@@ -452,53 +449,53 @@ $userSubmitted = isset($_COOKIE['user_submitted']) && $_COOKIE['user_submitted']
         </button>
       </div>
       <div class="modal-body" style="height: 400px;overflow-y: auto;">
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><strong><u><span style='font-size:16px;color:red;'>Weekly Contests!</span></u></strong></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><strong><span style='font-size:16px;color:#666666;'>&nbsp;</span></strong></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#666666;'>Get ready for the weekly fun contest starting form 12th January 2024 till 09th February 2024 and win exciting prizes! We promise that these are easier than actuarial exams and certainly a lot more fun :)</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#666666;'>&nbsp;</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#666666;'>Watch out this space for regular updates. We have a fresh contest plan for every week starting now up until GCA 2024!</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><strong><span style='font-size:16px;color:#F85D5D;'>&nbsp;</span></strong></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><strong><span style='font-size:16px;color:#F85D5D;'>Overall T&amp;C of the contest</span></strong></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>1.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Eligibility:</span></strong></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;font-family:"Arial",sans-serif;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;The contest is open to all.&nbsp;</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>&nbsp;</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>2.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Submission Guidelines:</span></strong></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;font-family:"Arial",sans-serif;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;Submissions must adhere to the theme specified for the contest.</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;font-family:"Arial",sans-serif;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;Any inappropriate or offensive content will result in disqualification.</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>&nbsp;</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>3.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Entry Deadline:</span></strong></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;font-family:"Arial",sans-serif;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;All submissions must be received by the last date of the weekly contest.</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>Late entries will not be considered.</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><strong><span style='font-size:16px;color:white;'>3</span></strong></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>4.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Selection of Winners:</span></strong></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;font-family:"Arial",sans-serif;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;Winners will be selected by Judging Panel &amp; Community Vote based on</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>creativity, humour, and adherence to the theme.</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;font-family:"Arial",sans-serif;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;The decision of the judges is final.</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>&nbsp;</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>5.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Prizes:</span></strong></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;font-family:"Arial",sans-serif;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;INR 10,000 e voucher will be awarded to the weekly winner.</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;font-family:"Arial",sans-serif;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;Prizes are non-transferable, and no cash alternatives will be offered.</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>&nbsp;</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>6.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Notification of Winners:</span></strong></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;font-family:"Arial",sans-serif;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;Winners will be notified via email within 7 days of the contest closing date.</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>&nbsp;</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>7.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Publicity:</span></strong></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;font-family:"Arial",sans-serif;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;By entering the contest, participants grant IAI the right to use their names,</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>likenesses, and submitted content for promotional purposes without</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>additional compensation.</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>&nbsp;</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>8.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Disqualification:</span></strong></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;font-family:"Arial",sans-serif;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;IAI reserves the right to disqualify any participant who violates the terms</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>and conditions or engages in any fraudulent or unethical behaviour.</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>&nbsp;</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>9.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Amendments:</span></strong></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;font-family:"Arial",sans-serif;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;IAI reserves the right to amend or modify these terms and conditions at</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>any time. Participants will be notified of any changes.</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>&nbsp;</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>10.</span><strong><span style='font-size:16px;color:#374151;'>Legal Compliance:</span></strong></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;font-family:"Arial",sans-serif;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;The contest is subject to all applicable laws and regulations and is void</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>where prohibited.</span></p>
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>By participating in the contest, participants indicate their understanding and acceptance of these terms and conditions.</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><strong><u><span style='font-size:16px;color:red;'>Weekly Contests!</span></u></strong></p>
+        <p style='font-size:11.0pt;line-height:normal;'><strong><span style='font-size:16px;color:#666666;'>&nbsp;</span></strong></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#666666;'>Get ready for the weekly fun contest starting form 12th January 2024 till 09th February 2024 and win exciting prizes! We promise that these are easier than actuarial exams and certainly a lot more fun :)</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#666666;'>&nbsp;</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#666666;'>Watch out this space for regular updates. We have a fresh contest plan for every week starting now up until GCA 2024!</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><strong><span style='font-size:16px;color:#F85D5D;'>&nbsp;</span></strong></p>
+        <p style='font-size:11.0pt;line-height:normal;'><strong><span style='font-size:16px;color:#F85D5D;'>Overall T&amp;C of the contest</span></strong></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>1.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Eligibility:</span></strong></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;xcolor:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;The contest is open to all.&nbsp;</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>&nbsp;</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>2.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Submission Guidelines:</span></strong></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;Submissions must adhere to the theme specified for the contest.</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;Any inappropriate or offensive content will result in disqualification.</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>&nbsp;</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>3.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Entry Deadline:</span></strong></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;All submissions must be received by the last date of the weekly contest.</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>Late entries will not be considered.</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><strong><span style='font-size:16px;color:white;'>3</span></strong></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>4.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Selection of Winners:</span></strong></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;Winners will be selected by Judging Panel &amp; Community Vote based on</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>creativity, humour, and adherence to the theme.</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;The decision of the judges is final.</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>&nbsp;</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>5.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Prizes:</span></strong></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;INR 10,000 e voucher will be awarded to the weekly winner.</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;Prizes are non-transferable, and no cash alternatives will be offered.</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>&nbsp;</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>6.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Notification of Winners:</span></strong></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;Winners will be notified via email within 7 days of the contest closing date.</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>&nbsp;</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>7.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Publicity:</span></strong></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;By entering the contest, participants grant IAI the right to use their names,</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>likenesses, and submitted content for promotional purposes without</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>additional compensation.</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>&nbsp;</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>8.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Disqualification:</span></strong></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;IAI reserves the right to disqualify any participant who violates the terms</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>and conditions or engages in any fraudulent or unethical behaviour.</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>&nbsp;</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>9.&nbsp;</span><strong><span style='font-size:16px;color:#374151;'>Amendments:</span></strong></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;IAI reserves the right to amend or modify these terms and conditions at</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>any time. Participants will be notified of any changes.</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>&nbsp;</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>10.</span><strong><span style='font-size:16px;color:#374151;'>Legal Compliance:</span></strong></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>○</span><span style='font-size:16px;color:#374151;'>&nbsp;The contest is subject to all applicable laws and regulations and is void</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>where prohibited.</span></p>
+        <p style='font-size:11.0pt;line-height:normal;'><span style='font-size:16px;color:#374151;'>By participating in the contest, participants indicate their understanding and acceptance of these terms and conditions.</span></p>
       </div>
 
       

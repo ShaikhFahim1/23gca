@@ -62,7 +62,7 @@
 		  <ul class="dropdown-menu">
 			<li><a class="dropdown-item" href="./agfa" >AGFA 2024</a></li>
 			<li><a class="dropdown-item" href="./coming-soon" >Program Schedule - 23<sup>rd</sup> GCA</a></li>
-			<li><a class="dropdown-item" href="./coming-soon">Speakers</a></li>
+			<li><a class="dropdown-item" href="./speakers">Speakers</a></li>
 			<li><a class="dropdown-item" href="./call-for-papers">Call For Papers</a></li>
 		  </ul>
 		</li>

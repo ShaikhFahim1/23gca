@@ -718,13 +718,28 @@ include "includes/header.php"
 				<div class="block text-center">
 					<!-- Sponsors image list -->
 					<ul class="list-inline sponsors-list">
-					<li class="list-inline-item">
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://actuaries.org.uk/" target="_blank">
+									<img src="assets/images/partners/IFOA.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+						<li class="list-inline-item">
 							<div class="image-block text-center">
 								<a href="https://www.mandg.com/mandgglobalservices.com" target="_blank">
 									<img src="assets/images/partners/M&G Global.png" alt="sponsors-logo" class="img-fluid">
 								</a>
 							</div>
 						</li>
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.munichre.com/en.html" target="_blank">
+									<img src="assets/images/partners/Munich_re.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+
 						<li class="list-inline-item">
 							<div class="image-block text-center">
 								<a href="https://www.swissre.com/" target="_blank">
@@ -764,6 +779,45 @@ include "includes/header.php"
 								</a>
 							</div>
 						</li>
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.maxlifeinsurance.com/" target="_blank">
+									<img src="assets/images/partners/max_logo_png.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.soa.org/" target="_blank">
+									<img src="assets/images/partners/soa.webp" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.sudlife.in/" target="_blank">
+									<img src="assets/images/partners/sud.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+						
+						
+					</ul>
+				</div>
+				<div class="sponsor-title text-center">
+					<h5>Wellness Partner</h5>
+				</div>
+				<div class="block text-center">
+					<!-- Sponsors image list -->
+					<ul class="list-inline sponsors-list">
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.icicilombard.com/" target="_blank">
+									<img src="assets/images/partners/ICICI_Lombard-removebg-preview.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+			
 						
 						
 					</ul>
@@ -869,10 +923,9 @@ include "includes/header.php"
 
 
   <!-- The modal container -->
-  <div class="modal fade " id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade " id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
-      <!-- Close icon -->
 	  <button type="button" class="close text-right " data-dismiss="modal" aria-label="Close" style="
     position: absolute;
     right: -28px;
@@ -882,12 +935,10 @@ include "includes/header.php"
     opacity: 1;">
           <span aria-hidden="true">&times;</span>
       </button>
-
-      <!-- Image -->
 	<a href="./registration-guidelines">      <img src="assets/images/early bird extended.jpg" style="width: 100%;" alt="Image"></a>
 	</div>
   </div>
-  </div>
+  </div> -->
 
 
 
@@ -901,18 +952,18 @@ include "includes/footer_includes.php";
 
 
 <script>
-$(document).ready(function(){
-  // Check if the modal has been shown before
-  var modalShownBefore = localStorage.getItem('modalShownBefore');
+// $(document).ready(function(){
+//   // Check if the modal has been shown before
+//   var modalShownBefore = localStorage.getItem('modalShownBefore');
 
-  // If the modal has not been shown before, show it
-  if (!modalShownBefore) {
-    $('#exampleModal1').modal('show');
+//   // If the modal has not been shown before, show it
+//   if (!modalShownBefore) {
+//     $('#exampleModal1').modal('show');
     
-    // Mark the modal as shown
-    localStorage.setItem('modalShownBefore', true);
-  }
-});
+//     // Mark the modal as shown
+//     localStorage.setItem('modalShownBefore', true);
+//   }
+// });
 </script>
 <script>
 

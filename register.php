@@ -4,7 +4,7 @@
 
         <ul class="nav nav-pills text-center">
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
 
                 <a class="nav-link active" href="#nov20" data-toggle="pill">
 
@@ -14,11 +14,11 @@
 
                 </a>
 
-            </li>
+            </li> -->
 
             <li class="nav-item">
 
-                <a class="nav-link" href="#nov21" data-toggle="pill">
+                <a class="nav-link active" href="#nov21" data-toggle="pill">
 
                     Standard Rate
 
@@ -52,7 +52,7 @@
 
         <div class="tab-content" id="pills-tabContent">
 
-            <div class="tab-pane fade show active schedule-item" id="nov20">
+            <div class="tab-pane fade schedule-item" id="nov20">
 
                 <!-- Headings -->
 
@@ -178,7 +178,7 @@
 
                         </tr>
 
-                        <tr>
+                        <!-- <tr>
 
                             <td>Student member per day</td>
 
@@ -186,7 +186,7 @@
 
                             <td><a href="#" class="btn btn-register btn-main-md">Register Now</a></td>
 
-                        </tr>
+                        </tr> -->
 
                         <tr>
 
@@ -208,7 +208,7 @@
 
             </div>
 
-            <div class="tab-pane fade schedule-item" id="nov21">
+            <div class="tab-pane fade show active schedule-item" id="nov21">
 
 
 
@@ -232,7 +232,7 @@
 
                             <td>Rs. 10,000/-</td>
 
-                            <td><a href="#" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
 
                         </tr>
 
@@ -242,7 +242,7 @@
 
                             <td>Rs. 17,000/-</td>
 
-                            <td><a href="#" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
 
                         </tr>
 
@@ -252,7 +252,7 @@
 
                             <td>Rs. 30,000/-</td>
 
-                            <td><a href="#" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
 
                         </tr>
 
@@ -261,6 +261,25 @@
                             <td>Fellow Member</td>
 
                             <td>Rs. 30,000/-</td>
+
+                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+
+                        </tr>
+                        
+                        <tr>
+
+                            <td>Student Member above 70</td>
+
+                            <td>Rs. 5,750/-</td>
+
+                            <td><a href="#" class="btn btn-register btn-main-md">Register Now</a></td>
+
+                        </tr>
+                        <tr>
+
+                            <td>Associate Member above 70</td>
+
+                            <td>Rs. 5,750/-</td>
 
                             <td><a href="#" class="btn btn-register btn-main-md">Register Now</a></td>
 
@@ -272,7 +291,7 @@
 
                             <td>Rs. 15,000/-</td>
 
-                            <td><a href="#" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
 
                         </tr>
 
@@ -282,7 +301,7 @@
 
                             <td>Rs. 30,000/-</td>
 
-                            <td><a href="#" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td><a href="http://115.112.202.200/23gca/GCA2023_form_OA.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
 
                         </tr>
 
@@ -292,20 +311,20 @@
 
                             <td>Rs. 15,000/-</td>
 
-                            <td><a href="#" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td><a href="http://115.112.202.200/23gca/GCA2023_form_OI.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
 
                         </tr>
 
                         <tr>
 
-                            <td>Accompanying Person (only for AGFA)</td>
+                            <td>Only AGFA<br>(Registration for Accompanying Persons is also available here)</td>
 
                             <td>Rs. 5,000/-</td>
 
-                            <td><a href="#" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td><a href="http://115.112.202.200/23gca/GCA2023_form_AGFA.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
 
                         </tr>
-
+                        
                         <tr>
 
                             <td>Student member per day</td>
@@ -315,6 +334,7 @@
                             <td><a href="#" class="btn btn-register btn-main-md">Register Now</a></td>
 
                         </tr>
+
 
                         <tr>
 

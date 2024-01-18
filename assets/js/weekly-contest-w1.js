@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
 let currentQuestionIndex = 0;
 
 // Fetch questions from the server
-// Fetch questions from the server
 function fetchQuestions() {
     fetch("./get_quiz_questions?action=get_quiz_questions") // Corrected the file extension to .php
         .then(response => response.json())

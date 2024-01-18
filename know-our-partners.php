@@ -189,6 +189,32 @@
             <div class="card custom-card mt-5">
                 <!-- First Section (30%) -->
                 <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>IFOA.png" alt="Company Logo">
+                    <div class="company-name">Gold Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    
+                    The Institute and Faculty of Actuaries (IFoA) is the UK's only chartered professional body dedicated to educating, developing and regulating actuaries based both in the UK and internationally. The IFoA regulates and represents over 32,000 members worldwide, overseeing their actuarial education at all stages of qualification and development throughout their careers. We set examinations, continuing professional development, professional codes and disciplinary standards for our members.
+                    <br>The Institute and Faculty of Actuaries came into being on 1 August 2010 as a result of the merger of the Institute of Actuaries in England and the Faculty of Actuaries in Scotland after members of both bodies voted to merge their respective organisations.
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://actuaries.org.uk/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
                     <img class="company-logo" src="<?= $partnerPath; ?>M&G Global.png" alt="Company Logo">
                     <div class="company-name">Gold Partner</div>
                     <div class="partnership-category"></div>
@@ -219,6 +245,29 @@
                         Read More <i class="fa fa-chevron-down fa-icon"></i>
                     </p>
                     <a href="https://www.mandg.com/mandgglobalservices.com" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>Munich_re.png" alt="Company Logo">
+                    <div class="company-name">Gold Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    Munich Re is one of the world’s leading providers of reinsurance, primary insurance and insurance-related risk solutions. The Group consists of the reinsurance and ERGO business segments, as well as the asset manager MEAG. Munich Re is globally active and operates in all lines of the insurance business. Since it was founded in 1880, Munich Re has been known for its unrivalled risk-related expertise and its sound financial position. It offers customers financial protection when faced with exceptional levels of damage – from the 1906 San Francisco earthquake to Hurricane Ian in 2022. Munich Re possesses outstanding innovative strength, which enables it to also provide coverage for extraordinary risks such as rocket launches, renewable energies or cyber risks. The company is playing a key role in driving forward the digital transformation of the insurance industry, and in doing so has further expanded its ability to assess risks and the range of services that it offers. Its tailor-made solutions and close proximity to its customers make Munich Re one of the world’s most sought-after risk partners for businesses, institutions, and private individuals.
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://www.munichre.com/en.html" target="_blank" class="btn btn-main-md">Partner Website</a>
                 </div>
             </div>
             <div class="card custom-card mt-5">
@@ -318,6 +367,115 @@
                         Read More <i class="fa fa-chevron-down fa-icon"></i>
                     </p>
                     <a href="https://www.iciciprulife.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>max_logo_png.png" alt="Company Logo">
+                    <div class="company-name">Silver Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    Max Life is a Joint Venture between Max Financial Services Limited (“MFSL”) and Axis Bank Limited. Max Life offers comprehensive protection and long-term savings life insurance solutions, through its multi-channel distribution including agency and third-party distribution partners. Max Life has built its operations over two decades through a need-based sales process, a customer-centric approach to engagement and service delivery and trained human capital. As per annual audited financials for FY2022-23, Max Life has achieved a gross written premium of INR 25,342 Cr.
+                    </p>
+                   
+                    <a href="https://www.maxlifeinsurance.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>soa.webp" alt="Company Logo">
+                    <div class="company-name">Silver Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    With roots dating back to 1889, the Society of Actuaries (SOA) is the world's largest actuarial professional organization with more than 32,000 actuaries as members. Through research and education, the SOA's mission is to advance actuarial knowledge and to enhance the ability of actuaries to provide expert advice and relevant solutions for financial, business and societal challenges. The SOA's vision is for actuaries to be the leading professionals in the measurement and management of risk. 
+                    </p>
+                   
+                    <a href="https://www.soa.org/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>sud.png" alt="Company Logo">
+                    <div class="company-name">Silver Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                        Star Union Dai-ichi Life Insurance, an influential presence in the Indian life insurance 
+                        landscape since its establishment in 2009, stands as a beacon of financial security and 
+                        innovation. In a powerful collaboration, it brings together the strengths of two of India's 
+                        premier public sector banks - Bank of India and Union Bank of India, along with Dai-ichi 
+                        Life, the second-largest life insurance company in Japan. As a testament to our expansive 
+                        reach and influence, SUD Life boasts of having one of the most extensive life insurance 
+                        distribution footprints in India. With a robust collective network spanning over 15,000 
+                        bank branches, we diligently serve the financial needs of over 10 million customers 
+                        nationwide. <br>
+                        Our portfolio of offerings is as diverse as the needs of our customers. From comprehensive 
+                        protection products to innovative savings solutions, wealth-building instruments, child-centric plans, retirement products, and cutting-edge hybrid health insurance options, SUD 
+                        Life is committed to providing a comprehensive suite of life insurance products. 
+                        <br>At the heart of our mission is an unwavering commitment to our customers. Their needs, 
+                        aspirations, and diverse backgrounds are our guiding principles. We strive to cater to the 
+                        unique requirements of individuals across various strata of society and geographies. In a 
+                        world where financial security is paramount, SUD Life stands tall as a guardian of dreams 
+                        and aspirations. Our journey goes beyond mere transactions; it is a pledge to safeguard 
+                        the financial well-being of our customers and contribute meaningfully to their life 
+                        journeys.
+                        
+                    
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://www.sudlife.in/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>ICICI_Lombard-removebg-preview.png" alt="Company Logo">
+                    <div class="company-name">Wellness Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    ICICI Lombard is the leading private general insurance company in the country. The company offers a comprehensive and well-diversified range of products through multiple distribution channels, including Motor, Health, Crop, Fire, Personal accident, Marine, Engineering and Liability insurance. With a legacy of over 22 years, ICICI Lombard is committed to customer centricity with its brand philosophy of “Nibhaaye Vaade” The company has issued over 32.7 million policies, settled 3.6 million claim and has a gross written premium (GWP) of INR 217.72 billion for the year ended March 31, 2023. ICICI Lombard has 305 branches and 12,685 employees, as on 31st March 2023.
+                    
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://www.icicilombard.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
                 </div>
             </div>
 
