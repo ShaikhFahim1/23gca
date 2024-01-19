@@ -2,22 +2,21 @@
 
 include "includes/config.php";
   
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["memeId"]) && isset($_POST["status"])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["meme_id"]) && isset($_POST["status"])) {
 
-    $memeId = $_POST["memeId"];
+    $memeId = $_POST["meme_id"];
     $status = $_POST["status"];
 
     // Update meme status in the 'memes' table
-    $stmt = $pdo->prepare("UPDATE memes SET status = ? WHERE meme_id = ?");
+    $stmt = $pdo->prepare("UPDATE meme_users SET status = ? WHERE id = ?");
     $stmt->execute([$status, $memeId]);
 
     echo 'Meme status updated successfully';
-} else {
-    echo 'Invalid request';
 } 
 
+
 // Fetch user-submitted memes with pending status
-$stmt = $pdo->prepare("SELECT meme_id, user_id, meme_image_url, meme_text FROM memes WHERE status = 'pending'");
+$stmt = $pdo->prepare("SELECT * FROM meme_users WHERE status = '0'");
 $stmt->execute();
 $memes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -31,6 +30,113 @@ $memes = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Admin Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Add any additional styles or scripts you need -->
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        section.schedule a {
+            color: #007bff !important;
+            cursor: pointer;
+        }
+
+        form#userForm label {
+            color: #000;
+        }
+
+        .section-title {
+            margin-bottom: 25px;
+        }
+
+        span.alternate {
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .form-control {
+            margin-bottom: 0;
+          
+        }
+
+        /* Meme Contest Start */
+        .error,
+        .astric {
+            color: red;
+        }
+
+        .meme-container {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .vote-button {
+            display: inline-block;
+            cursor: pointer;
+            padding: 8px 16px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            text-align: center;
+            padding-left: 0;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .vote-icon {
+            margin-right: 5px;
+        }
+
+        .vote-count {
+            font-size: 14px;
+            transition: color 0.3s;
+            color: #007bff;
+        }
+
+        .vote-button.voted {
+            background-color: #007bff;
+            color: #fff;
+            border-color: #007bff;
+        }
+
+        .vote-button.voted .vote-count {
+            color: #fff;
+        }
+
+        .meme-container-ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            width: 100%;
+        }
+
+        .meme-container-ul li {
+            width: 31%;
+            display: inline-block;
+            list-style-type: none;
+            margin-left: 10px;
+        }
+
+        /* Meme Contest End */
+    </style>
+
 </head>
 
 <body>
@@ -38,40 +144,66 @@ $memes = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="container mt-5">
         <h2>User-Submitted Memes</h2>
 
-        <?php
-        // Display user-submitted memes in a loop
-        foreach ($memes as $meme) {
-        ?>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <!-- User Profile Image, Name, Date/Time -->
-                    <!-- You can add these details based on your database structure -->
+        <ul class="meme-container-ul">
+                        <?php
+                        $voteCounts = [];
+                        if(!empty($memes)){
 
-                    <!-- Meme Image or Text -->
-                    <?php
-                    if (!empty($meme['meme_image_url'])) {
-                        echo '<img src="' . $meme['meme_image_url'] . '" class="img-fluid" alt="Meme Image">';
-                    } elseif (!empty($meme['meme_text'])) {
-                        echo '<p class="card-text">' . $meme['meme_text'] . '</p>';
-                    }
-                    ?>
+                    
+                        foreach ($memes as $meme) {
+                            // $stmt = $pdo->prepare("SELECT COUNT(*) as count FROM meme_votes WHERE user_id = ?");
+                            // $stmt->execute([$meme['id']]);
+                            // $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                            // $voteCounts[$meme['id']] = $result['count'];
 
-                    <!-- Accept and Reject Buttons -->
-                    <div class="mt-3">
-                        <button class="btn btn-success accept-button" data-meme-id="<?php echo $meme['meme_id']; ?>">
-                            <i class="fas fa-check"></i> Accept
-                        </button>
-                        <button class="btn btn-danger reject-button" data-meme-id="<?php echo $meme['meme_id']; ?>">
-                            <i class="fas fa-times"></i> Reject
-                        </button>
-                    </div>
-                </div>
-            </div>
-        <?php
-        }
-        ?>
+                            if ($meme['meme_image_url'] != '') {
+                        ?>
+                                <li>
+                                    <form action="" method="post">
+                                    <div class="meme-container">
+                                        <div class="user-info">
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1YjmQy7iBycLxXrdwvrl38TG9G_LxSHC1eg&usqp=CAU" class="profile-image" alt="User Profile">
+                                                <p class="mb-0"><?= $meme['full_name']; ?> <br> <small class="text-muted"><?= date('d-M-Y', strtotime($meme['created_at'])) ?></small></p>
+                                            </div>
+                                        </div>
+                                        <!-- Meme Image -->
+                                        <?php
+                                        if (!empty($meme['meme_image_url']) && $meme['meme_image_url'] != null) {
+                                        ?>
+                                            <img src="<?= $meme['meme_image_url']; ?>" class="img-fluid" alt="Meme 1">
+                                        <?php
+                                        } else {
 
-        <!-- Add any additional HTML content or scripts you need -->
+                                            echo '<p class="card-text">' . $meme['meme_text'] . '</p>';
+                                        }
+                                        echo '<input type="hidden" name="meme_id" value="'.$meme['id'].'">';
+                                        ?>
+                                        <div>
+                                            <select name="status" class="form-control">
+                                                <option value="">Select</option>
+                                                <option value="1">Accept</option>
+                                                <option value="2">Reject</option>
+                                            </select>
+                                        </div>
+                                        
+
+                                        <!-- Vote Button with Count -->
+                                        <button class="btn btn-secondary vote-button" type="submit" name="submit">
+                                            Submit
+                                        </button>
+                                    </div>
+                                    </form>
+                                </li>
+                        <?php
+                                    }
+                                }
+                        }else{
+                            echo '<br><br><br><h3>Currently there are no memes available.</h3>';
+                        }
+                        ?>
+                    </ul>
+                    
 
     </div>
 
@@ -80,30 +212,7 @@ $memes = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Your custom scripts here -->
-
-    <!-- jQuery for handling accept/reject button clicks with AJAX -->
-    <script>
-        $(document).ready(function () {
-            $('.accept-button, .reject-button').click(function () {
-                var memeId = $(this).data('meme-id');
-                var status = $(this).hasClass('accept-button') ? 'accepted' : 'rejected';
-
-                // Use AJAX to handle accept/reject
-                $.ajax({
-                    type: 'POST',
-                    url: 'update_status.php', // Create a separate PHP file (update_status.php) to update the meme status
-                    data: { memeId: memeId, status: status },
-                    success: function (response) {
-                        // Handle success response, e.g., remove the card or update UI
-                        console.log(response);
-                    },
-                    error: function (error) {
-                        console.error('Error:', error);
-                    }
-                });
-            });
-        });
-    </script>
+    
 </body>
 
 </html>
