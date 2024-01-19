@@ -6,36 +6,20 @@ $error = false;
 $errorMessage = '';
 
 // Fetch memes data from 'memes' table
-$stmt = $pdo->prepare("SELECT id, user_id, meme_image_url, meme_text FROM memes");
+$stmt = $pdo->prepare("SELECT id, meme_image_url, meme_text FROM meme_users");
 $stmt->execute();
 $memes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Fetch vote counts for each meme
 $voteCounts = [];
 foreach ($memes as $meme) {
-    $stmt = $pdo->prepare("SELECT COUNT(*) as count FROM votes WHERE id = ?");
+    $stmt = $pdo->prepare("SELECT COUNT(*) as count FROM meme_votes WHERE id = ?");
     $stmt->execute([$meme['id']]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     $voteCounts[$meme['id']] = $result['count'];
 }
 
-// Check if form was previously submitted and store values in cookies
-if (isset($_COOKIE['user_full_name'])) {
-    $userFullName = htmlspecialchars($_COOKIE['user_full_name']);
-    $userMemberId = htmlspecialchars($_COOKIE['user_member_id']);
-    $userActuarialAssociation = htmlspecialchars($_COOKIE['user_actuarial_association']);
-    $userOrganisation = htmlspecialchars($_COOKIE['user_organisation']);
-    $userEmail = htmlspecialchars($_COOKIE['user_email']);
-    $userContact = htmlspecialchars($_COOKIE['user_contact']);
-} else {
-    // Set default values or fetch from database if needed
-    $userFullName = '';
-    $userMemberId = '';
-    $userActuarialAssociation = '';
-    $userOrganisation = '';
-    $userEmail = '';
-    $userContact = '';
-}
+
 // Handle form submission 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate and sanitize input (you may need to enhance validation based on your requirements)
@@ -46,19 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST["email"]);
     $contact = htmlspecialchars($_POST["contact"]);
 
-    // Insert user data into 'users' table using PDO
-    $stmt = $pdo->prepare("INSERT INTO users (full_name, member_id, actuarial_association, organisation, email, contact) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->execute([$fullName, $memberId, $actuarialAssociation, $organisation, $email, $contact]);
-
-    // Get the last inserted user ID
-    $userId = $pdo->lastInsertId();
-
     // Handle meme upload or text submission
     $selectedOption = $_POST["meme_type"];
 
-    if ($selectedOption == "meme" && $_FILES["meme"]["size"] > 0 && in_array($_FILES["meme"]["type"], ["image/jpeg", "image/png", "image/gif"])) {
+    if ($selectedOption == "meme" && $_FILES["meme"]["size"] > 0 && in_array($_FILES["meme"]["type"], ["image/jpeg", "image/png", "image/gif", "image/jpg"])) {
         // Handle meme upload (if a file is selected and is an image/gif)
-        $targetDir = "uploads/"; // Specify your upload directory
+        $targetDir = "uploads/memes/"; // Specify your upload directory
         $targetFile = $targetDir . basename($_FILES["meme"]["name"]);
 
         // Check image size
@@ -66,9 +43,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Move the uploaded file to the target directory
             move_uploaded_file($_FILES["meme"]["tmp_name"], $targetFile);
 
-            // Insert meme data into 'memes' table using PDO
-            $stmt = $pdo->prepare("INSERT INTO memes (user_id, meme_image_url) VALUES (?, ?)");
-            $stmt->execute([$userId, $targetFile]);
+
+            // Insert user data into 'users' table using PDO
+            $stmt = $pdo->prepare("INSERT INTO meme_users (full_name, member_id, actuarial_association, organisation, email, contact, meme_image_url) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$fullName, $memberId, $actuarialAssociation, $organisation, $email, $contact, $targetFile]);
+            // Set a session message for successful submission
+            $_SESSION['form_message'] = ['type' => 'success', 'message' => 'Form submitted successfully!'];
+
+            $userCookie = json_encode([
+                'full_name' => $fullName,
+                'member_id' => $memberId,
+                'actuarial_association' => $actuarialAssociation,
+                'organisation' => $organisation,
+                'email' => $email,
+                'contact' => $contact
+            ]);
+            setcookie('user_info', $userCookie, time() + (86400 * 30), "/"); // Cookie valid for 30 days
+            
+            // Set a cookie to remember that the form has been submitted
+            setcookie('form_submitted', true, time() + (86400 * 30), "/"); // 86400 seconds = 1 day
+
         } else {
             // Set a session message for image size exceeded
             $_SESSION['form_message'] = ['type' => 'danger', 'message' => 'Image size should be less than 2MB.'];
@@ -77,19 +71,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Handle meme text submission (if the text is not empty)
         $memeText = htmlspecialchars($_POST["meme_text"]);
 
-        // Insert meme data into 'memes' table using PDO
-        $stmt = $pdo->prepare("INSERT INTO memes (user_id, meme_text) VALUES (?, ?)");
-        $stmt->execute([$userId, $memeText]);
+        // Insert user data into 'users' table using PDO
+        $stmt = $pdo->prepare("INSERT INTO meme_users (full_name, member_id, actuarial_association, organisation, email, contact, meme_text) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$fullName, $memberId, $actuarialAssociation, $organisation, $email, $contact, $memeText]);
+
+        $userCookie = json_encode(['full_name' => $fullName, 'member_id' => $memberId, 'actuarial_association' => $actuarialAssociation, 
+        'organisation' => $organisation, 'email' => $email, 'contact'=>$contact]);
+        setcookie('user_info', $userCookie, time() + (86400 * 30), "/"); // Cookie valid for 30 days
+
+        // Set a session message for successful submission
+        $_SESSION['form_message'] = ['type' => 'success', 'message' => 'Form submitted successfully!'];
+
+        // Set a cookie to remember that the form has been submitted
+        setcookie('form_submitted', true, time() + (86400 * 30), "/"); // 86400 seconds = 1 day
     }
 
-    // Set a session message for successful submission
-    $_SESSION['form_message'] = ['type' => 'success', 'message' => 'Form submitted successfully!'];
-
-    // Set a cookie to remember that the form has been submitted
-    setcookie('form_submitted', true, time() + (86400 * 30), "/"); // 86400 seconds = 1 day
 
     // Redirect to prevent form resubmission on page refresh
-    header("Location: ".$_SERVER['PHP_SELF']);
+    header("Location: ./meme-contest");
     exit();
 }
 // Check for success or error message in the session
@@ -120,8 +119,8 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
         .hidden {
             display: none;
         }
-        #nov20 a{
-            color: #007bff;
+        section.schedule a{
+            color: #007bff !important;
             cursor: pointer;
         }
         form#userForm label{
@@ -134,8 +133,14 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
             font-style: normal;
             font-weight: 600;
         }
-
+        .form-control{
+            margin-bottom: 0;
+            padding: 12px 9px;
+        }
         /* Meme Contest Start */
+        .error,.astric{
+            color: red;
+        }
         .meme-container {
             border: 1px solid #ccc;
             border-radius: 10px;
@@ -169,6 +174,7 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
             text-align: center;
             padding-left: 0;
             margin-top: 10px;
+            width: 100%;
         }
 
         .vote-icon {
@@ -197,9 +203,10 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
             width: 100%;
         }
         .meme-container-ul li{
-            width: 32%;
+            width: 48%;
             display: inline-block;
             list-style-type: none;
+            margin-left: 10px;
         }
         /* Meme Contest End */
     </style>
@@ -259,7 +266,7 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
                 
             </div>
             <div class="row">
-             <div class="col-9">
+             <div class="col-7">
           
             <!-- Meme 1 -->
             <ul class="meme-container-ul">
@@ -290,76 +297,117 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
                 </div>
 
 
-        <div class="col-3">
-            <h4>Provide your details</h4>
-            <!-- Display success or error messages -->
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h6>Step 1: Provide your details</h6>
+                </div>
+                <div class="card-body">
+                    <!-- Display success or error messages -->
             <?php
-                if (isset($formMessage)) {
-                    echo '<div class="alert ' . ($formMessage['type'] == 'success' ? 'alert-success' : 'alert-danger') . '" role="alert">' . $formMessage['message'] . '</div>';
-                }
-                ?>
-            <!-- Submission Form -->
-            <form id="submitForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-                <!-- Form Fields -->
-                <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" class="form-control" id="fullName" name="fullName" required>
-                </div>
+            
+            $userCookie = isset($_COOKIE['user_info']) ? json_decode($_COOKIE['user_info'], true) : null;
 
-                <div class="form-group">
-                    <label for="memberId">Member ID</label>
-                    <input type="text" class="form-control" id="memberId" name="memberId" required>
-                </div>
+            if (isset($formMessage)) {
+                echo '<div class="alert ' . ($formMessage['type'] == 'success' ? 'alert-success' : 'alert-danger') . '" role="alert">' . $formMessage['message'] . '</div>';
+            }
+            ?>
+                    <!-- Submission Form -->
+                    <form id="submitForm" action="" method="post"
+                        enctype="multipart/form-data">
+                        <!-- Form Fields -->
+                    
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="full_name" class="form-label">Full Name <span class="astric">*</span></label>
+                                <input type="text" class="form-control" id="full_name" name="full_name" required
+                                    value="<?php echo isset($userCookie['full_name']) ? $userCookie['full_name'] : ''; ?>">
+                            </div>
+                                        <div class="col-md-6">
+                                            <label for="member_id" class="form-label">Member ID </label>
+                                            <input type="number" class="form-control" id="member_id" name="member_id"
+                                                value="<?php echo isset($userCookie['member_id']) ? $userCookie['member_id'] : ''; ?>">
+                                        </div>
+                                        </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="actuarialAssociation">Actuarial Association</label>
+                            
+                                            <select class="form-control" id="actuarial_assoc" name="actuarial_association">
+                                                <option value="">Select
+                                                    Association</option>
+                                                <option value="Institute of Actuaries of India" <?php echo (isset($userCookie['actuarial_association']) && $userCookie['actuarial_association'] == 'Institute of Actuaries of India') ? 'selected' : ''; ?>>
+                                        Institute of Actuaries of India</option>
+                                    <option value="Institute & Faculty of Actuaries" <?php echo (isset($userCookie['actuarial_association']) && $userCookie['actuarial_association'] == 'Institute & Faculty of Actuaries') ? 'selected' : ''; ?>>
+                                        Institute &amp; Faculty of Actuaries</option>
+                                    <option value="Casualty Actuarial Society" <?php echo (isset($userCookie['actuarial_association']) && $userCookie['actuarial_association'] == 'Casualty Actuarial Society') ? 'selected' : ''; ?>>
+                                        Casualty Actuarial Society</option>
+                                    <option value="Actuarial Society of South Africa" <?php echo (isset($userCookie['actuarial_association']) && $userCookie['actuarial_association'] == 'Actuarial Society of South Africa') ? 'selected' : ''; ?>>
+                                        Actuarial Society of South Africa</option>
+                                    <!-- Add other options as needed -->
+                            
+                                    <option>Society of Actuaries</option>
+                                    <option>Institute of Chartered Accountants of India</option>
+                                    <option>Chartered Financial Analyst</option>
+                                    <option>Insurance Institute of India</option>
+                                    <option>Institute of Insurance and Risk Management</option>
+                                    <option>Indian Statistical Institute</option>
+                                </select>
+                                </div>
+                                        <div class="col-md-6">
+                                            <label for="organization" class="form-label">Organization <span class="astric">*</span></label>
+                                            <input type="text" class="form-control" id="organization" name="organisation" required
+                                                value="<?php echo isset($userCookie['organisation']) ? $userCookie['organisation'] : ''; ?>">
+                                        </div>
+                                        </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                            
+                                            <label for="email" class="form-label">Email <span class="astric">*</span></label>
+                                            <input type="email" class="form-control" id="email" name="email" required
+                                                value="<?php echo isset($userCookie['email']) ? $userCookie['email'] : ''; ?>">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="contact_no" class="form-label">Contact No <span class="astric">*</span></label>
+                                            <input type="number" class="form-control" id="contact_no" name="contact" required
+                                                value="<?php echo isset($userCookie['contact']) ? $userCookie['contact'] : ''; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                         <div class="col-md-6">
+                                            <label>Choose Meme or Text:</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="meme_type" id="memeOption" value="meme" checked>
+                                                <label class="form-check-label" for="memeOption">Meme</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="meme_type" id="textOption" value="text">
+                                                <label class="form-check-label" for="textOption">Text</label>
+                                            </div>
+                                        </div>
 
-                <div class="form-group">
-                    <label for="actuarialAssociation">Actuarial Association</label>
-                    <input type="text" class="form-control" id="actuarialAssociation" name="actuarialAssociation" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="organization">Organization</label>
-                    <input type="text" class="form-control" id="organization" name="organization" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="contact">Contact</label>
-                    <input type="tel" class="form-control" id="contact" name="contact" required>
-                </div>
-                <?php if (!$formSubmitted) { ?>
-            <!-- ... (other form fields) ... -->
-
-            <!-- Radio Toggle for Meme/Text -->
-            <div class="form-group">
-                <label>Choose Meme or Text:</label>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="meme_type" id="memeOption" value="meme" checked>
-                    <label class="form-check-label" for="memeOption">Meme</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="meme_type" id="textOption" value="text">
-                    <label class="form-check-label" for="textOption">Text</label>
+                                        <!-- Show upload memes/text field based on radio selection -->
+                                        <div class="col-md-6" id="uploadMemeField">
+                                            <label for="meme">Upload Meme:</label>
+                                            <input type="file" class="form-control-file" name="meme" accept="image/*">
+                                        </div>
+                                        <div class="col-md-6" id="memeTextField" style="display:none;">
+                                            <label for="meme_text">Meme Text:</label>
+                                            <textarea class="form-control" name="meme_text"></textarea>
+                                        </div>
+                                    </div>
+                                
+                        
+                                    
+                        <!-- Submit Button -->
+                        <div class="col-md-12 text-center">
+                            <input type="checkbox" name="terms" required>&nbsp;&nbsp;I agree to <a data-toggle="modal"
+                                data-target="#weeklyContestModal">&nbsp;terms & conditions</a>.*<br>
+                            <button type="submit" class="btn btn-success" name="submit">Submit</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-
-            <!-- Show upload memes/text field based on radio selection -->
-            <div class="form-group" id="uploadMemeField">
-                <label for="meme">Upload Meme:</label>
-                <input type="file" class="form-control-file" name="meme" accept="image/*">
-            </div>
-            <div class="form-group" id="memeTextField" style="display:none;">
-                <label for="meme_text">Meme Text:</label>
-                <textarea class="form-control" name="meme_text"></textarea>
-            </div>
-        <?php } ?>
-
-                <!-- Submit Button -->
-                <button type="submit" class="btn btn-success">Submit</button>
-            </form>
         </div>
         
 
@@ -440,7 +488,7 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
     </div>
   </div>
 </div>
-    <!-- JavaScript -->
+
     <!-- JavaScript -->
 
     <script src="assets/js/weekly-contest-w2.js"></script>
@@ -480,6 +528,20 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
                     required: true,
                     email: true
                 },
+                terms:{
+                    required:true
+                },
+                meme_text: {
+                required: function () {
+                    return $('input[name="memeType"]:checked').val() === 'text';
+                },
+                maxlength: 130
+                },
+                meme_file: {
+                required: function () {
+                    return $('input[name="memeType"]:checked').val() === 'image';
+                     }
+                 }
                 // ... (other fields)
             },
             messages: {
@@ -488,6 +550,11 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
                     required: 'Please enter a valid email address',
                     email: 'Please enter a valid email address'
                 },
+                meme_text: {
+                required: "Please enter meme text",
+                maxlength: "Meme text should not exceed 130 characters"
+            },
+            meme_file: "Please upload a meme image"
                 // ... (other fields)
             },
             submitHandler: function (form) {
@@ -504,15 +571,9 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
         });
     });
 </script>
-  <!-- JavaScript to hide remaining form fields if the form was submitted -->
-  <script>
-        $(document).ready(function () {
-            <?php if ($formSubmitted) { ?>
-                // Form was submitted, hide remaining form fields
-                $('#submitForm input:not([readonly]), #submitForm textarea:not([readonly]), #submitForm select:not([readonly])').prop('disabled', true);
-            <?php } ?>
-        });
-    </script>
+ 
+
+ 
 <!-- jQuery for handling vote button clicks with AJAX -->
 <script>
     $(document).ready(function () {
@@ -574,6 +635,7 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
         }
     });
 </script>
+
 
 </body>
 
