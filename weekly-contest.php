@@ -19,22 +19,20 @@ function generateUniqueFilename($originalFilename)
     $randomString = bin2hex(random_bytes(8)); // Generate a random string
     $extension = pathinfo($originalFilename, PATHINFO_EXTENSION);
     $newFilename = "meme_" . $timestamp . "_" . $randomString . "." . $extension;
-
     return $newFilename;
 }
 
 
 
 // Handle form submission 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && (isset($_POST["submit"]))) {
-   
+if ($_SERVER["REQUEST_METHOD"] == "POST" && (isset($_POST["submit"]))) {   
     // Validate and sanitize input (you may need to enhance validation based on your requirements)
-    $fullName = htmlspecialchars($_POST["full_name"]);
-    $memberId = htmlspecialchars($_POST["member_id"]);
-    $actuarialAssociation = htmlspecialchars($_POST["actuarial_association"]);
-    $organisation = htmlspecialchars($_POST["organisation"]);
-    $email = htmlspecialchars($_POST["email"]);
-    $contact = htmlspecialchars($_POST["contact"]);
+    $fullName = filter_input(INPUT_POST, 'full_name');
+    $memberId = filter_input(INPUT_POST, 'member_id');
+    $actuarialAssociation = $_POST["actuarial_association"];
+    $organisation = filter_input(INPUT_POST, 'organisation');
+    $email = filter_input(INPUT_POST, 'email');
+    $contact = filter_input(INPUT_POST, 'contact');
 
     // Handle meme upload or text submission $_POST["meme_type"]
     $selectedOption = "meme"; 
@@ -152,7 +150,7 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
             padding: 10px;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            height: 250px;
+            width: 100%;
         }
 
         .profile-image {

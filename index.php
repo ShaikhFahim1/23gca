@@ -767,6 +767,13 @@ include "includes/header.php"
 						</li>
 						<li class="list-inline-item">
 							<div class="image-block text-center">
+								<a href="https://www.genre.com/" target="_blank">
+									<img src="assets/images/partners/GenRe.svg" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+						<li class="list-inline-item">
+							<div class="image-block text-center">
 								<a href="https://www.hdfcergo.com/" target="_blank">
 									<img src="assets/images/partners/HDFC ERGO.png" alt="sponsors-logo" class="img-fluid">
 								</a>
@@ -817,9 +824,28 @@ include "includes/header.php"
 								</a>
 							</div>
 						</li>
-			
-						
-						
+					</ul>
+				</div>
+				<div class="sponsor-title text-center">
+					<h5>Engagement Partner</h5>
+				</div>
+				<div class="block text-center">
+					<!-- Sponsors image list -->
+					<ul class="list-inline sponsors-list">
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.hdfclife.com/" target="_blank">
+									<img src="assets/images/partners/hdfc%20life.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.pnbmetlife.com/" target="_blank">
+									<img src="assets/images/partners/pnb-metlife.svg" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
 					</ul>
 				</div>
 				

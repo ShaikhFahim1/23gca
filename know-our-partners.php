@@ -317,6 +317,25 @@
             <div class="card custom-card mt-5">
                 <!-- First Section (30%) -->
                 <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>GenRe.svg" alt="Company Logo">
+                    <div class="company-name">Silver Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description new-height">Gen Re delivers reinsurance solutions to the Life & Health and Property & Casualty insurance industries. We work closely with the clients to understand their strategic and operational goals, offering a wide range of products, tools, and resources that aim to promote our clients’ ongoing growth and success. Gen Re is a member of the Berkshire Hathaway family of companies and has earned superior financial strength ratings from each of the major rating agencies.
+                    </p>
+                    <a href="https://www.genre.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
                     <img class="company-logo" src="<?= $partnerPath; ?>HDFC ERGO.png" alt="Company Logo">
                     <div class="company-name">Silver Partner</div>
                     <div class="partnership-category"></div>
@@ -476,6 +495,57 @@
                         Read More <i class="fa fa-chevron-down fa-icon"></i>
                     </p>
                     <a href="https://www.icicilombard.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>hdfc life.png" alt="Company Logo">
+                    <div class="company-name">Engagement Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    Established in 2000, HDFC Life is a leading, listed, long-term life insurance solutions provider in India, offering a range of individual and group insurance solutions that meet various customer needs such as Protection, Pension, Savings, Investment, Annuity and Health. The Company has more than 80 products (including individual and group products) and optional riders in its portfolio, catering to a diverse range of customer needs.<br>
+                    <br>HDFC Life continues to benefit from its increased presence across the country, having a wide reach with branches and additional distribution touch-points through several new tie-ups and partnerships. The count of distribution partnerships is over 300, comprising banks, NBFCs, MFIs, SFBs, brokers, new ecosystem partners amongst others. The Company has a strong base of financial consultants.
+
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://www.hdfclife.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>pnb-metlife.svg" alt="Company Logo">
+                    <div class="company-name">Engagement Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    PNB MetLife India Insurance Company Limited is one of the leading life insurance companies in India that combines the financial strength of MetLife, Inc. with the credibility of Punjab National Bank (PNB), one of the India's oldest nationalized banks. PNB MetLife’s purpose, Milkar Life Aage Badhaein, is demonstrated through its customer-centric innovations and employee empowerment practices. 
+<br><br>
+With a strong presence in 139 branches, and access to customers through its bank partnerships in over 18,600 branches (as of March 31, 2023), PNB MetLife offers a comprehensive product portfolio covering Child Education, Family Protection, Long-Term Saving, and Retirement solutions through its sales channel of over 19,500 financial advisors and multiple bank partners and caters to over 590+ group relationships in India.
+
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://www.pnbmetlife.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
                 </div>
             </div>
 
