@@ -213,6 +213,13 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
             list-style-type: none;
             margin-left: 10px;
         }
+@media only screen and (max-width: 767px) {
+   .meme-container-ul li {
+    width: 100%;
+    margin-left: 0;
+   }
+    
+}
 
         /* Meme Contest End */
     </style>
@@ -275,7 +282,7 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
 
             </div>
             <div class="row" >
-                <div class="col-7">
+                <div class="col-md-7 order-2 order-md-1">
 
                     <!-- Meme 1 -->
                     <?php
@@ -337,7 +344,7 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
                 </div>
 
 
-                <div class="col-5" id="meme_div">
+                <div class="col-md-5 order-1 order-md-2 mb-4" id="meme_div">
                     <div class="card">
                         <div class="card-header">
                             <h6>Step 1: Provide your details</h6>
