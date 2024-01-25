@@ -3976,12 +3976,35 @@ ul.pagination .active a {
   margin-bottom: 30px;
 }
 
+.weekly-dropitem:nth-child(1){
+      background-color: #4CAF50;
+}
+.weekly-dropitem:nth-child(1) a.dropdown-item{
+   color: #ffffff;
+}
+.weekly-dropitem:nth-child(2){
+  background-color: #FFA500; /* Orange background */
+  animation: week_pulse 1s infinite; /* Pulse animation with a 1-second duration, set to repeat infinitely */
+}
 
-.weekly-dropitem{
-  background: rgb(167 167 167);
+
+/* Pulse Animation Keyframes */
+@keyframes week_pulse {
+  0% {
+    transform: scale(1); /* Initial scale */
+  }
+  50% {
+    transform: scale(1.05); /* Scale up to 105% at the midpoint */
+  }
+  100% {
+    transform: scale(1); /* Return to the initial scale */
+  }
+}
+.weekly-dropitem:nth-child(3),.weekly-dropitem:nth-child(4){
+  background-color:#D3D3D3;
 }
 .weekly-dropitem a.dropdown-item{
-   color: white;
+   color: #000000;
 }
 .astric{
   color: red;
