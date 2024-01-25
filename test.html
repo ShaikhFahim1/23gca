@@ -3,55 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJAX Example</title>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-</head>
-<body>
-
-<div id="contentContainer">
-    <!-- Content will be loaded here -->
-</div>
-
-<button id="loadContentBtn">Load Content</button>
-
-<script>
-    $(document).ready(function () {
-    $("#loadContentBtn").on("click", function () {
-        // AJAX request
-        $.ajax({
-            url: "theme/index.html",  // Replace with the actual path to your file
-            type: "GET",
-            dataType: "html",
-            success: function (data) {
-                // Update the content of the div
-                $("#contentContainer").html(data);
-                var styleLink = $("#contentContainer").find("link[rel='stylesheet']");
-                    if (styleLink.length > 0) {
-                        var cssUrl = styleLink.attr("href");
-                        $("<link rel='stylesheet' type='text/css' href='" + cssUrl + "'>").appendTo("head");
-                    }
-
-               window.history.pushState('', '', '/journal.actuariesindia.org');
-
-            },
-            error: function (error) {
-                console.log("Error loading content: ", error);
-            }
-        });
-    });
-    function updateURLParameter(url, param, value) {
-        var regex = new RegExp('(' + param + '=)[^&]*');
-        var newUrl = url.replace(regex, '$1' + value);
-        
-        if (url === newUrl) {
-            newUrl += (url.indexOf('?') === -1 ? '?' : '&') + param + '=' + value;
+    <style>
+        /* Container for the gallery divs using flexbox */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to the next row */
+            justify-content: space-between; /* Adjust as needed */
         }
 
-        return newUrl;
-    }
-});
+        /* Style for each gallery div */
+        .gallery {
+            width: 300px; /* Set your desired width */
+            overflow: hidden; /* Hide overflow to prevent stretching */
+            border: 1px solid #ccc; /* Optional border for visual clarity */
+            margin-bottom: 10px; /* Adjust spacing between gallery divs */
+            display: flex; /* Use flexbox for center alignment */
+            align-items: center; /* Center-align items vertically */
+            justify-content: center; /* Center-align items horizontally */
+        }
 
-</script>
+        /* Style for the image */
+        .gallery img {
+            max-width: 100%; /* Ensure the image doesn't exceed its original size */
+            height: auto; /* Maintain the aspect ratio */
+        }
+    </style>
+    <title>Multiple Fixed Size Galleries</title>
+</head>
+<body>
+    <div class="gallery-container">
+        <div class="gallery">
+            <img src="https://www.gca.org.in/uploads/memes/meme_1705673503_c7f8a2a26159d6c9.jpg" alt="Image 1 description">
+        </div>
+        <div class="gallery">
+            <img src="https://www.gca.org.in/uploads/memes/meme_1705990714_ac9e76306843caa7.jpeg" alt="Image 2 description">
+        </div>
+        <div class="gallery">
+            <img src="https://www.gca.org.in/uploads/memes/meme_1705673503_c7f8a2a26159d6c9.jpg" alt="Image 1 description">
+        </div>
+        <div class="gallery">
+            <img src="https://www.gca.org.in/uploads/memes/meme_1705990714_ac9e76306843caa7.jpeg" alt="Image 2 description">
+        </div>
+        <div class="gallery">
+            <img src="https://www.gca.org.in/uploads/memes/meme_1705673503_c7f8a2a26159d6c9.jpg" alt="Image 1 description">
+        </div>
+        <div class="gallery">
+            <img src="https://www.gca.org.in/uploads/memes/meme_1705990714_ac9e76306843caa7.jpeg" alt="Image 2 description">
+        </div>
+        <div class="gallery">
+            <img src="https://www.gca.org.in/uploads/memes/meme_1705673503_c7f8a2a26159d6c9.jpg" alt="Image 1 description">
+        </div>
+        <div class="gallery">
+            <img src="https://www.gca.org.in/uploads/memes/meme_1705990714_ac9e76306843caa7.jpeg" alt="Image 2 description">
+        </div>
+        <div class="gallery">
+            <img src="https://www.gca.org.in/uploads/memes/meme_1705673503_c7f8a2a26159d6c9.jpg" alt="Image 1 description">
+        </div>
+        <div class="gallery">
+            <img src="https://www.gca.org.in/uploads/memes/meme_1705990714_ac9e76306843caa7.jpeg" alt="Image 2 description">
+        </div>
+        <div class="gallery">
+            <img src="https://www.gca.org.in/uploads/memes/meme_1705673503_c7f8a2a26159d6c9.jpg" alt="Image 1 description">
+        </div>
+        <div class="gallery">
+            <img src="https://www.gca.org.in/uploads/memes/meme_1705990714_ac9e76306843caa7.jpeg" alt="Image 2 description">
+        </div>
 
+        <!-- Add more gallery divs as needed -->
+    </div>
 </body>
 </html>

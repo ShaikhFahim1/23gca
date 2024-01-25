@@ -212,6 +212,7 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
             display: inline-block;
             list-style-type: none;
             margin-left: 10px;
+            vertical-align: top;
         }
 
         /* Meme Contest End */
@@ -264,7 +265,7 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
                         <h4 style="color: #f02596;"><b>Thrilled! Excited! to attend 23<sup>rd</sup>GCA?
                             <br>Depict it via Meme
     </b></h4>
-                        <p>19th January - 26th January 2024 (Upto 15:00 hrs)</p>
+                        <p>19th January - 27th January 2024 (Upto 15:00 hrs)</p>
 
                     </div>
                     <div>
@@ -285,10 +286,10 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
                         <?php
                         $voteCounts = [];
                         foreach ($memes as $meme) {
-                            // $stmt = $pdo->prepare("SELECT COUNT(*) as count FROM meme_votes WHERE user_id = ?");
-                            // $stmt->execute([$meme['id']]);
-                            // $result = $stmt->fetch(PDO::FETCH_ASSOC);
-                            // $voteCounts[$meme['id']] = $result['count'];
+                        // $stmt = $pdo->prepare("SELECT COUNT(*) as count FROM meme_votes WHERE user_id = ?");
+                        // $stmt->execute([$meme['id']]);
+                        // $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                        // $voteCounts[$meme['id']] = $result['count'];
 
                             if ($meme['meme_image_url'] != '') {
                         ?>
@@ -327,13 +328,9 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
                     <?php
                     }else{
                     ?>
-                   <div style="
-    border: 1px dashed #000;height: 250px;text-align: center;display: flex;justify-content: center;align-items: center;">Keep Watching this space.
-</div>
+                   <div style="border: 1px dashed #000;height: 250px;text-align: center;display: flex;justify-content: center;align-items: center;">Keep Watching this space.</div>
                     <?php
                     }?>
-
-
                 </div>
 
 

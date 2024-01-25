@@ -734,6 +734,13 @@ include "includes/header.php"
 						</li>
 						<li class="list-inline-item">
 							<div class="image-block text-center">
+								<a href="https://www.marshmclennan.com" target="_blank">
+									<img src="assets/images/partners/MarshMcLennan_h_rgb_c.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+						<li class="list-inline-item">
+							<div class="image-block text-center">
 								<a href="https://www.munichre.com/en.html" target="_blank">
 									<img src="assets/images/partners/Munich_re.png" alt="sponsors-logo" class="img-fluid">
 								</a>

@@ -211,6 +211,34 @@
                     <a href="https://actuaries.org.uk/" target="_blank" class="btn btn-main-md">Partner Website</a>
                 </div>
             </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>MarshMcLennan_h_rgb_c.png" alt="Company Logo">
+                    <div class="company-name">Gold Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    Marsh McLennan is the world’s leading professional services firm in the areas of risk, strategy and people. The Company’s 86,000 colleagues advise clients in 130 countries. With annual revenue over $19 billion, Marsh McLennan helps clients navigate an increasingly dynamic and complex environment through four market-leading businesses. 
+                    <br><br>
+                    Marsh provides data-driven risk advisory services and insurance solutions to commercial and consumer clients. 
+                    Guy Carpenter develops advanced risk, reinsurance and capital strategies that help clients grow profitably and pursue emerging opportunities. 
+                    Mercer delivers advice and technology-driven solutions that help organizations redefine the world of work, reshape retirement and investment outcomes, and unlock health and well-being for a changing workforce. 
+                    Oliver Wyman serves as a critical strategic, economic and brand advisor to private sector and governmental clients.
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://www.marshmclennan.com" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
 
             <div class="card custom-card mt-5">
                 <!-- First Section (30%) -->
@@ -245,6 +273,34 @@
                         Read More <i class="fa fa-chevron-down fa-icon"></i>
                     </p>
                     <a href="https://www.mandg.com/mandgglobalservices.com" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>MarshMcLennan_h_rgb_c.png" alt="Company Logo">
+                    <div class="company-name">Gold Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    Marsh McLennan is the world’s leading professional services firm in the areas of risk, strategy and people. The Company’s 86,000 colleagues advise clients in 130 countries. With annual revenue over $19 billion, Marsh McLennan helps clients navigate an increasingly dynamic and complex environment through four market-leading businesses. 
+                    <br><br>
+                    Marsh provides data-driven risk advisory services and insurance solutions to commercial and consumer clients. 
+                    Guy Carpenter develops advanced risk, reinsurance and capital strategies that help clients grow profitably and pursue emerging opportunities. 
+                    Mercer delivers advice and technology-driven solutions that help organizations redefine the world of work, reshape retirement and investment outcomes, and unlock health and well-being for a changing workforce. 
+                    Oliver Wyman serves as a critical strategic, economic and brand advisor to private sector and governmental clients.
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://www.marshmclennan.com" target="_blank" class="btn btn-main-md">Partner Website</a>
                 </div>
             </div>
             <div class="card custom-card mt-5">
@@ -538,8 +594,8 @@
                 <div class="card-body">
                     <p class="description">
                     PNB MetLife India Insurance Company Limited is one of the leading life insurance companies in India that combines the financial strength of MetLife, Inc. with the credibility of Punjab National Bank (PNB), one of the India's oldest nationalized banks. PNB MetLife’s purpose, Milkar Life Aage Badhaein, is demonstrated through its customer-centric innovations and employee empowerment practices. 
-<br><br>
-With a strong presence in 139 branches, and access to customers through its bank partnerships in over 18,600 branches (as of March 31, 2023), PNB MetLife offers a comprehensive product portfolio covering Child Education, Family Protection, Long-Term Saving, and Retirement solutions through its sales channel of over 19,500 financial advisors and multiple bank partners and caters to over 590+ group relationships in India.
+                    <br><br>
+                    With a strong presence in 139 branches, and access to customers through its bank partnerships in over 18,600 branches (as of March 31, 2023), PNB MetLife offers a comprehensive product portfolio covering Child Education, Family Protection, Long-Term Saving, and Retirement solutions through its sales channel of over 19,500 financial advisors and multiple bank partners and caters to over 590+ group relationships in India.
 
                     </p>
                     <p class="read-more" onclick="toggleDescription(this)">
