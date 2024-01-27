@@ -8,15 +8,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["meme_id"]) && isset($_
     $status = $_POST["status"];
 
     // Update meme status in the 'memes' table
-    $stmt = $pdo->prepare("UPDATE meme_users SET status = ? WHERE id = ?");
+    $stmt = $pdo->prepare("UPDATE fun_users SET status = ? WHERE id = ?");
     $stmt->execute([$status, $memeId]);
 
-    echo 'Meme status updated successfully';
+    echo 'Status updated successfully';
 } 
 
 
 // Fetch user-submitted memes with pending status
-$stmt = $pdo->prepare("SELECT * FROM meme_users WHERE status = '0'");
+$stmt = $pdo->prepare("SELECT * FROM fun_users WHERE status = '0'");
 $stmt->execute();
 $memes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -136,20 +136,18 @@ $memes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         /* Meme Contest End */
     </style>
-
 </head>
 
 <body>
 
     <div class="container mt-5">
-        <h2>User-Submitted Memes</h2>
+        <h2>User-Submitted Screenshot</h2>
 
         <ul class="meme-container-ul">
                         <?php
                         $voteCounts = [];
                         if(!empty($memes)){
 
-                    
                         foreach ($memes as $meme) {
                             // $stmt = $pdo->prepare("SELECT COUNT(*) as count FROM meme_votes WHERE user_id = ?");
                             // $stmt->execute([$meme['id']]);
@@ -173,10 +171,11 @@ $memes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         ?>
                                             <img src="<?= $meme['meme_image_url']; ?>" class="img-fluid" alt="Meme 1">
                                         <?php
-                                        } else {
+                                        } 
+                                        // else {
 
-                                            echo '<p class="card-text">' . $meme['meme_text'] . '</p>';
-                                        }
+                                        //     echo '<p class="card-text">' . $meme['meme_text'] . '</p>';
+                                        // }
                                         echo '<input type="hidden" name="meme_id" value="'.$meme['id'].'">';
                                         ?>
                                         <div>
@@ -199,7 +198,7 @@ $memes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     }
                                 }
                         }else{
-                            echo '<br><br><br><h3>Currently there are no memes available.</h3>';
+                            echo '<br><br><br><h3>Currently there are no screenshot available.</h3>';
                         }
                         ?>
                     </ul>

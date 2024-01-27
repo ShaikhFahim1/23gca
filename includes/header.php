@@ -107,9 +107,9 @@
 		  </a>
 		  <!-- Dropdown list -->
 		  <ul class="dropdown-menu">
-			<li class="weekly-dropitem"><a class="dropdown-item" href="javascript:void(0);">1st Week Completed</a></li>
 			<li class="weekly-dropitem"><a class="dropdown-item" href="./weekly-contest">Current Week Running</a></li>
-			<li class="weekly-dropitem"><a class="dropdown-item" href="javascript:void(0);">3rd Week</a></li>
+			<li class="weekly-dropitem"><a class="dropdown-item" href="javascript:void(0);">1st Week Completed</a></li>
+			<li class="weekly-dropitem"><a class="dropdown-item" href="javascript:void(0);">2nd Week Completed</a></li>
 			<li class="weekly-dropitem"><a class="dropdown-item" href="javascript:void(0);">4th Week</a></li>
 		  </ul>
 		</li>

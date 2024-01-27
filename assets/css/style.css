@@ -2445,17 +2445,27 @@ button:hover {
 }
 
 .sponsors .block .image-block {
-  padding: 45px 0;
+  padding: 45px 6px;
   background: #fff;
   width: 244px;
   cursor: pointer;
   transition: all 0.3s ease;
   border: 1px solid transparent;
   margin-bottom: 10px;
+  height: 147px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .sponsors .block .image-block img {
-  height: 55px;
+  max-width: 95%;
+  max-height: 67px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .sponsors .block .image-block:hover {
@@ -3977,14 +3987,15 @@ ul.pagination .active a {
 }
 
 .weekly-dropitem:nth-child(1){
-      background-color: #4CAF50;
-}
-.weekly-dropitem:nth-child(1) a.dropdown-item{
-   color: #ffffff;
-}
-.weekly-dropitem:nth-child(2){
   background-color: #FFA500; /* Orange background */
   animation: week_pulse 1s infinite; /* Pulse animation with a 1-second duration, set to repeat infinitely */
+      
+}
+.weekly-dropitem:nth-child(2) a.dropdown-item,.weekly-dropitem:nth-child(3) a.dropdown-item, .weekly-dropitem:nth-child(2) a.dropdown-item:hover,.weekly-dropitem:nth-child(3) a.dropdown-item:hover{
+   color: #ffffff !important;
+}
+.weekly-dropitem:nth-child(2),.weekly-dropitem:nth-child(3),.weekly-dropitem:nth-child(2) a.dropdown-item:hover,.weekly-dropitem:nth-child(3) a.dropdown-item:hover{
+  background-color: #4CAF50 !important;
 }
 
 
@@ -4000,7 +4011,7 @@ ul.pagination .active a {
     transform: scale(1); /* Return to the initial scale */
   }
 }
-.weekly-dropitem:nth-child(3),.weekly-dropitem:nth-child(4){
+.weekly-dropitem:nth-child(4){
   background-color:#D3D3D3;
 }
 .weekly-dropitem a.dropdown-item{
@@ -4010,4 +4021,7 @@ ul.pagination .active a {
   color: red;
   vertical-align: top;
 
+}
+.sponsors .list-inline .list-inline-item{
+  vertical-align: top;
 }

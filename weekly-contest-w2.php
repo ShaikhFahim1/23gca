@@ -5,8 +5,8 @@ include "includes/config.php";
 $error = false;
 $errorMessage = '';
 session_start();
-// Fetch memes data from 'fun' table
-$stmt = $pdo->prepare("SELECT * FROM fun_users where status=1");
+// Fetch memes data from 'memes' table
+$stmt = $pdo->prepare("SELECT * FROM meme_users where status=1");
 $stmt->execute();
 $memes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -18,7 +18,7 @@ function generateUniqueFilename($originalFilename)
     $timestamp = time();
     $randomString = bin2hex(random_bytes(8)); // Generate a random string
     $extension = pathinfo($originalFilename, PATHINFO_EXTENSION);
-    $newFilename = "fun_" . $timestamp . "_" . $randomString . "." . $extension;
+    $newFilename = "meme_" . $timestamp . "_" . $randomString . "." . $extension;
     return $newFilename;
 }
 
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && (isset($_POST["submit"]))) {
             // Move the uploaded file to the target directory
             move_uploaded_file($_FILES["meme"]["tmp_name"], $targetFile);
             // Insert user data into 'users' table using PDO
-            $stmt = $pdo->prepare("INSERT INTO fun_users (full_name, member_id, actuarial_association, organisation, email, contact, meme_image_url) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt = $pdo->prepare("INSERT INTO meme_users (full_name, member_id, actuarial_association, organisation, email, contact, meme_image_url) VALUES (?, ?, ?, ?, ?, ?, ?)");
             $stmt->execute([$fullName, $memberId, $actuarialAssociation, $organisation, $email, $contact, $targetFile]);
             // Set a session message for successful submission
             $_SESSION['form_message'] = ['type' => 'success', 'message' => 'Form submitted successfully!'];
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && (isset($_POST["submit"]))) {
 
 
     // Redirect to prevent form resubmission on page refresh
-    header("Location: ./weekly-contest#form_div");
+    header("Location: ./weekly-contest#meme_div");
 }
 
 // Check for success or error message in the session
@@ -225,13 +225,13 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
             max-width: 100%;
             max-height: 202px;
         }
-        @media only screen and (max-width: 767px) {
-        .meme-container-ul li {
-            width: 100%;
-            margin-left: 0;
-        }
-            
-        }
+@media only screen and (max-width: 767px) {
+   .meme-container-ul li {
+    width: 100%;
+    margin-left: 0;
+   }
+    
+}
 
         /* Meme Contest End */
     </style>
@@ -279,9 +279,11 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
             <div class="row">
                 <div class="col-md-6 offset-md-3 col-sm-12 mb-4">
                     <div class="section-title">
-                    <h3><span class="alternate">Fun & </span>Actuaries</h3>
-                        <h4 style="color: #f02596;"><b>Share a Screenshot of a Book or Movie which has mention of Actuaries.</b></h4>
-                        <p>27th January - 02nd February 2024 (Upto 15:00 hrs)</p>
+                        <h3><span class="alternate">Meme</span> Contest</h3>
+                        <h4 style="color: #f02596;"><b>Thrilled! Excited! to attend 23<sup>rd</sup>GCA?
+                            <br>Depict it via Meme
+    </b></h4>
+                        <p>19th January - 27th January 2024 (Upto 15:00 hrs)</p>
 
                     </div>
                     <div>
@@ -353,7 +355,7 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
                 </div>
 
 
-                <div class="col-md-5 order-1 order-md-2 mb-4" id="form_div">
+                <div class="col-md-5 order-1 order-md-2 mb-4" id="meme_div">
                     <div class="card">
                         <div class="card-header">
                             <h6>Step 1: Provide your details</h6>
@@ -440,7 +442,7 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
 
                                     <!-- Show upload memes/text field based on radio selection -->
                                     <div class="col-md-12" id="uploadMemeField">
-                                        <label for="meme">Upload Screenshot <span class="astric">*</span></label>
+                                        <label for="meme">Upload Meme <span class="astric">*</span></label>
                                         <input type="file" class="form-control-file" id="memeFile" name="meme" accept="image/*" required>
                                         <span class="error">Note: Please only upload image/gif files upto 2mb.</span>
                                     </div>
@@ -455,7 +457,7 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
                                 <!-- Submit Button -->
                                 <div class="col-md-12 text-center">
                                     <input type="checkbox" name="terms" required>&nbsp;&nbsp;I agree to <a data-toggle="modal" data-target="#weeklyContestModal">&nbsp;terms & conditions</a>.*<br>
-                                    <br><button type="submit" class="btn btn-success" name="submit">Submit</button>
+                                    <button type="submit" class="btn btn-success" name="submit">Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -472,8 +474,6 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
 
 
     <?php
-    // setcookie('meme_user_info', '', time() - 3600, '/'); // empty value and old timestamp
-    session_destroy();
     include "includes/footer.php";
     include "includes/footer_includes.php";
     ?>
