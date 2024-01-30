@@ -449,9 +449,6 @@ $formSubmitted = isset($_COOKIE['form_submitted']);
                                         <textarea class="form-control" id="memeText" name="meme_text"></textarea>
                                     </div> -->
                                 </div>
-
-
-
                                 <!-- Submit Button -->
                                 <div class="col-md-12 text-center">
                                     <input type="checkbox" name="terms" required>&nbsp;&nbsp;I agree to <a data-toggle="modal" data-target="#weeklyContestModal">&nbsp;terms & conditions</a>.*<br>

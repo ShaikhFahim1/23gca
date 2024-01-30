@@ -132,6 +132,7 @@ $memes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             display: inline-block;
             list-style-type: none;
             margin-left: 10px;
+            vertical-align: top;
         }
 
         /* Meme Contest End */
