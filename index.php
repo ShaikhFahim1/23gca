@@ -795,8 +795,22 @@ include "includes/header.php"
 						</li>
 						<li class="list-inline-item">
 							<div class="image-block text-center">
+								<a href="https://www.kotaklife.com/" target="_blank">
+									<img src="assets/images/partners/Kotak Life.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+						<li class="list-inline-item">
+							<div class="image-block text-center">
 								<a href="https://www.maxlifeinsurance.com/" target="_blank">
 									<img src="assets/images/partners/max_logo_png.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.shriramlife.com/" target="_blank">
+									<img src="assets/images/partners/shriram-life-insurance.svg" alt="sponsors-logo" class="img-fluid">
 								</a>
 							</div>
 						</li>

@@ -321,7 +321,6 @@
                 <div class="card-body">
                     <p class="description new-height">
                         The Swiss Re Group is one of the world's leading providers of reinsurance, insurance and other forms of insurance-based risk transfer, working to make the world more resilient. The aim of the Swiss Re Group is to enable society to thrive and progress, creating new opportunities and solutions for its clients. Our Reinsurance Business Unit covers both Property & Casualty and Life & Health. We're a leading, diversified global reinsurer with offices in more than 20 countries, providing expertise and services to clients throughout the world. We've been engaged in the reinsurance business since our foundation in Zurich, Switzerland in 1863.
-                       
                     </p>
                     <a href="https://www.swissre.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
                 </div>
@@ -388,7 +387,6 @@
                         <br><br>In FY23, the company has issued 1.22 crore policies and has settled ~50 lakhs claims. The Company has an active data base of 1.5+ crore customers. HDFC ERGO is present in 490 districts of the country through their 215 branches, 10,000+ employees and 1.8 lakhs agents and channel partners.&nbsp;
                         <br><br>HDFC ERGO offers a complete range of General Insurance products including Health, Motor, Home, Agriculture, Travel, Credit, Cyber and Personal Accident in the retail space along with Property, Marine, Engineering, Marine Cargo, Group Health and Liability Insurance in the corporate space. Be it unique insurance products, integrated customer service models, top-in-class claim processes or a host of technologically innovative solutions, HDFC ERGO has been able to delight its customers at every touch-point and milestone to ensure consumers are serviced in real-time.&nbsp;
                         <br><br>Please log on to <a href="https://www.hdfcergo.com" target="_blank">www.hdfcergo.com</a> or stay connected on the following social media handles to get more information on HDFC ERGO and the products and services offered by the company. &nbsp;
-                
                     </p>
                     <p class="read-more" onclick="toggleDescription(this)">
                         Read More <i class="fa fa-chevron-down fa-icon"></i>
@@ -426,6 +424,29 @@
             <div class="card custom-card mt-5">
                 <!-- First Section (30%) -->
                 <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>Kotak Life.png" alt="Company Logo">
+                    <div class="company-name">Silver Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    Kotak Mahindra Life Insurance Company Limited (Kotak Life) is a 100% owned subsidiary of Kotak Mahindra Bank Limited (Kotak). As an organisation, Kotak Life provides world-class insurance products with high customer empathy. Its product suite leverages the combined prowess of protection and long term savings. Kotak Life is one of the fastest growing insurance companies in India with 286 branches across 146 cities and has more than 5 crore lives covered on its books as on 31st December, 2023.
+                    </p>
+                    <!-- <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p> -->
+                    <a href="https://www.kotaklife.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
                     <img class="company-logo" src="<?= $partnerPath; ?>max_logo_png.png" alt="Company Logo">
                     <div class="company-name">Silver Partner</div>
                     <div class="partnership-category"></div>
@@ -442,6 +463,36 @@
                     </p>
                    
                     <a href="https://www.maxlifeinsurance.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>shriram-life-insurance.svg" alt="Company Logo">
+                    <div class="company-name">Silver Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    Shriram Life Insurance Company Ltd is jointly promoted by Shriram Capital Ltd, the holding company for the financial services business of the Shriram Group, and South Africa-based financial services group Sanlam Ltd. Shriram Life Insurance is a leading insurer having built its operations over 18 years by catering to a wide demographic and providing the average Indian with a bouquet of life insurance products catering to their financial needs. The company works with the purpose of ensuring that all families in the community are provided with adequate financial protection especially in the vulnerable segment. 
+<br><br>
+Shriram Life Insurance offers comprehensive protection and long-term savings life insurance solutions, focused on people at the bottom of the socio-economic pyramid, with close to 45% of insurance beneficiaries being from rural markets. It has a network of 403 branch offices across India. Shriram Life Insurance underwrote gross premium of approximately INR 2,500 crore in FY23 and recording Assets Under Management (AUM) exceeding INR 10,000 crore as on September’23. The company successfully has provided life protection to over 7.2cr customers.
+The Company has won an Award for the Best Digital Initiative- Life Insurance conferred by the InsureNext Awards 2022, organized by the Banking Frontiers in collaboration with knowledge partner Deloitte India. 
+<br><br>
+About Shriram Group
+<br><br>
+Shriram Group is one of India’s leading financial conglomerates with a dominant presence in commercial vehicle, retail, chit fund, equipment and housing finance, in addition to life and general insurance, stockbroking, distribution of financial products, and wealth advisory services. The Group focuses on serving the underserved and is driven by its agenda of ‘Financial Inclusion’ wherein it aims to provide access to finance to low-income families and small businesses. Shriram Capital Ltd is the holding company for the financial service entities--Shriram City Union Finance Ltd and Shriram Transport Finance Ltd, and the insurance entities--Shriram General Insurance Company Ltd and Shriram Life Insurance Company Ltd. Shriram Housing Finance Ltd is a subsidiary of Shriram City Union Finance. Shriram Group has a customer base in excess of 26 million, and around 1,12,000 employees across 4,200 branches. It posted a net profit of Rs 85 billion for FY23, with assets under management at Rs 2.5 trillion as of March 2023.
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p> 
+                    <a href="https://www.shriramlife.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
                 </div>
             </div>
             <div class="card custom-card mt-5">
