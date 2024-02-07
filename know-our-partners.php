@@ -396,8 +396,193 @@
                     <a href="https://www.swissre.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
                 </div>
             </div>
-            
             <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>Tata AA.png" alt="Company Logo">
+                    <div class="company-name">Delegate Kit Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                                                <b>About Tata AIA Life </b>
+
+                            
+
+                            <br><br>Tata AIA Life Insurance Company Limited (Tata AIA) is a joint venture Company formed by Tata Sons Pvt. Ltd. and AIA Group Ltd. (AIA). Tata AIA Life combines Tata’s pre-eminent leadership position in India and AIA’s presence as the largest, independent listed pan-Asian life insurance group in the world, spanning 18 markets in the Asia Pacific region. 
+
+                            <br>Tata AIA reported an Individual Weighted New Business Premium (IWNBP) income of INR 7,092 Cr in FY23, an increase of 59% over FY22. The Individual Death Claims Settlement ratio improved from 98.53% in FY22 to 99.01% in FY23. The Persistency ratio, reflecting the percentage of consumers who choose to renew their policies with Tata AIA, has earned the Company the top rank in four out of five cohorts, including 13th-month persistency.  Compared to FY22, the 13th Month Persistency ratio (based on Premium) of the Company improved to 88.1%. 
+
+                            
+
+                            <br><br><b>About the Tata Group   </b>
+
+                            
+
+                            <br><br>Founded by Jamsetji Tata in 1868, the Tata Group is a global enterprise, headquartered in India, comprising 30 companies across ten verticals. The group operates in more than 100 countries across six continents, with a mission 'To improve the quality of life of the communities we serve globally, through long-term stakeholder value creation based on Leadership with Trust’. 
+
+                            <br>Tata Sons is the principal investment holding company and promoter of Tata companies. Sixty-six percent of the equity share capital of Tata Sons is held by philanthropic trusts, which support education, health, livelihood generation and art and culture. In 2022-23, the revenue of Tata companies, taken together, was $150 billion (INR 12 trillion). These companies collectively employ over 1 million people. 
+
+                            
+
+                            <br>Each Tata company or enterprise operates independently under the guidance and supervision of its own board of directors. There are 29 publicly listed Tata enterprises with a combined market capitalisation of $300 billion (INR 24 trillion) as on July 31, 2023. 
+
+                            
+
+                            <br><br><b>About AIA  </b>
+
+                            
+
+                            <br><br> AIA Group Limited and its subsidiaries (collectively “AIA” or the “Group”) comprise the largest independent publicly listed pan-Asian life insurance group. It has a presence in 18 markets–wholly-owned branches and subsidiaries in Mainland China, Hong Kong SAR(1), Thailand, Singapore, Malaysia, Australia, Cambodia, Indonesia, Myanmar, New Zealand, the Philippines, South Korea, Sri Lanka, Taiwan (China), Vietnam, Brunei and Macau SAR(2), and a 49 per cent joint venture in India. In addition, AIA has a 24.99 per cent shareholding in China Post Life Insurance Co., Ltd. 
+
+                            
+
+                            <br>The business that is now AIA was first established in Shanghai more than a century ago in 1919. It is a market leader in Asia (ex-Japan) based on life insurance premiums and holds leading positions across the majority of its markets. It had total assets of US$276 billion as of 30 June 2023. 
+
+                            
+
+                            <br>AIA meets the long-term savings and protection needs of individuals by offering a range of products and services including life insurance, accident and health insurance and savings plans. The Group also provides employee benefits, credit life and pension services to corporate clients. Through an extensive network of agents, partners and employees across Asia, AIA serves the holders of more than 41 million individual policies and 17 million participating members of group insurance schemes. 
+
+                            
+
+                            <br>AIA Group Limited is listed on the Main Board of The Stock Exchange of Hong Kong Limited under the stock codes “1299” for HKD counter and “81299” for RMB counter with American Depositary Receipts (Level 1) traded on the over-the-counter market under the ticker symbol “AAGIY”. 
+
+                            
+
+                            <br><br><b>Notes: </b>
+
+                            <br><br>(1) Hong Kong SAR refers to the Hong Kong Special Administrative Region. 
+
+                            <br>(2) Macau SAR refers to the Macau Special Administrative Region. 
+
+                            
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://www.tataaia.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+          
+            <!-- Wellness start -->
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>ICICI_Lombard-removebg-preview.png" alt="Company Logo">
+                    <div class="company-name">Wellness Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    ICICI Lombard is the leading private general insurance company in the country. The company offers a comprehensive and well-diversified range of products through multiple distribution channels, including Motor, Health, Crop, Fire, Personal accident, Marine, Engineering and Liability insurance. With a legacy of over 22 years, ICICI Lombard is committed to customer centricity with its brand philosophy of “Nibhaaye Vaade” The company has issued over 32.7 million policies, settled 3.6 million claim and has a gross written premium (GWP) of INR 217.72 billion for the year ended March 31, 2023. ICICI Lombard has 305 branches and 12,685 employees, as on 31st March 2023.
+                    
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://www.icicilombard.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <!-- Wellness end -->
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>AIC Logo.png" alt="Company Logo">
+                    <div class="company-name">Engagement Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    Agriculture Insurance Company of India Limited (AIC) has been formed at the behest of Government of India, 
+                    consequent to the announcement by the then Hon'ble Union Finance Minister in his General Budget Speech FY 2002-
+                    03 that, "to subserve the needs of farmers better and to move towards a sustainable actuarial regime, it was proposed 
+                    to set up a new Corporation for Agriculture Insurance".
+                    <br><br>AIC has taken over the implementation of National Agricultural Insurance Scheme (NAIS) which, until FY 2002-03 was 
+                    implemented by General Insurance Corporation of India. In addition, AIC also transacts other insurance businesses 
+                    directly or indirectly concerning agriculture and its allied activities.
+                    <br><br>Company has its Registered & Head Office at New Delhi and 18 Regional Offices situated in State Capitals.
+                    <br><br>The company has technically sound workforce working only in the field of Agriculture insurance.
+                    <br><br>Since inception the Company is the leading crop insurer of the country and is the largest insurer in term of number of 
+                    farmers insured in the world and presently the Market Leader with more than 50% market share of Crop Insurance in 
+                    India.
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://www.aicofindia.com/AICEng/Pages/default.aspx" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>hdfc life.png" alt="Company Logo">
+                    <div class="company-name">Engagement Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    Established in 2000, HDFC Life is a leading, listed, long-term life insurance solutions provider in India, offering a range of individual and group insurance solutions that meet various customer needs such as Protection, Pension, Savings, Investment, Annuity and Health. The Company has more than 80 products (including individual and group products) and optional riders in its portfolio, catering to a diverse range of customer needs.<br>
+                    <br>HDFC Life continues to benefit from its increased presence across the country, having a wide reach with branches and additional distribution touch-points through several new tie-ups and partnerships. The count of distribution partnerships is over 300, comprising banks, NBFCs, MFIs, SFBs, brokers, new ecosystem partners amongst others. The Company has a strong base of financial consultants.
+
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://www.hdfclife.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>pnb-metlife.svg" alt="Company Logo">
+                    <div class="company-name">Engagement Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    PNB MetLife India Insurance Company Limited is one of the leading life insurance companies in India that combines the financial strength of MetLife, Inc. with the credibility of Punjab National Bank (PNB), one of the India's oldest nationalized banks. PNB MetLife’s purpose, Milkar Life Aage Badhaein, is demonstrated through its customer-centric innovations and employee empowerment practices. 
+                    <br><br>
+                    With a strong presence in 139 branches, and access to customers through its bank partnerships in over 18,600 branches (as of March 31, 2023), PNB MetLife offers a comprehensive product portfolio covering Child Education, Family Protection, Long-Term Saving, and Retirement solutions through its sales channel of over 19,500 financial advisors and multiple bank partners and caters to over 590+ group relationships in India.
+
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://www.pnbmetlife.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+              <!-- Silver start -->
+              <div class="card custom-card mt-5">
                 <!-- First Section (30%) -->
                 <div class="card-body text-center">
                     <img class="company-logo" src="<?= $partnerPath; ?>CAS Logo.png" alt="Company Logo">
@@ -630,115 +815,7 @@
                     <a href="https://www.sudlife.in/" target="_blank" class="btn btn-main-md">Partner Website</a>
                 </div>
             </div>
-            <div class="card custom-card mt-5">
-                <!-- First Section (30%) -->
-                <div class="card-body text-center">
-                    <img class="company-logo" src="<?= $partnerPath; ?>ICICI_Lombard-removebg-preview.png" alt="Company Logo">
-                    <div class="company-name">Wellness Partner</div>
-                    <div class="partnership-category"></div>
-                </div>
-
-                <!-- Border between sections -->
-                <!-- //my-3 -->
-                <div class="border-left"></div>
-
-                <!-- Second Section (70%) -->
-                <div class="card-body">
-                    <p class="description">
-                    ICICI Lombard is the leading private general insurance company in the country. The company offers a comprehensive and well-diversified range of products through multiple distribution channels, including Motor, Health, Crop, Fire, Personal accident, Marine, Engineering and Liability insurance. With a legacy of over 22 years, ICICI Lombard is committed to customer centricity with its brand philosophy of “Nibhaaye Vaade” The company has issued over 32.7 million policies, settled 3.6 million claim and has a gross written premium (GWP) of INR 217.72 billion for the year ended March 31, 2023. ICICI Lombard has 305 branches and 12,685 employees, as on 31st March 2023.
-                    
-                    </p>
-                    <p class="read-more" onclick="toggleDescription(this)">
-                        Read More <i class="fa fa-chevron-down fa-icon"></i>
-                    </p>
-                    <a href="https://www.icicilombard.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
-                </div>
-            </div>
-            <div class="card custom-card mt-5">
-                <!-- First Section (30%) -->
-                <div class="card-body text-center">
-                    <img class="company-logo" src="<?= $partnerPath; ?>AIC Logo.png" alt="Company Logo">
-                    <div class="company-name">Engagement Partner</div>
-                    <div class="partnership-category"></div>
-                </div>
-
-                <!-- Border between sections -->
-                <!-- //my-3 -->
-                <div class="border-left"></div>
-
-                <!-- Second Section (70%) -->
-                <div class="card-body">
-                    <p class="description">
-                    Agriculture Insurance Company of India Limited (AIC) has been formed at the behest of Government of India, 
-                    consequent to the announcement by the then Hon'ble Union Finance Minister in his General Budget Speech FY 2002-
-                    03 that, "to subserve the needs of farmers better and to move towards a sustainable actuarial regime, it was proposed 
-                    to set up a new Corporation for Agriculture Insurance".
-                    <br><br>AIC has taken over the implementation of National Agricultural Insurance Scheme (NAIS) which, until FY 2002-03 was 
-                    implemented by General Insurance Corporation of India. In addition, AIC also transacts other insurance businesses 
-                    directly or indirectly concerning agriculture and its allied activities.
-                    <br><br>Company has its Registered & Head Office at New Delhi and 18 Regional Offices situated in State Capitals.
-                    <br><br>The company has technically sound workforce working only in the field of Agriculture insurance.
-                    <br><br>Since inception the Company is the leading crop insurer of the country and is the largest insurer in term of number of 
-                    farmers insured in the world and presently the Market Leader with more than 50% market share of Crop Insurance in 
-                    India.
-                    </p>
-                    <p class="read-more" onclick="toggleDescription(this)">
-                        Read More <i class="fa fa-chevron-down fa-icon"></i>
-                    </p>
-                    <a href="https://www.aicofindia.com/AICEng/Pages/default.aspx" target="_blank" class="btn btn-main-md">Partner Website</a>
-                </div>
-            </div>
-            <div class="card custom-card mt-5">
-                <!-- First Section (30%) -->
-                <div class="card-body text-center">
-                    <img class="company-logo" src="<?= $partnerPath; ?>hdfc life.png" alt="Company Logo">
-                    <div class="company-name">Engagement Partner</div>
-                    <div class="partnership-category"></div>
-                </div>
-
-                <!-- Border between sections -->
-                <!-- //my-3 -->
-                <div class="border-left"></div>
-
-                <!-- Second Section (70%) -->
-                <div class="card-body">
-                    <p class="description">
-                    Established in 2000, HDFC Life is a leading, listed, long-term life insurance solutions provider in India, offering a range of individual and group insurance solutions that meet various customer needs such as Protection, Pension, Savings, Investment, Annuity and Health. The Company has more than 80 products (including individual and group products) and optional riders in its portfolio, catering to a diverse range of customer needs.<br>
-                    <br>HDFC Life continues to benefit from its increased presence across the country, having a wide reach with branches and additional distribution touch-points through several new tie-ups and partnerships. The count of distribution partnerships is over 300, comprising banks, NBFCs, MFIs, SFBs, brokers, new ecosystem partners amongst others. The Company has a strong base of financial consultants.
-
-                    </p>
-                    <p class="read-more" onclick="toggleDescription(this)">
-                        Read More <i class="fa fa-chevron-down fa-icon"></i>
-                    </p>
-                    <a href="https://www.hdfclife.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
-                </div>
-            </div>
-            <div class="card custom-card mt-5">
-                <!-- First Section (30%) -->
-                <div class="card-body text-center">
-                    <img class="company-logo" src="<?= $partnerPath; ?>pnb-metlife.svg" alt="Company Logo">
-                    <div class="company-name">Engagement Partner</div>
-                    <div class="partnership-category"></div>
-                </div>
-
-                <!-- Border between sections -->
-                <!-- //my-3 -->
-                <div class="border-left"></div>
-
-                <!-- Second Section (70%) -->
-                <div class="card-body">
-                    <p class="description">
-                    PNB MetLife India Insurance Company Limited is one of the leading life insurance companies in India that combines the financial strength of MetLife, Inc. with the credibility of Punjab National Bank (PNB), one of the India's oldest nationalized banks. PNB MetLife’s purpose, Milkar Life Aage Badhaein, is demonstrated through its customer-centric innovations and employee empowerment practices. 
-                    <br><br>
-                    With a strong presence in 139 branches, and access to customers through its bank partnerships in over 18,600 branches (as of March 31, 2023), PNB MetLife offers a comprehensive product portfolio covering Child Education, Family Protection, Long-Term Saving, and Retirement solutions through its sales channel of over 19,500 financial advisors and multiple bank partners and caters to over 590+ group relationships in India.
-
-                    </p>
-                    <p class="read-more" onclick="toggleDescription(this)">
-                        Read More <i class="fa fa-chevron-down fa-icon"></i>
-                    </p>
-                    <a href="https://www.pnbmetlife.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
-                </div>
-            </div>
+            <!-- Silver end -->
 
 
         </div>

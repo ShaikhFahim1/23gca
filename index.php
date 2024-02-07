@@ -607,7 +607,7 @@ include "includes/header.php"
 
 <!--==============================
 
-=            Sponsors            =
+=            Registration            =
 
 ===============================-->
 
@@ -615,49 +615,42 @@ include "includes/header.php"
 
 <section class="section schedule two">
 
-	<div class="container">
+		<div class="container">
 
-		<div class="row">
+			<div class="row">
 
-			<div class="col-12">
+				<div class="col-12">
 
-				
+					<div class="section-header">
 
-      
+						<h2>Registration Rate</h2>
 
-        
+						<p>Checkout our registration rate for all the categories</p>
 
-  <div class="section-header">
-
-			<h2>Registration Rate</h2>
-
-			<p>Checkout our registration rate for all the categories</p>
-
-		  </div>
+					</div>
 
 
 
 
 
 
+
+				</div>
+
+			</div>
+
+			<div class="row">
+
+							<?php
+
+					include "register.php";
+
+					?>
 
 			</div>
 
 		</div>
 
-		<div class="row">
-
-			<?php
-
-      include "register.php";
-
-      ?>
-
-		</div>
-
-	</div>
-
-	</div>
 
 </section>
 
@@ -772,6 +765,66 @@ include "includes/header.php"
 						
 					</ul>
 				</div>
+				<div class="sponsor-title text-center">
+					<h5>Delegate Kit Partner</h5>
+				</div>
+				<div class="block text-center">
+					<!-- Sponsors image list -->
+					<ul class="list-inline sponsors-list">
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.tataaia.com/" target="_blank">
+									<img src="assets/images/partners/Tata AA.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="sponsor-title text-center">
+					<h5>Wellness Partner</h5>
+				</div>
+				<div class="block text-center">
+					<!-- Sponsors image list -->
+					<ul class="list-inline sponsors-list">
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.icicilombard.com/" target="_blank">
+									<img src="assets/images/partners/ICICI_Lombard-removebg-preview.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="sponsor-title text-center">
+					<h5>Engagement Partners</h5>
+				</div>
+				<div class="block text-center">
+					<!-- Sponsors image list -->
+					<ul class="list-inline sponsors-list">
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.aicofindia.com/AICEng/Pages/default.aspx" target="_blank">
+									<img src="assets/images/partners/AIC Logo.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.hdfclife.com/" target="_blank">
+									<img src="assets/images/partners/hdfc%20life.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.pnbmetlife.com/" target="_blank">
+									<img src="assets/images/partners/pnb-metlife.svg" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
 				<!-- Title -->
 				<div class="sponsor-title text-center">
 					<h5>Silver Partners</h5>
@@ -846,50 +899,6 @@ include "includes/header.php"
 						
 					</ul>
 				</div>
-				<div class="sponsor-title text-center">
-					<h5>Wellness Partner</h5>
-				</div>
-				<div class="block text-center">
-					<!-- Sponsors image list -->
-					<ul class="list-inline sponsors-list">
-						<li class="list-inline-item">
-							<div class="image-block text-center">
-								<a href="https://www.icicilombard.com/" target="_blank">
-									<img src="assets/images/partners/ICICI_Lombard-removebg-preview.png" alt="sponsors-logo" class="img-fluid">
-								</a>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="sponsor-title text-center">
-					<h5>Engagement Partners</h5>
-				</div>
-				<div class="block text-center">
-					<!-- Sponsors image list -->
-					<ul class="list-inline sponsors-list">
-						<li class="list-inline-item">
-							<div class="image-block text-center">
-								<a href="https://www.aicofindia.com/AICEng/Pages/default.aspx" target="_blank">
-									<img src="assets/images/partners/AIC Logo.png" alt="sponsors-logo" class="img-fluid">
-								</a>
-							</div>
-						</li>
-						<li class="list-inline-item">
-							<div class="image-block text-center">
-								<a href="https://www.hdfclife.com/" target="_blank">
-									<img src="assets/images/partners/hdfc%20life.png" alt="sponsors-logo" class="img-fluid">
-								</a>
-							</div>
-						</li>
-						<li class="list-inline-item">
-							<div class="image-block text-center">
-								<a href="https://www.pnbmetlife.com/" target="_blank">
-									<img src="assets/images/partners/pnb-metlife.svg" alt="sponsors-logo" class="img-fluid">
-								</a>
-							</div>
-						</li>
-					</ul>
-				</div>
 				
 			</div>
 		</div>
@@ -898,7 +907,73 @@ include "includes/header.php"
 
 <!--====  End of Sponsors  ====-->
 
+<section class="section schedule two">
 
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-12">
+
+					<div class="section-header">
+
+						<h2>Partner Video</h2>
+
+						<p>Checkout our partner video</p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="row">
+				<div class="col-md-6 col-lg-4">
+					<div class="video-card">
+						<a href="VIDEO_URL_1" target="_blank">
+						<div class="video-overlay"></div>
+						<iframe src="VIDEO_URL_1" frameborder="0" allowfullscreen></iframe>
+						</a>
+						<div class="company-info mt-2">
+						<img src="LOGO_URL_1" alt="Company Logo">
+						<h5 class="mt-2">Company Name 1</h5>
+						<p>Partnership Category: Category 1</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="video-card">
+						<a href="VIDEO_URL_1" target="_blank">
+						<div class="video-overlay"></div>
+						<iframe src="VIDEO_URL_1" frameborder="0" allowfullscreen></iframe>
+						</a>
+						<div class="company-info mt-2">
+						<img src="LOGO_URL_1" alt="Company Logo">
+						<h5 class="mt-2">Company Name 1</h5>
+						<p>Partnership Category: Category 1</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="video-card">
+						<a href="VIDEO_URL_1" target="_blank">
+						<div class="video-overlay"></div>
+						<iframe src="VIDEO_URL_1" frameborder="0" allowfullscreen></iframe>
+						</a>
+						<div class="company-info mt-2">
+						<img src="LOGO_URL_1" alt="Company Logo">
+						<h5 class="mt-2">Company Name 1</h5>
+						<p>Partnership Category: Category 1</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+
+</section>
 
 
    <!--==========================
