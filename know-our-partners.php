@@ -94,6 +94,7 @@
             color: #111;
             overflow: hidden;
             height: 185px;
+            font-weight: 500;
             /* Initial height */
         }
 
@@ -171,6 +172,52 @@
 
         <div class="container">
             <div class="card custom-card">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>SBI_Logo.png" alt="Company Logo">
+                    <div class="company-name">Platinum Partner</div>
+                    <!-- <div class="partnership-category"></div> -->
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                        SBI Life Insurance (‘SBI Life’ / ‘The Company’), one of the most trusted life insurance companies in India, 
+                        was incorporated in October 2000 and is registered with the Insurance Regulatory and Development 
+                        Authority of India (IRDAI) in March 2001.
+                        <br><br>Serving millions of families across India, SBI Life’s diverse range of products caters to individuals as well 
+                        as group customers through Protection, Pension, Savings and Health solutions.
+                        <br><br>Driven by ‘Customer-First’ approach, SBI Life places great emphasis on maintaining world class operating 
+                        efficiency and providing hassle-free claim settlement experience to its customers by following high ethical 
+                        standards of service. Additionally, SBI Life is committed to enhance digital experiences for its customers, 
+                        distributors and employees alike.
+                        <br><br>SBI Life strives to make insurance accessible to all, with its extensive presence across the country through 
+                        its 1,028 offices, 24,060 employees, a large and productive network of about 243,590 agents, 74 corporate 
+                        agents and 14 bancassurance partners with more than 41,000 partner branches, 150 brokers and other 
+                        insurance marketing firms.
+                        <br><br>In addition to doing what’s right for the customers, the company is also committed to provide a healthy 
+                        and flexible work environment for its employees to excel personally and professionally.
+                        <br><br>SBI Life strongly encourages a culture of giving back to the society and has made substantial contribution 
+                        in the areas of child education, healthcare, disaster relief and environmental upgrade. In 2022-23, the 
+                        Company touched over 1.1 lakh direct beneficiaries through various CSR interventions.
+                        <br><br>Listed on the Bombay Stock Exchange ('BSE') and the National Stock Exchange ('NSE'), the company has 
+                        an authorized capital of Rs. 20.0 billion and a paid-up capital of Rs. 10.0 billion. The AuM is Rs. 3,714.1 
+                        billion.
+                        <br><br>For more information, please visit our website-<a href="https://www.sbilife.co.in/" target="_blank">www.sbilife.co.in</a> and connect with us on Facebook, 
+                        Twitter, YouTube, Instagram, and LinkedIn.
+                        <br>(Numbers & data mentioned above are for the period ended December 31, 2023)
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://www.sbilife.co.in/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
                 <!-- First Section (30%) -->
                 <div class="card-body text-center">
                     <img class="company-logo" src="<?= $partnerPath; ?>K A Pandit_AGFA.png" alt="Company Logo">
@@ -280,6 +327,30 @@
                         Read More <i class="fa fa-chevron-down fa-icon"></i>
                     </p>
                     <a href="https://www.marshmclennan.com" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>MetLife.png" alt="Company Logo">
+                    <div class="company-name">Gold Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    MetLife GOSC was established in Noida, India, in 2007. GOSC is MetLife owned and has been operational since March 2008.  Presently, we stand strong at ~3700 associates with additional capability centers in Jaipur and Hyderabad. As a customer-first organization, we develop optimal solutions for migrating and improving business processes through a disciplined approach grounded in quality methodologies and technology. This enables our business partners to focus resources where they count most.
+                    <br><br>We have been certified as a ‘Great place to work’ for the 5th time. At GOSC, we believe that people are our most valuable asset and investment in our colleagues yields strong business outcomes. This recognition is a testimony of our strong people practices. Following industry-wide best norms, we have also achieved CMMI 2.0 – Maturity Level 5 Certification – which further demonstrates our strong industry positioning and focus on innovation and sustained excellence.
+                    <br><br>GOSC lays an equal emphasis on environmental sustainability, community outreach programs, and pushing the needle on diversity, equity, and inclusion. We are actively involved in working towards the social and economic development of the communities in which we operate. Our association with different NGOs has given us positive results and today we are working on dimensions such as healthcare, education, sustainable livelihood, and women empowerment to calibrate substantial changes. </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://www.metlife.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
                 </div>
             </div>
             <div class="card custom-card mt-5">
@@ -481,14 +552,14 @@
                 <div class="card-body">
                     <p class="description">
                     Shriram Life Insurance Company Ltd is jointly promoted by Shriram Capital Ltd, the holding company for the financial services business of the Shriram Group, and South Africa-based financial services group Sanlam Ltd. Shriram Life Insurance is a leading insurer having built its operations over 18 years by catering to a wide demographic and providing the average Indian with a bouquet of life insurance products catering to their financial needs. The company works with the purpose of ensuring that all families in the community are provided with adequate financial protection especially in the vulnerable segment. 
-<br><br>
-Shriram Life Insurance offers comprehensive protection and long-term savings life insurance solutions, focused on people at the bottom of the socio-economic pyramid, with close to 45% of insurance beneficiaries being from rural markets. It has a network of 403 branch offices across India. Shriram Life Insurance underwrote gross premium of approximately INR 2,500 crore in FY23 and recording Assets Under Management (AUM) exceeding INR 10,000 crore as on September’23. The company successfully has provided life protection to over 7.2cr customers.
-The Company has won an Award for the Best Digital Initiative- Life Insurance conferred by the InsureNext Awards 2022, organized by the Banking Frontiers in collaboration with knowledge partner Deloitte India. 
-<br><br>
-About Shriram Group
-<br><br>
-Shriram Group is one of India’s leading financial conglomerates with a dominant presence in commercial vehicle, retail, chit fund, equipment and housing finance, in addition to life and general insurance, stockbroking, distribution of financial products, and wealth advisory services. The Group focuses on serving the underserved and is driven by its agenda of ‘Financial Inclusion’ wherein it aims to provide access to finance to low-income families and small businesses. Shriram Capital Ltd is the holding company for the financial service entities--Shriram City Union Finance Ltd and Shriram Transport Finance Ltd, and the insurance entities--Shriram General Insurance Company Ltd and Shriram Life Insurance Company Ltd. Shriram Housing Finance Ltd is a subsidiary of Shriram City Union Finance. Shriram Group has a customer base in excess of 26 million, and around 1,12,000 employees across 4,200 branches. It posted a net profit of Rs 85 billion for FY23, with assets under management at Rs 2.5 trillion as of March 2023.
-                    </p>
+                        <br><br>
+                        Shriram Life Insurance offers comprehensive protection and long-term savings life insurance solutions, focused on people at the bottom of the socio-economic pyramid, with close to 45% of insurance beneficiaries being from rural markets. It has a network of 403 branch offices across India. Shriram Life Insurance underwrote gross premium of approximately INR 2,500 crore in FY23 and recording Assets Under Management (AUM) exceeding INR 10,000 crore as on September’23. The company successfully has provided life protection to over 7.2cr customers.
+                        The Company has won an Award for the Best Digital Initiative- Life Insurance conferred by the InsureNext Awards 2022, organized by the Banking Frontiers in collaboration with knowledge partner Deloitte India. 
+                        <br><br>
+                        About Shriram Group
+                        <br><br>
+                        Shriram Group is one of India’s leading financial conglomerates with a dominant presence in commercial vehicle, retail, chit fund, equipment and housing finance, in addition to life and general insurance, stockbroking, distribution of financial products, and wealth advisory services. The Group focuses on serving the underserved and is driven by its agenda of ‘Financial Inclusion’ wherein it aims to provide access to finance to low-income families and small businesses. Shriram Capital Ltd is the holding company for the financial service entities--Shriram City Union Finance Ltd and Shriram Transport Finance Ltd, and the insurance entities--Shriram General Insurance Company Ltd and Shriram Life Insurance Company Ltd. Shriram Housing Finance Ltd is a subsidiary of Shriram City Union Finance. Shriram Group has a customer base in excess of 26 million, and around 1,12,000 employees across 4,200 branches. It posted a net profit of Rs 85 billion for FY23, with assets under management at Rs 2.5 trillion as of March 2023.
+                                            </p>
                     <p class="read-more" onclick="toggleDescription(this)">
                         Read More <i class="fa fa-chevron-down fa-icon"></i>
                     </p> 
@@ -581,6 +652,40 @@ Shriram Group is one of India’s leading financial conglomerates with a dominan
                         Read More <i class="fa fa-chevron-down fa-icon"></i>
                     </p>
                     <a href="https://www.icicilombard.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>AIC Logo.png" alt="Company Logo">
+                    <div class="company-name">Engagement Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    Agriculture Insurance Company of India Limited (AIC) has been formed at the behest of Government of India, 
+                    consequent to the announcement by the then Hon'ble Union Finance Minister in his General Budget Speech FY 2002-
+                    03 that, "to subserve the needs of farmers better and to move towards a sustainable actuarial regime, it was proposed 
+                    to set up a new Corporation for Agriculture Insurance".
+                    <br><br>AIC has taken over the implementation of National Agricultural Insurance Scheme (NAIS) which, until FY 2002-03 was 
+                    implemented by General Insurance Corporation of India. In addition, AIC also transacts other insurance businesses 
+                    directly or indirectly concerning agriculture and its allied activities.
+                    <br><br>Company has its Registered & Head Office at New Delhi and 18 Regional Offices situated in State Capitals.
+                    <br><br>The company has technically sound workforce working only in the field of Agriculture insurance.
+                    <br><br>Since inception the Company is the leading crop insurer of the country and is the largest insurer in term of number of 
+                    farmers insured in the world and presently the Market Leader with more than 50% market share of Crop Insurance in 
+                    India.
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://www.aicofindia.com/AICEng/Pages/default.aspx" target="_blank" class="btn btn-main-md">Partner Website</a>
                 </div>
             </div>
             <div class="card custom-card mt-5">

@@ -370,7 +370,7 @@ include "includes/header.php"
 
 			
 
-			<div class="col-lg-8 col-md-6 align-self-center">
+			<div class="col-md-8 order-2 order-md-1 align-self-center">
 
 				<div class="content-block">
 
@@ -394,16 +394,7 @@ include "includes/header.php"
 
 					</div>
 
-					<!-- <div class="description-two">
-
-						<p>
-
-							
-
-						</p>
-
-					</div> -->
-
+				 
 					<ul class="list-inline">
 
 						<li class="list-inline-item">
@@ -424,7 +415,7 @@ include "includes/header.php"
 
 			</div>
 
-			<div class="col-lg-4 col-md-6 align-self-center">
+			<div class="col-md-4 order-1 order-md-2 align-self-center">
 
 				<div class="image-block bg-about">
 
@@ -684,18 +675,35 @@ include "includes/header.php"
 				
 				<div class="section-header">
 
-<h2>Our Partners</h2>
+					<h2>Our Partners</h2>
 
-<p>We partner with the best.</p>
+					<p>We partner with the best.</p>
 
-</div>
+				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-12">
 				<!-- Title -->
 				<div class="sponsor-title text-center">
-					<h5>AGFA Partners</h5>
+					<h5>Platinum Partner</h5>
+				</div>
+				<div class="block text-center">
+					<!-- Partners image list -->
+					<ul class="list-inline sponsors-list">
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.sbilife.co.in/" target="_blank">
+									<img src="assets/images/partners/SBI_Logo.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+				<!-- Title -->
+				<div class="sponsor-title text-center">
+					<h5>AGFA Partner</h5>
 				</div>
 				<div class="block text-center">
 					<!-- Partners image list -->
@@ -707,7 +715,6 @@ include "includes/header.php"
 								</a>
 							</div>
 						</li>
-						
 						
 					</ul>
 				</div>
@@ -736,6 +743,13 @@ include "includes/header.php"
 							<div class="image-block text-center">
 								<a href="https://www.marshmclennan.com" target="_blank">
 									<img src="assets/images/partners/MarshMcLennan_h_rgb_c.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.metlife.com/" target="_blank">
+									<img src="assets/images/partners/MetLife.png" alt="sponsors-logo" class="img-fluid">
 								</a>
 							</div>
 						</li>
@@ -848,11 +862,18 @@ include "includes/header.php"
 					</ul>
 				</div>
 				<div class="sponsor-title text-center">
-					<h5>Engagement Partner</h5>
+					<h5>Engagement Partners</h5>
 				</div>
 				<div class="block text-center">
 					<!-- Sponsors image list -->
 					<ul class="list-inline sponsors-list">
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.aicofindia.com/AICEng/Pages/default.aspx" target="_blank">
+									<img src="assets/images/partners/AIC Logo.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
 						<li class="list-inline-item">
 							<div class="image-block text-center">
 								<a href="https://www.hdfclife.com/" target="_blank">

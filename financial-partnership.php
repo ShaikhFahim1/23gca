@@ -88,8 +88,8 @@
 
             <div class="row">
                 <p style="color: #222;font-weight: bold;margin-bottom: 5px;">To View the Partnership Brochure - <a href="assets/23rd%20GCA%20Financial%20Partnership%20Brochure_Final%2022.11.23.pdf" target="_blank">Click Here</a></p>
-                <p style="color: #ff0000;font-weight: bold;font-style: italic; margin: 27px 0;    text-align: center;width: 100%;
-">“Due to an overwhelming response, our Gold, AGFA, Wellness Partner partnership is currently sold out. However, there's no need to despair. <br>We have alternative partnership opportunities available that may better suit your needs.”</p>
+                <!-- <p style="color: #ff0000;font-weight: bold;font-style: italic; margin: 27px 0;    text-align: center;width: 100%;
+">“Due to an overwhelming response, our Gold, AGFA, Wellness Partner partnership is currently sold out. However, there's no need to despair. <br>We have alternative partnership opportunities available that may better suit your needs.”</p> -->
             <table border="0" cellspacing="0" cellpadding="0" class="studentRegisterTable table table-bordered">
 
         <tr>
@@ -100,11 +100,11 @@
         </tr>
  
     <tbody>
-        <tr>
+        <tr class="sold_out_color">
             <td>1</td>
             <td>Platinum</td>
             <td>₹ 25,00,000</td>
-            <td><label class="label label-success">Available</label></td>
+            <td>Sold Out</td>
         </tr>
         <tr class="sold_out_color">
             <td>2</td>
@@ -124,11 +124,11 @@
             <td>₹ 7,00,000</td>
             <td><label class="label label-success">Available</label></td>
         </tr>
-        <tr>
+        <tr class="sold_out_color">
             <td>5</td>
             <td>Delegate Kit Partner</td>
             <td>₹ 15,00,000</td>
-            <td><label class="label label-success">Available</label></td>
+            <td>Sold Out</td>
         </tr>
         <tr>
             <td>6</td>
@@ -154,11 +154,11 @@
             <td>₹ 12,00,000</td>
             <td><label class="label label-success">Available</label></td>
         </tr>
-        <tr>
+        <tr class="sold_out_color">
             <td>10</td>
             <td>Engagement Partner</td>
             <td>₹ 12,00,000</td>
-            <td><label class="label label-success">Available</label></td>
+            <td>Sold Out</td>
         </tr>
         
     </tbody>
