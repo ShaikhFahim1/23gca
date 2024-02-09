@@ -130,6 +130,84 @@
 		.modal-sm {
     max-width: 350px;
 }
+/* Partner Video */
+ /* Custom styling */
+ 	.partner_video .video-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+      transition: box-shadow 0.3s ease-in-out;
+	  min-height: 430px;
+	  margin-bottom: 20px;
+    }
+
+    .partner_video .video-card:hover {
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .partner_video .video-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .partner_video .video-card:hover .video-overlay {
+      opacity: 1;
+    }
+
+    .partner_video .video-overlay::before {
+      content: '\25B6';
+      font-size: 3rem;
+      color: #fff;
+    }
+
+    .partner_video .company-info {
+      position: relative;
+      padding: 5px 15px;
+    }
+
+    .partner_video .company-info h5 {
+      margin-top: 2px;
+      font-size: 1.2rem;
+    }
+
+    .partner_video .company-info p {
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+	.partner_video  iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+	.partner_video  .company-info img {
+		max-width: 100%;
+    	max-height: 100px;
+    }
+	.partner_video  .company-info .logo-div{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100px;
+		margin-bottom: 9px;
+		margin-top: 3px;
+	}
+	/* Hide all controls except the play button */
+/* video::-webkit-media-controls {
+    display: none !important;
+} */
+
+/* Show the play button */
+/* video::-webkit-media-controls-play-button {
+    display: inline !important;
+} */
+/* Partner ENd */
 		</style>
 
 
@@ -825,6 +903,21 @@ include "includes/header.php"
 						</li>
 					</ul>
 				</div>
+				<!-- <div class="sponsor-title text-center">
+					<h5>Academic Partner</h5>
+				</div>
+				<div class="block text-center">
+					
+					<ul class="list-inline sponsors-list">
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.newindia.co.in/portal/" target="_blank">
+									<img src="assets/images/partners/nia.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div> -->
 				<!-- Title -->
 				<div class="sponsor-title text-center">
 					<h5>Silver Partners</h5>
@@ -843,6 +936,13 @@ include "includes/header.php"
 							<div class="image-block text-center">
 								<a href="https://www.genre.com/" target="_blank">
 									<img src="assets/images/partners/GenRe.svg" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.gicre.in/en/" target="_blank">
+									<img src="assets/images/partners/gicre.jpg" alt="sponsors-logo" class="img-fluid">
 								</a>
 							</div>
 						</li>
@@ -871,6 +971,20 @@ include "includes/header.php"
 							<div class="image-block text-center">
 								<a href="https://www.maxlifeinsurance.com/" target="_blank">
 									<img src="assets/images/partners/max_logo_png.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.newindia.co.in/portal/" target="_blank">
+									<img src="assets/images/partners/nia.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>
+						<li class="list-inline-item">
+							<div class="image-block text-center">
+								<a href="https://www.nivabupa.com/" target="_blank">
+									<img src="assets/images/partners/Niva Bupa Logo in Blue PNG.PNG" alt="sponsors-logo" class="img-fluid">
 								</a>
 							</div>
 						</li>
@@ -907,7 +1021,11 @@ include "includes/header.php"
 
 <!--====  End of Sponsors  ====-->
 
-<section class="section schedule two">
+<!--==============================
+=            Partner VIdeo            =
+===============================-->
+
+<section class="section schedule two partner_video">
 
 		<div class="container">
 
@@ -930,40 +1048,86 @@ include "includes/header.php"
 			<div class="row">
 				<div class="col-md-6 col-lg-4">
 					<div class="video-card">
-						<a href="VIDEO_URL_1" target="_blank">
-						<div class="video-overlay"></div>
-						<iframe src="VIDEO_URL_1" frameborder="0" allowfullscreen></iframe>
-						</a>
-						<div class="company-info mt-2">
-						<img src="LOGO_URL_1" alt="Company Logo">
-						<h5 class="mt-2">Company Name 1</h5>
-						<p>Partnership Category: Category 1</p>
+						<!-- <a href="VIDEO_URL_1" target="_blank">
+						<div class="video-overlay"></div> -->
+						<video width="100%" height="198" controls>
+							<source src="assets/partner_video/Kulin Patel_CEO_KAPandit_AGFA_compressed.mp4" type="video/mp4">
+							<!-- <source src="movie.ogg" type="video/ogg"> -->
+							Your browser does not support the video tag.
+						</video>
+						<!-- </a> -->
+						<div class="company-info mt-2 text-center">
+						<h5>Mr. Kulin Patel</h5>
+						<p>CEO & Partner</p>
+						<div class="logo-div">
+						<img src="assets/images/partners/K%20A%20Pandit_AGFA.png" alt="Company Logo">
+						</div>
+					
+						<!-- <h5>K. A. Pandit</h5> -->
+						<p>AGFA Partner</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-4">
 					<div class="video-card">
-						<a href="VIDEO_URL_1" target="_blank">
-						<div class="video-overlay"></div>
-						<iframe src="VIDEO_URL_1" frameborder="0" allowfullscreen></iframe>
-						</a>
-						<div class="company-info mt-2">
-						<img src="LOGO_URL_1" alt="Company Logo">
-						<h5 class="mt-2">Company Name 1</h5>
-						<p>Partnership Category: Category 1</p>
+						<!-- <a href="VIDEO_URL_1" target="_blank">
+						<div class="video-overlay"></div> -->
+						<video width="100%" height="198" controls>
+							<source src="assets/partner_video/Kalpana Shah_IFoA_Gold Partner.mp4" type="video/mp4">
+							<!-- <source src="movie.ogg" type="video/ogg"> -->
+							Your browser does not support the video tag.
+						</video>
+						<!-- </a> -->
+						<div class="company-info mt-2 text-center">
+						<h5>Ms. Kalpana Shah</h5>
+						<p>President</p>
+						<div class="logo-div">
+						<img src="assets/images/partners/IFOA.png" alt="Company Logo">
+						</div>
+						<!-- <h5>Institute and Faculty of Actuaries (IFOA)</h5> -->
+						<p>Gold Partner</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-4">
 					<div class="video-card">
-						<a href="VIDEO_URL_1" target="_blank">
-						<div class="video-overlay"></div>
-						<iframe src="VIDEO_URL_1" frameborder="0" allowfullscreen></iframe>
-						</a>
-						<div class="company-info mt-2">
-						<img src="LOGO_URL_1" alt="Company Logo">
-						<h5 class="mt-2">Company Name 1</h5>
-						<p>Partnership Category: Category 1</p>
+						<!-- <a href="VIDEO_URL_1" target="_blank">
+						<div class="video-overlay"></div> -->
+						<video width="100%" height="198" controls>
+							<source src="assets/partner_video/Avnish Nainawatee_M & G_Gold Partner.mp4" type="video/mp4">
+							<!-- <source src="movie.ogg" type="video/ogg"> -->
+							Your browser does not support the video tag.
+						</video>
+						<!-- </a> -->
+						<div class="company-info mt-2 text-center">
+						<h5>Mr. Avnish Nainawatee</h5>
+						<p>Director, Actuarial & Investments</p>
+						<div class="logo-div">
+						<img src="assets/images/partners/M&G Global.png" alt="Company Logo">
+						</div>
+						<!-- <h5>Marsh McLennan</h5> -->
+						<p>Gold Partner</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 offset-md-4">
+					<div class="video-card">
+						<!-- <a href="VIDEO_URL_1" target="_blank">
+						<div class="video-overlay"></div> -->
+						<video width="100%" height="198" controls>
+							<source src="assets/partner_video/Jitendra Keswani_Marsh McLennan_Gold Partner.mp4" type="video/mp4">
+							<!-- <source src="movie.ogg" type="video/ogg"> -->
+							Your browser does not support the video tag.
+						</video>
+						<!-- </a> -->
+						<div class="company-info mt-2 text-center">
+						<h5>Mr. Jitendra Keswani</h5>
+						<p>Senior Director, Actuarial Leader</p>
+						<div class="logo-div">
+						<img src="assets/images/partners/MarshMcLennan_h_rgb_c.png" alt="Company Logo">
+						</div>
+						<!-- <h5>Marsh McLennan</h5> -->
+						<p>Gold Partner</p>
 						</div>
 					</div>
 				</div>

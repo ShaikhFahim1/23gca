@@ -724,6 +724,31 @@
             <div class="card custom-card mt-5">
                 <!-- First Section (30%) -->
                 <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>Niva Bupa Logo in Blue PNG.PNG" alt="Company Logo">
+                    <div class="company-name">Silver Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                    About Niva Bupa Health Insurance (Formerly known as Max Bupa Health Insurance)    
+                            Niva Bupa Health Insurance Company Limited is committed to offering every Indian the confidence to access the best healthcare - 'Zindagi Ko Claim Kar Le'. A joint venture between Fettle Tone LLP (an affiliate of True North Fund VI LLP), a leading Indian private equity firm, and the UK based healthcare expert, Bupa Singapore Holdings Pte. Limited. Niva Bupa is currently present in over 350 cities in the country. It additionally distributes its products through a network of 1.5 lakhs agent advisors, 20+ bank partners spread across 45,000+ bank partner branches and over 100 third party distributors.
+                            <br><br>Niva Bupa currently covers more than 11 million lives and has 10,300+ hospitals as part of its network. The Company has been empowering consumers since 2010 with innovative products and solutions across all age groups in urban & rural markets. It is one of the fastest-growing health insurance companies with an annual average of 90%+ claim settlement ratio. With an employee base of over 7500 people, Niva Bupa is certified ‘Great Place to Work’ for the fourth time in a row.
+                        </p>
+                        <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p> 
+                    <a href="https://www.nivabupa.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
                     <img class="company-logo" src="<?= $partnerPath; ?>shriram-life-insurance.svg" alt="Company Logo">
                     <div class="company-name">Silver Partner</div>
                     <div class="partnership-category"></div>

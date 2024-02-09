@@ -302,6 +302,7 @@ $conn->close();
                 <option value="Mr" <?php echo (isset($row['salutation']) && $row['salutation'] === 'Mr') ? 'selected' : ''; ?>>Mr</option>
                 <option value="Ms" <?php echo (isset($row['salutation']) && $row['salutation'] === 'Ms') ? 'selected' : ''; ?>>Ms</option>
                 <option value="Mrs" <?php echo (isset($row['salutation']) && $row['salutation'] === 'Mrs') ? 'selected' : ''; ?>>Mrs</option>
+                <option value="Commander" <?php echo (isset($row['salutation']) && $row['salutation'] === 'Commander') ? 'selected' : ''; ?>>Commander</option>
             </select>
         </div>
         <div class="form-group">

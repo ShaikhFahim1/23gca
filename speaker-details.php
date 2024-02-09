@@ -113,7 +113,7 @@ if (isset($_GET['url_slug'])) {
 				<div class="col-lg-9 col-md-6 align-self-center">
 					<div class="content-block">
 						<div class="name">
-							<h3><b><?= $row['name']; ?></b></h3>
+							<h3><b><?= $row['salutation'] ?>. <?= $row['name']; ?></b></h3>
 						</div>
 						<div class="profession">
 							<p><?= $row['designation']; ?></p>

@@ -229,7 +229,7 @@ font-size: 18px;
                         <li><p>Gala Dinner - Indulge in a sumptuous dinner as we continue the festivities.  </p></li>
                         <li><p>Cocktail Hour and Networking - Whether you're a seasoned actuary or just starting your career, this cocktail hour provides the ideal backdrop to unwind, exchange ideas, and build lifelong relationships within the actuarial community.</p></li>
                     </ol>   
-                    <br><h5>Dress Code </h5><p>Elegance meets fun! Get ready for exciting dress code announcement!</p>
+                    <br><h5>Dress Code </h5><p>Ethnic wear</p>
 
 <br><h5>Ticket Information (Registration is compulsory)</h5> <p>Secure your spot at the Actuarial Gala Function and Awards Night. Limited tickets available. </p>
 

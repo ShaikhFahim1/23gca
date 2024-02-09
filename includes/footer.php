@@ -41,7 +41,7 @@ $right_svg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fil
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-            <li><?= $right_svg; ?> <a href="./coming-soon">Program Schedule</a></li>
+            <li><?= $right_svg; ?> <a href="assets/programschedule.pdf">Program Schedule</a></li>
               <li><?= $right_svg; ?> <a href="./organising-group">Organising Group</a></li>
               <li><?= $right_svg; ?> <a href="./room-booking">Accommodation</a></li>
               <li><?= $right_svg; ?> <a href="./financial-partnership">Partnership Category</a></li>
