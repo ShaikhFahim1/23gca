@@ -581,6 +581,35 @@
                     <a href="https://www.pnbmetlife.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
                 </div>
             </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>IIRM-1.png" alt="Company Logo">
+                    <div class="company-name">Academic Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description ">
+                        Institute of Insurance and Risk Management (IIRM), a joint initiative of the Insurance Regulatory and Development Authority of India (IRDAI) & Govt. of Telangana and approved by AICTE -New Delhi. IIRM has been in existence for over two decades and is mandated to deliver excellence in education that meets the changing needs of the fast-growing Services industry, BFSI sector, and economy at large. 
+
+                        <br><br>IIRM is a one-of-a-kind institute imparting education and professional training programs in the world (promoted by the Regulator in the country). The institute has been in the field of education since 2002 offering knowledge and skills enhancement programs to students aspiring to build their careers in Financial Services, Insurance, Risk Management, Data Analytics, and Actuarial Sciences focusing on Management, Insurance, Banking, and other allied sectors. 
+
+                        <br><br>IIRM has accreditation from the Chartered Insurance Institute (CII), London, and the Insurance Institute of India (III), Mumbai, and the AICTE for its program.  The institute has entered into MoUs with reputed companies like SwisRe,                                                     Star Union Dai-ichi Life Insurance Company, Kotak Life Insurance, Access Health Insurance, Munich Re, and IIT Patna to name a few for undertaking joint Training, Research, and Consultancy initiatives/ activities.  
+
+                        <br><br>The Insurance Regulatory and Development Authority of India (IRDAI), which is a statutory body formed under the act of the Parliament, is a promoter of IIRM, Hyderabad.  IIRM has a flagship course called Post Graduate Diploma in Management                                 (2 Yrs. full-time) with specializations in Insurance Risk Management, Marketing, Finance, Business Analytics, and Actuarial Science. IIRM also offers customized short-term training programs (Regular, Online, and Hybrid Mode) to students and participants from business and industry. This Industry-oriented curriculum will make the participants/ students industry-ready, equip them with job-specific skills, offer domain-oriented knowledge, and provide them with a successful career path. IIRM is on the path to establishing itself as a Centre of Excellence to support in providing professionally qualified and competent human resources for the IRDAI’s mission “Insurance for all by 2047”. Further, initiatives are already underway to establish a dedicated “School of Actuarial Sciences” under the aegis of IIRM.  
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="#" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+              </div>
               <!-- Silver start -->
               <div class="card custom-card mt-5">
                 <!-- First Section (30%) -->
@@ -603,7 +632,7 @@
                     </p>
                     <a href="https://www.casact.org" target="_blank" class="btn btn-main-md">Partner Website</a>
                 </div>
-            </div>
+              </div>
             <div class="card custom-card mt-5">
                 <!-- First Section (30%) -->
                 <div class="card-body text-center">
@@ -753,6 +782,39 @@
                     </p>
                    
                     <a href="https://www.maxlifeinsurance.com/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>nia.png" alt="Company Logo">
+                    <div class="company-name">Silver Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                        Welcome to The New India Assurance Co. Ltd. - India's Premier Multinational General Insurance Company. 
+
+                        <br><br>At The New India, we take great pride in our reputation as a trusted and reliable insurance provider. We are committed to making insurance easy to understand and accessible, which is why we offer a range of user-friendly digital platforms to facilitate insurance purchases and claims processing. With our nationwide network of offices, we enhance this accessibility. 
+
+                        <br><br>NEW INDIA ASSURANCE CO. LTD was founded by Sir Dorab Tata in 1919 with the motto of assuring the wellbeing of the people of India. Being a Multinational General Insurance Company, the Company today operates in 25 countries and is headquartered at Mumbai, India. 
+
+                        <br><br>With 1,900+ offices across India and presence in 25 countries, the company has an authorized capital of INR 1,000 crore (USD 122 million) and a paid up capital of INR 824 crores (USD 100 million). The Company has been conferred the most preferred workplace award for FY 2022-23 from BFSI. The Company has been awarded the General Insurance company of the year for FY 2022-23 from BFSI. Additionally, the company received the ETascent Stars of the Industry award for Excellence & Leadership in BFSI for FY 2022-23. 
+
+                        <br><br>We have been market leaders in India in Non-Life business for more than 50 years. Our Indian business crossed INR 18,800 crores as on 30th September 2023, highlighting a growth of 7.06% against INR 17,560 crores as on 30th September 2022. We have been rated AAA/Stable by CRISIL since 2014 and the AM Best Rating of Financial Strength Rating of B++ (Good) ; Long-Term Issuer Credit Rating of “bbb+” (Good) ; and India National Scale Rating (NSR) of aaa.IN (Exceptional)  indicating that the Company has the highest degree of Financial Strength to honour its Policyholder's obligations. 
+
+                        
+                    </p>
+                    <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p> 
+                    <a href="https://www.newindia.co.in/portal/" target="_blank" class="btn btn-main-md">Partner Website</a>
                 </div>
             </div>
             <div class="card custom-card mt-5">
