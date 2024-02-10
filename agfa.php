@@ -231,7 +231,7 @@ font-size: 18px;
                     </ol>   
                     <br><h5>Dress Code </h5><p>Ethnic wear</p>
 
-<br><h5>Ticket Information (Registration is compulsory)</h5> <p>Secure your spot at the Actuarial Gala Function and Awards Night. Limited tickets available. </p>
+<br><h5>Ticket Information</h5> <p>Secure your spot at the Actuarial Gala Function and Awards Night. Limited tickets available. </p>
 
 <br><h5>Join Us for a Night to Remember</h5> <p>The Actuarial Gala Function and Awards Night 2024 is not just an event; it's an experience you won't want to miss. </p>
 

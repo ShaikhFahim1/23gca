@@ -764,6 +764,13 @@ include "includes/header.php"
 					<ul class="list-inline sponsors-list">
 						<li class="list-inline-item">
 							<div class="image-block text-center">
+								<a href="https://licindia.in/" target="_blank">
+									<img src="assets/images/partners/LIC.png" alt="sponsors-logo" class="img-fluid">
+								</a>
+							</div>
+						</li>	
+						<li class="list-inline-item">
+							<div class="image-block text-center">
 								<a href="https://www.sbilife.co.in/" target="_blank">
 									<img src="assets/images/partners/SBI_Logo.png" alt="sponsors-logo" class="img-fluid">
 								</a>
@@ -903,7 +910,7 @@ include "includes/header.php"
 						</li>
 					</ul>
 				</div>
-				<!-- <div class="sponsor-title text-center">
+				<div class="sponsor-title text-center">
 					<h5>Academic Partner</h5>
 				</div>
 				<div class="block text-center">
@@ -911,13 +918,13 @@ include "includes/header.php"
 					<ul class="list-inline sponsors-list">
 						<li class="list-inline-item">
 							<div class="image-block text-center">
-								<a href="https://www.newindia.co.in/portal/" target="_blank">
-									<img src="assets/images/partners/nia.png" alt="sponsors-logo" class="img-fluid">
+								<a href="# target="_blank">
+									<img src="assets/images/partners/IIRM-1.png" alt="sponsors-logo" class="img-fluid">
 								</a>
 							</div>
 						</li>
 					</ul>
-				</div> -->
+				</div>
 				<!-- Title -->
 				<div class="sponsor-title text-center">
 					<h5>Silver Partners</h5>
@@ -938,7 +945,7 @@ include "includes/header.php"
 									<img src="assets/images/partners/GenRe.svg" alt="sponsors-logo" class="img-fluid">
 								</a>
 							</div>
-						</li>
+						</li> 
 						<li class="list-inline-item">
 							<div class="image-block text-center">
 								<a href="https://www.gicre.in/en/" target="_blank">

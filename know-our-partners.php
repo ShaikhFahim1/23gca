@@ -626,6 +626,40 @@
             <div class="card custom-card mt-5">
                 <!-- First Section (30%) -->
                 <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>gicre.jpg" alt="Company Logo">
+                    <div class="company-name">Silver Partner</div>
+                    <div class="partnership-category"></div>
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">
+                        Set up in 1972 by the Government of India, to supervise the Indian General Insurance Industry, today, GIC Re with a net worth of 7.76 billion dollar, is the largest reinsurer in the domestic reinsurance market in India and leads most of the domestic companies' treaty programmes and facultative placements. It has steadfastly maintained its leadership position in the Indian reinsurance market. While foreign reinsurers have opened branch operations in India since early 2017, GIC Re has continued to maintain its market leadership and market share. GIC Re has been identified as Domestic Systemically Important Insurers (D-SIIs) by insurance regulator IRDAI. GIC Re, is India's sole public sector reinsurance company. 
+
+                            <br><br>Internationally, GIC Re is an effective reinsurance partner for the Afro-Asian region, leading the reinsurance programmes of several insurance companies in Middle East and North Africa, and Asia including SAARC countries.  It has branch offices in London and Kuala Lumpur.  In April 2018, a syndicate fully capitalised by GIC Re became operational at Lloyd's of London.  This syndicate is expected to scale up over the next few years towards achieving the medium-term management objective of achieving 60:40 (domestic: international) risk portfolio composition.  Additionally, GIC Re has 100% subsidiary in South Africa and Russia and also associate companies in Bhutan, Singapore and India. GIC Re is transacting business across the world in 160 countries.  
+
+                            <br><br>Besides subsidiaries and associate companies, GIC Re has branches in London, Dubai (currently in Run-off), Malaysia and GIFT City, Gandhinagar, India. 
+
+                            <br><br>GIC Re provides reinsurance across all business lines, viz property, marine, motor, engineering, agriculture, aviation/space, health, liability, credit and financial and life insurance. 
+
+                            <br><br>GIC Re was listed on the major stock exchanges of India in October 2017 by way of an Initial Public Offering. Majority ownership is still with the Government of India. 
+
+                            <br><br>With more than 50 years of experience and commitment, GIC Re has become a trusted brand in India and overseas and is ranked 16th largest global reinsurer group as per AM Best Rating Agency. 
+                                              
+                        </p>
+                        <p class="read-more" onclick="toggleDescription(this)">
+                        Read More <i class="fa fa-chevron-down fa-icon"></i>
+                    </p>
+                    <a href="https://www.gicre.in/en/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
                     <img class="company-logo" src="<?= $partnerPath; ?>HDFC ERGO.png" alt="Company Logo">
                     <div class="company-name">Silver Partner</div>
                     <div class="partnership-category"></div>

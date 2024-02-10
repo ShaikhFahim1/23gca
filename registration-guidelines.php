@@ -63,7 +63,11 @@
     background: #922dd4;
 
 }
-
+.guidlines p, a, li, blockquote, label, ol{
+    color:#222;
+   
+    
+}
 
 
 </style>
@@ -238,7 +242,7 @@ ii) via Wire/Cable Transfer:<br>
 
 <li>One attends for one day only   - 3 hrs Professional and 3 hrs Technical wherein one would need to declare the practice area at time of registration.</li> 
 
-<li>Attendance is required to claim CPD (Day 2 exit attendance at 4.00 pm is compulsory for claiming CPD on day 2).</li> 
+<li>Attendance is required to claim CPD (Day 2 exit attendance at 4.30 pm is compulsory for claiming CPD on day 2).</li> 
 
 </ol>
 

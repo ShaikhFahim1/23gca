@@ -11,29 +11,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($data->memberId)) {
         // Member check-in
         $memberId = $data->memberId;
-        // Perform location radius check here
-        // Replace YOUR_CHECKIN_LATITUDE and YOUR_CHECKIN_LONGITUDE with actual check-in location coordinates
-        $checkinLocation = array('latitude' => YOUR_CHECKIN_LATITUDE, 'longitude' => YOUR_CHECKIN_LONGITUDE); 
-
-        // Replace with actual user's location received from the front-end
-        $userLocation = array('latitude' => $data->latitude, 'longitude' => $data->longitude);
-
-        // Calculate distance between user's location and check-in location
-        $distance = calculateDistance($checkinLocation, $userLocation);
-
-        // Check if user is within 900 meter radius of check-in location
-        if ($distance > RADIUS_DISTANCE) {
-            echo json_encode(array("success" => false, "message" => "You are not within the check-in location."));
+         // Validate memberId (only accept numbers)
+        if (!is_numeric($memberId)) {
+            $response = array(
+                'success' => false,
+                'message' => 'Member ID must be a number.'
+            );
+            echo json_encode($response);
             exit;
         }
+        
+        // // Replace YOUR_CHECKIN_LATITUDE and YOUR_CHECKIN_LONGITUDE with actual check-in location coordinates
+        // $checkinLocation = array('latitude' => YOUR_CHECKIN_LATITUDE, 'longitude' => YOUR_CHECKIN_LONGITUDE); 
+
+        // // Replace with actual user's location received from the front-end
+        // $userLocation = array('latitude' => $data->latitude, 'longitude' => $data->longitude);
+
+        // // Calculate distance between user's location and check-in location
+        // $distance = calculateDistance($checkinLocation, $userLocation);
+
+        // // Check if user is within 900 meter radius of check-in location
+        // if ($distance > RADIUS_DISTANCE) {
+        //     echo json_encode(array("success" => false, "message" => "You are not within the check-in location."));
+        //     exit;
+        // }
         try {
            
             // Prepare SQL statement to check if member exists in tbl_registration
             $stmt = $pdo->prepare("SELECT * FROM tbl_registration WHERE member_id = ?");
             $stmt->execute([$memberId]);
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
+                        
             if ($row) {
+                $username = $row['name'];    
                 // Member exists in tbl_registration, check if already checked in
                 $stmt = $pdo->prepare("SELECT * FROM tbl_agfa_checkin WHERE member_id = ?");
                 $stmt->execute([$memberId]);
@@ -47,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $stmt = $pdo->prepare("INSERT INTO tbl_agfa_checkin (member_id, checkin_date) VALUES (?, NOW())");
                     $stmt->execute([$memberId]);
                     // Check-in successful
-                    echo json_encode(array("success" => true));
+                    echo json_encode(array("success" => true,"name"=>$username));
                 }
             } else {
                 // Member ID not found in tbl_registration
@@ -71,32 +81,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         }
 
-        // Perform location radius check here
-        // Replace YOUR_CHECKIN_LATITUDE and YOUR_CHECKIN_LONGITUDE with actual check-in location coordinates
-        $checkinLocation = array('latitude' => YOUR_CHECKIN_LATITUDE, 'longitude' => YOUR_CHECKIN_LONGITUDE); 
+        
+        // // Replace YOUR_CHECKIN_LATITUDE and YOUR_CHECKIN_LONGITUDE with actual check-in location coordinates
+        // $checkinLocation = array('latitude' => YOUR_CHECKIN_LATITUDE, 'longitude' => YOUR_CHECKIN_LONGITUDE); 
 
-        // Replace with actual user's location received from the front-end
-        $userLocation = array('latitude' => $data->latitude, 'longitude' => $data->longitude);
+        // // Replace with actual user's location received from the front-end
+        // $userLocation = array('latitude' => $data->latitude, 'longitude' => $data->longitude);
 
-        // Calculate distance between user's location and check-in location
-        $distance = calculateDistance($checkinLocation, $userLocation);
+        // // Calculate distance between user's location and check-in location
+        // $distance = calculateDistance($checkinLocation, $userLocation);
 
-        // Check if user is within 900 meter radius of check-in location
-        if ($distance > RADIUS_DISTANCE) {
-            echo json_encode(array("success" => false, "message" => "You are not within the check-in location."));
-            exit;
-        }
+        // // Check if user is within 900 meter radius of check-in location
+        // if ($distance > RADIUS_DISTANCE) {
+        //     echo json_encode(array("success" => false, "message" => "You are not within the check-in location."));
+        //     exit;
+        // }
 
         try {
-            // Connect to the database (replace with your connection details)
-            $pdo = new PDO("mysql:host=localhost;dbname=your_database_name", "username", "password");
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $stmt = $pdo->prepare("SELECT * FROM tbl_agfa_checkin WHERE email = ?");
+                $stmt->execute([$email]);
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
+                if ($row) {
+                    // Member is already checked in
+                    echo json_encode(array("success" => false, "message" => "You are already checked in."));
+                } else {
             // Insert the record into tbl_agfa_checkin table
             $stmt = $pdo->prepare("INSERT INTO tbl_agfa_checkin (name, email, checkin_date) VALUES (?, ?, NOW())");
             $stmt->execute([$name, $email]);
             // Check-in successful
             echo json_encode(array("success" => true));
+
+                }
+
+
         } catch(PDOException $e) {
             // Error occurred
             echo json_encode(array("success" => false, "message" => "Error: " . $e->getMessage()));
@@ -139,7 +157,7 @@ function getUsernameFromDatabase($memberId,$pdo) {
     $stmt->execute([$memberId]);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($row) {
-        return $row['username'];
+        return $row['name'];
     } else {
         return false;
     }

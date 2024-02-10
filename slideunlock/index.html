@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery slideunlock Plugin Demo</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="./slide-unlock.css" rel="stylesheet">
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+     
+</head>
+
+<body>
+
+    
+<div id="demo">
+ 
+    
+
+    <div id="slider">
+        <div id="slider_bg"></div>
+        <span id="label">>></span>
+        <span id="labelTip">Slide To Unlock</span>
+    </div>
+
+<script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+
+    <script src="./jquery.slideunlock.js"></script>
+    <script>
+        $(function () {
+            var slider = new SliderUnlock("#slider", {}, function () {
+				alert('unlocked');
+            });
+
+            slider.init();
+        })
+    </script>
+    
+    
+</div>
+</body>
+</html>
