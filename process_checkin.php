@@ -45,16 +45,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($row) {
                 $username = $row['name'];    
                 // Member exists in tbl_registration, check if already checked in
-                $stmt = $pdo->prepare("SELECT * FROM tbl_agfa_checkin WHERE member_id = ?");
+                $stmt = $pdo->prepare("SELECT * FROM $checkInTable WHERE member_id = ?");
                 $stmt->execute([$memberId]);
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
                 if ($row) {
                     // Member is already checked in
-                    echo json_encode(array("success" => false, "message" => "You are already checked in."));
+                   // echo json_encode(array("success" => false, "message" => "You are already checked in."));
+                    echo json_encode(array("success" => true,"name"=>$username));
                 } else {
-                    // Insert the record into tbl_agfa_checkin table
-                    $stmt = $pdo->prepare("INSERT INTO tbl_agfa_checkin (member_id, checkin_date) VALUES (?, NOW())");
+                    // Insert the record into $checkInTable table
+                    $stmt = $pdo->prepare("INSERT INTO $checkInTable (member_id, checkin_date) VALUES (?, NOW())");
                     $stmt->execute([$memberId]);
                     // Check-in successful
                     echo json_encode(array("success" => true,"name"=>$username));
@@ -98,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // }
 
         try {
-            $stmt = $pdo->prepare("SELECT * FROM tbl_agfa_checkin WHERE email = ?");
+            $stmt = $pdo->prepare("SELECT * FROM $checkInTable WHERE email = ?");
                 $stmt->execute([$email]);
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -106,8 +107,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Member is already checked in
                     echo json_encode(array("success" => false, "message" => "You are already checked in."));
                 } else {
-            // Insert the record into tbl_agfa_checkin table
-            $stmt = $pdo->prepare("INSERT INTO tbl_agfa_checkin (name, email, checkin_date) VALUES (?, ?, NOW())");
+            // Insert the record into $checkInTable table
+            $stmt = $pdo->prepare("INSERT INTO $checkInTable (name, email, checkin_date) VALUES (?, ?, NOW())");
             $stmt->execute([$name, $email]);
             // Check-in successful
             echo json_encode(array("success" => true));

@@ -1,3 +1,6 @@
+<?php
+include "includes/config.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,45 +14,66 @@
     <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
+      @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Roboto:300,400,500,700");
+
         body {
+            font-family: "Montserrat", sans-serif;
             background-color: #f5f5f5;
             /* light grey background */
         }
 
         #checkin-card {
-            background-color: #ffffff;
-            /* white background */
+           background-color: #304fc5;
             border-radius: 10px;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
             width: 50%;
-            /* set width to 30% for laptop and desktop screens */
-            margin: 0 auto;
-            /* center the card */
-        }
+            margin: 10px auto;
+            height: 97vh /* center the card */;
+            position: relative;
+            overflow:hidden
+            }
 
         #logo-container {
             padding: 20px;
-            background-color: #e3f2fd;
-            /* light blue background */
             text-align: center;
+            padding-bottom: 0;
         }
 
         #logo {
+             background: white;
+            padding: 10px;
+            border-radius: 10px;
             max-width: 100%;
             height: auto;
         }
 
         #webcheckin-title {
             text-align: center;
-            font-size: 1.5rem;
-            color: #333333;
-            /* dark grey text */
-            padding: 20px;
-            background-color: #f5f5f5;
-            /* light grey background */
+            font-size: 1.7rem;
+            color: #ffffff;
+            /* padding: 20px; */
+            /* background-color: #304fc5; */
             margin: 0;
-            /* remove top margin */
-
+            height: 92px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card .card-content {
+            padding: 24px;
+            border-radius: 40px 40px 10px 10px;
+            background: white;
+            height: 100vh;
+        }
+        #footer{
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          padding: 10px;
+          background: #666;
+          color: white;
+          border-radius: 0 0 10px 10px;
+          text-align:center
         }
 
         #checkin-form {
@@ -57,8 +81,8 @@
         }
 
         /* Tab Start */
-        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
+        
         :root {
             --primary-color: #185ee0;
             --secondary-color: #e6eef9;
@@ -85,9 +109,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 54px;
+            height: 43px;
+            line-height:43px;
             width: 50%;
-            font-size: 1.25rem;
+            font-size: 1rem;
             font-weight: 500;
             border-radius: 99px;
             cursor: pointer;
@@ -119,19 +144,19 @@
         .glider {
             position: absolute;
             display: flex;
-            height: 54px;
-            width: 50%;
+            height: 43px;
+            width: 49.8%;
             background-color: var(--secondary-color);
             z-index: 1;
             border-radius: 99px;
             transition: 0.25s ease-out;
         }
 
-        @media (max-width: 700px) {
+        /* @media (max-width: 700px) {
             .tabs {
                 transform: scale(0.6);
             }
-        }
+        } */
         @media screen and (max-width: 768px) {
             #checkin-card {
                 width: 100%; /* set width to 100% for smaller screens */
@@ -139,15 +164,18 @@
             .tab{
                 width: 100%;
             }
+            #webcheckin-title{
+              font-size:1.5rem
+            }
         }
         .tabs{
-            height: 54px;
+            height: 43px;
             width: 100%;
         }
          /* Styling for tab content */
             .tab-content {
             display: none;
-            margin-top: 10px;
+            margin-top: 15px;
             }
 
             #tab-content-1 {
@@ -207,7 +235,7 @@
     .locked {
         color: #692003;
         font-size: 18px;
-        font-family: 'Microsoft Yahei', serif;      
+          
         background-color: #CCC;  
     }
 
@@ -250,6 +278,13 @@
     border-radius: 4px;
     position: relative;
     text-align: center;
+    border-radius: 40px 40px 10px 10px;
+    height: 73vh;
+    }
+    #successMessage p{
+      font-size: 20px;
+    margin-top: 4px;
+    font-weight: 600;
     }
                 /* Slide to unlock end */
     </style>
@@ -261,18 +296,23 @@
             <div id="logo-container">
                 <img id="logo" src="assets/images/gca-logo.png" alt="Event Logo" height="100">
             </div>
-            <h2 id="webcheckin-title"><b>AGFA 2024</b></h2>
-            <h2 id="webcheckin-title">Web Check-in</h2>
+            <h2 id="webcheckin-title"><b><?= $webtitle ?>
+              </b></h2>
             <div class="card-content " id="commonForm">
-
+                    <?php
+                    if (WEBCHECKINDAY != "3") {
+                      ?>
                 <div class="tabs form-tab-pills">
                     <input type="radio" id="radio-1" name="tabs" checked />
                     <label class="tab" for="radio-1">Member</label>
+                    
                     <input type="radio" id="radio-2" name="tabs" />
                     <label class="tab" for="radio-2">NON Member</label>
+                    
                     <span class="glider"></span>
                 </div>
-                
+                <?php } ?>
+
                 
                   <div id="tab-content-1" class="tab-content">
                     <form id="memberCheckinForm">
@@ -282,11 +322,14 @@
                             <input id="memberId" type="number" class="validate">
                             <label for="memberId">Enter Member ID</label>
                           </div>
+                          <div class="col s12 center-align">
+                              <button class="waves-effect waves-light btn" type="submit"><?= $memberButton ?></button>
+                         <!-- <div id="slider1" data-lock-text="Swipe to check-in" data-unlock-text="Checked-in" class="col-sm-5"> 
+                            </div> -->
+                        </div> 
                         </div>
-                        <button class="waves-effect waves-light btn" type="submit">Check In</button>
-                        <!-- <div class="row">
-                            <div id="slider1" data-lock-text="Swipe to check-in" data-unlock-text="Checked-in" class="col-sm-5"> </div>
-                        </div> -->
+                        
+                        
 
                       </form>
                   </div>
@@ -295,19 +338,21 @@
                     <form id="nonMemberCheckinForm">
 
                         <div class="row">
-                          <div class="input-field col s6">
+                          <div class="input-field col s12 m6">
                             <input id="name" type="text" class="validate">
                             <label for="name">Name</label>
                           </div>
-                          <div class="input-field col s6">
+                          <div class="input-field col s12 m6">
                             <input id="email" type="email" class="validate">
                             <label for="email">Email</label>
                           </div>
-                        </div>
+                          <div class="col s12  center-align">
                         <button class="waves-effect waves-light btn" type="submit">Check In</button>
-                        <!-- <div class="row">
-                            <div id="slider2" data-lock-text="Swipe to check-in" data-unlock-text="Checked-in" class="col-sm-5"> </div>
-                          </div> -->
+                        <!--    <div id="slider2" data-lock-text="Swipe to check-in" data-unlock-text="Checked-in" class="col-sm-5"> </div> -->
+                          </div>
+                        </div>
+                        
+                         
                       </form>
                   </div>
                 
@@ -317,18 +362,19 @@
             </div>
             <div id="successMessage">
 
-</div>
-        </div>
-    </div>
-    <footer id="footer">
-    
+          </div>
+              <div id="footer"> 
         <div class="container">
           <div class="copyright">
             © Copyright GCA. All Rights Reserved.
           </div>
     
         </div>
-      </footer>
+                    
+      </div>
+        </div>
+    </div>
+
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <!-- SweetAlert JavaScript -->
@@ -363,29 +409,22 @@
 
     // Call getLocation initially
     getLocation();
-
     function showSuccessMessage(name) {
       document.getElementById('successMessage').innerHTML = '<div class="success-message">' +
         '<svg class="icon" viewBox="0 0 24 24">' +
         '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"></path>' +
         '</svg>' +
-        '<p>Congratulations, ' + name.toUpperCase() + '! 🎉 You\'ve successfully checked in to the AGFA 2024 Happy Event!</p>' +
+        '<p>Congratulations, ' + name.toUpperCase() + '! 🎉 <?= $localStoragetext ?></p>' +
         '</div>';
       document.getElementById('successMessage').style.display = 'flex';
-      document.getElementById('commonForm').style.display = 'none';
-      localStorage.setItem('checkinSuccess', true); // Store in localStorage
-
-
-
+      document.getElementById('commonForm').remove();
+      localStorage.setItem("<?= $localStorage ?>", true); // Store in localStorage
     }
     // Check if success message is stored in localStorage
-    var checkinSuccess = localStorage.getItem('checkinSuccess');
-    if (checkinSuccess) {
-      
+    var checkinSuccess = localStorage.getItem("<?= $localStorage ?>");
+      if (checkinSuccess) {      
       var name = localStorage.getItem('username');
-
       showSuccessMessage(name);
-    
     }
   </script>
   <script>
