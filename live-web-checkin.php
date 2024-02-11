@@ -40,10 +40,9 @@ include "includes/config.php";
         }
 
         #logo {
-             background: white;
-            padding: 10px;
+       
             border-radius: 10px;
-            max-width: 100%;
+            max-width: 96%;
             height: auto;
         }
 
@@ -294,7 +293,7 @@ include "includes/config.php";
     <div class="container">
         <div id="checkin-card" class="card">
             <div id="logo-container">
-                <img id="logo" src="assets/images/gca-logo.png" alt="Event Logo" height="100">
+                <img id="logo" src="assets/images/biglogo.png" alt="Event Logo" height="100">
             </div>
             <h2 id="webcheckin-title"><b><?= $webtitle ?>
               </b></h2>
@@ -440,34 +439,45 @@ include "includes/config.php";
         swal("Please enter a member ID.", "", "info");
         return;
       }
-
-      // Send AJAX request for member check-in
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', './process_checkin', true);
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-          if (xhr.status === 200) {
-            var response = JSON.parse(xhr.responseText);
-            if (response.success) {
-              // Show success message
-              swal("Check-in successful!", "", "success");
-              showSuccessMessage(response.name);
-              localStorage.setItem('username', response.name); // Store in localStorage
-            } else {
-              // Show error message
-              swal(response.message, "", "info");
+  // Ask for confirmation before proceeding
+  swal({
+        title: "Confirm Check-in",
+        text: "Are you sure you want to check in?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+    .then((willCheckIn) => {
+        if (willCheckIn) {
+          // Send AJAX request for member check-in
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', './process_checkin', true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+              if (xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                if (response.success) {
+                  // Show success message
+                  swal("Check-in successful!", "", "success");
+                  showSuccessMessage(response.name);
+                  localStorage.setItem('username', response.name); // Store in localStorage
+                } else {
+                  // Show error message
+                  swal(response.message, "", "info");
+                }
+              } else {
+                // Show error message
+                swal("An error occurred while processing your request.", "", "info");
+              }
             }
-          } else {
-            // Show error message
-            swal("An error occurred while processing your request.", "", "info");
-          }
+          };
+          xhr.send(JSON.stringify({
+            memberId: memberId
+          }));
         }
-      };
-      xhr.send(JSON.stringify({
-        memberId: memberId
-      }));
     });
+  });
 
     document.getElementById('nonMemberCheckinForm').addEventListener('submit', function(event) {
       event.preventDefault(); // Prevent default form submission
@@ -484,7 +494,16 @@ include "includes/config.php";
         
         return;
       }
-
+// Ask for confirmation before proceeding
+  swal({
+        title: "Confirm Check-in",
+        text: "Are you sure you want to check in?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+    .then((willCheckIn) => {
+      if(willCheckIn){
       // Send AJAX request for non-member check-in
       var xhr = new XMLHttpRequest();
       xhr.open('POST', './process_checkin', true);
@@ -512,7 +531,9 @@ include "includes/config.php";
         name: name,
         email: email
       }));
+        }
     });
+  });
   </script>
 <script>
         document.addEventListener('DOMContentLoaded', function () {

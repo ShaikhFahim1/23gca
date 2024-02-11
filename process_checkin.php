@@ -1,7 +1,7 @@
 <?php
 include "includes/config.php";
 
-
+$currentDateTime = date('Y-m-d H:i:s');
 // Check if the request is a POST request
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Decode the JSON data sent with the request
@@ -55,8 +55,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo json_encode(array("success" => true,"name"=>$username));
                 } else {
                     // Insert the record into $checkInTable table
-                    $stmt = $pdo->prepare("INSERT INTO $checkInTable (member_id, checkin_date) VALUES (?, NOW())");
-                    $stmt->execute([$memberId]);
+                  
+                    $stmt = $pdo->prepare("INSERT INTO $checkInTable (member_id, checkin_date) VALUES (?, ?)");
+                    $stmt->execute([$memberId,$currentDateTime]);
                     // Check-in successful
                     echo json_encode(array("success" => true,"name"=>$username));
                 }
@@ -108,10 +109,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo json_encode(array("success" => false, "message" => "You are already checked in."));
                 } else {
             // Insert the record into $checkInTable table
-            $stmt = $pdo->prepare("INSERT INTO $checkInTable (name, email, checkin_date) VALUES (?, ?, NOW())");
-            $stmt->execute([$name, $email]);
+            $stmt = $pdo->prepare("INSERT INTO $checkInTable (name, email, checkin_date) VALUES (?, ?, ?)");
+            $stmt->execute([$name, $email,$currentDateTime]);
             // Check-in successful
-            echo json_encode(array("success" => true));
+            echo json_encode(array("success" => true,"name"=>$name));
 
                 }
 

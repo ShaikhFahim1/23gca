@@ -272,7 +272,7 @@ include "includes/header.php"
 
 					<h6>12-14 February 2024, The Westin Mumbai Powai Lake,<br>Mumbai - 400 087</h6>
 
-					<div class="flex-w flex-sa-m cd100 bor1 p-10 respon1">
+					<!-- <div class="flex-w flex-sa-m cd100 bor1 p-10 respon1">
 
 						<div class="flex-col-c-m wsize2 m-b-0">
 
@@ -312,7 +312,7 @@ include "includes/header.php"
 
 						</div>
 
-					</div>
+					</div> -->
 
 					<!-- Action Button -->
 

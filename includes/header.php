@@ -65,6 +65,7 @@
 			<li><a class="dropdown-item" href="./agfa" >AGFA 2024</a></li>
 			<li><a class="dropdown-item" href="./speakers">Speakers</a></li>
 			<li><a class="dropdown-item" href="./call-for-papers">Call For Papers</a></li>
+			<li><a class="dropdown-item" href="./pre-gca-tour">Pre GCA Tour</a></li>
 		  </ul>
 		</li>
 		<li class="nav-item dropdown">
@@ -97,9 +98,9 @@
 			<li><a class="dropdown-item" href="./room-booking">Room Booking</a></li>
 		  </ul>
 		</li>
-		<li class="nav-item">
+		<!-- <li class="nav-item">
 		<a class="nav-link" href="./pre-gca-tour">Pre GCA Tour</a>
-		</li>
+		</li> -->
 
 		<li class="nav-item dropdown">
 		  <a class="nav-link" href="#!" data-toggle="dropdown">Weekly Contest
@@ -115,9 +116,12 @@
 		
 		  </ul>
 		</li>
+		<li class="nav-item">
+		<a class="nav-link" href="./registration-guidelines">Registration</a>
+		</li>
 	
 		
-		<li class="nav-item nav-reg-li"><a class="btn-main-md btn" href="./registration-guidelines">Register Now</a></li>
+		<li class="nav-item nav-reg-li"><a class="btn-main-md btn" href="https://get.eventedge.com/actuaries24/">Download App</a></li>
 	  </ul>
 	  
 	  
