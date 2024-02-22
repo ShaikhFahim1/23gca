@@ -1,7 +1,10 @@
 <?php
 
 date_default_timezone_set('Asia/Kolkata');
-error_reporting(0);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 
 include "db_connection.php";
 
@@ -17,7 +20,7 @@ define('YOUR_CHECKIN_LATITUDE','19.0207136');
 define('YOUR_CHECKIN_LONGITUDE','73.0190031');
 define('RADIUS_DISTANCE','3000');
 
-define('WEBCHECKINDAY','0');
+define('WEBCHECKINDAY','3');
 if(WEBCHECKINDAY == '0') {
     $checkInTable = "tbl_agfa_checkin";
     $webtitle = "Web Check-in (AGFA 2024)";
@@ -41,8 +44,8 @@ if(WEBCHECKINDAY == '0') {
     
 }elseif(WEBCHECKINDAY == '3'){
     $checkInTable = "tbl_gca_cpd";
-    $webtitle = "CPD Registration";
-    $memberButton = 'Get CPD';
+    $webtitle = "CPD CHECKOUT";
+    $memberButton = 'Submit';
     $localStorage = "checkinSuccessCPD";
-    $localStoragetext = "You\'ve successfully got the CPD it will take 2 days to reflect in your login. Thank you for attending GCA";
+    $localStoragetext = "<br>Thank you for attending 23rd Global Conference of Actuaries. We confirmed your checkout for the conference. Your CPD points will be credited in the records.";
 }

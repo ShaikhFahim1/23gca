@@ -32,9 +32,9 @@
 
                 <a class="nav-link active" href="#nov22" data-toggle="pill">
 
-                    Late Entry Rate
+                    Registration Closed
 
-                    <span>03 Feb, 2023 till event</span>
+                    <!--<span>03 Feb, 2023 till event</span>-->
 
                 </a>
 
@@ -76,7 +76,7 @@
 
                             <td>Rs. 8,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" target="_blank" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -86,7 +86,7 @@
 
                             <td>Rs. 8,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" target="_blank" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -96,7 +96,7 @@
 
                             <td>Rs. 15,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" target="_blank" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -106,7 +106,7 @@
 
                             <td>Rs. 25,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" target="_blank" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -116,7 +116,7 @@
 
                             <td>Rs. 25,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" target="_blank" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -126,7 +126,7 @@
 
                             <td>Rs. 5,750/-</td>
 
-                            <td><a href="#" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
                         <tr>
@@ -135,7 +135,7 @@
 
                             <td>Rs. 5,750/-</td>
 
-                            <td><a href="#" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
                         <tr>
@@ -144,7 +144,7 @@
 
                             <td>Rs. 12,500/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" target="_blank" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -154,7 +154,7 @@
 
                             <td>Rs. 25,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/GCA2023_form_OA.aspx" target="_blank" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -164,7 +164,7 @@
 
                             <td>Rs. 12,500/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/GCA2023_form_OI.aspx" target="_blank" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -174,7 +174,7 @@
 
                             <td>Rs. 5,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/GCA2023_form_AGFA.aspx" target="_blank" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -232,7 +232,7 @@
 
                             <td>Rs. 10,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -242,7 +242,7 @@
 
                             <td>Rs. 17,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -252,7 +252,7 @@
 
                             <td>Rs. 30,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -262,7 +262,7 @@
 
                             <td>Rs. 30,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
                         
@@ -291,7 +291,7 @@
 
                             <td>Rs. 15,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -301,7 +301,7 @@
 
                             <td>Rs. 30,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/GCA2023_form_OA.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -311,7 +311,7 @@
 
                             <td>Rs. 15,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/GCA2023_form_OI.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -321,7 +321,7 @@
 
                             <td>Rs. 5,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/GCA2023_form_AGFA.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
                         
@@ -331,7 +331,7 @@
 
                             <td>Rs. 6,000/-</td>
 
-                            <td><a href="#" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -380,7 +380,7 @@
 
                             <td>Rs. 14,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -390,7 +390,7 @@
 
                             <td>Rs. 21,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -400,7 +400,7 @@
 
                             <td>Rs. 35,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -410,7 +410,7 @@
 
                             <td>Rs. 35,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -420,7 +420,7 @@
 
                             <td>Rs. 17,500/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/gca2023_form.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -430,7 +430,7 @@
 
                             <td>Rs. 35,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/GCA2023_form_OA.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -440,7 +440,7 @@
 
                             <td>Rs. 17,500/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/GCA2023_form_OI.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -450,7 +450,7 @@
 
                             <td>Rs. 5,000/-</td>
 
-                            <td><a href="http://115.112.202.200/23gca/GCA2023_form_AGFA.aspx" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 
@@ -460,7 +460,7 @@
 
                             <td>Rs. 6,000/-</td>
 
-                            <td><a href="#" class="btn btn-register btn-main-md">Register Now</a></td>
+                            <td>Registration Closed</td>
 
                         </tr>
 

@@ -174,6 +174,25 @@
             <div class="card custom-card">
                 <!-- First Section (30%) -->
                 <div class="card-body text-center">
+                    <img class="company-logo" src="<?= $partnerPath; ?>LIC.png" alt="Company Logo">
+                    <div class="company-name">Platinum Partner</div>
+                    <!-- <div class="partnership-category"></div> -->
+                </div>
+
+                <!-- Border between sections -->
+                <!-- //my-3 -->
+                <div class="border-left"></div>
+
+                <!-- Second Section (70%) -->
+                <div class="card-body">
+                    <p class="description">Life Insurance Corporation of India</p>
+                    
+                    <a href="https://licindia.in/" target="_blank" class="btn btn-main-md">Partner Website</a>
+                </div>
+            </div>
+            <div class="card custom-card mt-5">
+                <!-- First Section (30%) -->
+                <div class="card-body text-center">
                     <img class="company-logo" src="<?= $partnerPath; ?>SBI_Logo.png" alt="Company Logo">
                     <div class="company-name">Platinum Partner</div>
                     <!-- <div class="partnership-category"></div> -->

@@ -226,11 +226,11 @@
             <div class="row no-gutters">
 
             <div class="wrapper text-center" style="
-    margin: 10% auto 11% auto;">
-  <h3 style=" font-weight: bold; color: #922dd4;">See you on 12th February 2024.<span class="dot">.</span></h3>
-  <!-- <p>Stay tuned for something amazing!</p> -->
-  <br>
-  <a class="btn btn-register btn-main-md" href="./index">Go to home page</a>
+        margin: 10% auto 11% auto;">
+      <h3 style=" font-weight: bold; color: #922dd4;">Thank you for attending 23rd GCA<span class="dot">.</span></h3>
+      <!-- <p>Stay tuned for something amazing!</p> -->
+      <br>
+      <a class="btn btn-register btn-main-md" href="./index">Go to home page</a>
             </div>
         </div>
     </section>

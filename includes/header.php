@@ -121,7 +121,7 @@
 		</li>
 	
 		
-		<li class="nav-item nav-reg-li"><a class="btn-main-md btn" href="https://get.eventedge.com/actuaries24/">Download App</a></li>
+		<!-- <li class="nav-item nav-reg-li"><a class="btn-main-md btn" href="https://get.eventedge.com/actuaries24/">Download App</a></li> -->
 	  </ul>
 	  
 	  

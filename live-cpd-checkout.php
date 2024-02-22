@@ -511,7 +511,7 @@ include "includes/config.php";
             var response = JSON.parse(xhr.responseText);
             if (response.success) {
               // Show success message
-              swal("Check-in successful!", "", "success");
+           //   swal("Check-in successful!", "", "success");
               showSuccessMessage(name.trim());
               localStorage.setItem('username', response.name); // Store in localStorage
             } else {
